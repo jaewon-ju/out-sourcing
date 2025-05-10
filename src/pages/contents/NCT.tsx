@@ -55,6 +55,7 @@ const NCTContent = () => {
     <div>
       {sections.map((section) => (
         <div
+          id={section}
           key={section}
           className="mt-10 flex flex-col justify-center items-center gap-5 overflow-y-auto"
         >
