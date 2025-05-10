@@ -1,1 +1,7 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@font-face {
+  font-family: "Snell";
+  src: url("/fonts/Snell.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

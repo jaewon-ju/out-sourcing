@@ -2,29 +2,17 @@
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import MovieBox from "./components/MovieBox";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
-import MusicController from "./components/musicController";
-import AudioConsent from "./components/AudioConsent";
 
 function MainLayout() {
   const hoveredPage = useSelector((state: RootState) => state.ui.hoveredPage);
   const [backgroundImage, setBackgroundImage] = useState("default");
-  const [audioConsentGiven, setAudioConsentGiven] = useState(false);
-
-  const handleAudioConsent = () => setAudioConsentGiven(true);
-
   const backgroundMap: Record<string, string> = {
     default: "images/default.jpg",
     woodz: "/images/woodz.jpg",
     way: "/images/way.webp",
     leehi: "/images/leehi.webp",
-  };
-
-  const musicMap: Record<string, string> = {
-    woodz: "/music/music-home.mp3",
-    way: "/music/music-about.mp3",
-    leehi: "/music/music-contact.mp3",
   };
 
   // MovieImage에서 배경 이미지 변경 함수 처리
@@ -35,7 +23,7 @@ function MainLayout() {
   }, [hoveredPage]);
 
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center bg-white">
+    <div className="min-h-screen w-screen flex items-center justify-center bg-grey">
       <div
         className="relative"
         style={{
@@ -52,11 +40,6 @@ function MainLayout() {
         }}
       >
         <NavBar />
-        {audioConsentGiven ? (
-          <MusicController />
-        ) : (
-          <AudioConsent onConsent={handleAudioConsent} />
-        )}
         <MovieBox />
       </div>
     </div>

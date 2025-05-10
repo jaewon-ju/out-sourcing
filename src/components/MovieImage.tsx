@@ -10,8 +10,8 @@ const MovieImage = ({ page }: Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleImageClick = (id: string) => {
-    navigate(`/subpage/${id}`);
+  const handleImageClick = (singer: string) => {
+    navigate(`/sub/${singer}`);
   };
 
   const handleImageHover = () => {
