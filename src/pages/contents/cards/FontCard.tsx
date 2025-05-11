@@ -6,6 +6,7 @@ interface FontCardProps {
 }
 
 const FontCard = ({ singerName, font }: FontCardProps) => {
+  console.log(singerName);
   return (
     <div id="FontCards" className={`flex flex-col gap-4 w-[80%]`}>
       {/* 첫번째 카드 */}

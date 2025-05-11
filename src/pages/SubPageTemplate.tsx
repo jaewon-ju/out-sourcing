@@ -7,36 +7,36 @@ interface SubPageTemplateProps {
   audioSrc?: string;
 }
 
-const TopBackgrounds = () => {
-  return (
-    <>
-      {/* 상단 배경 1, 2 */}
-      <div className="absolute w-[80vw] top-0 h-[200vh] flex flex-col items-center">
-        <div
-          className="w-[80vw] h-[100vh] flex flex-col items-center"
-          style={{
-            backgroundImage: `url('/background/top_bg.png'), linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%)`,
-            backgroundSize: "100%",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-      </div>
-    </>
-  );
-};
+// const TopBackgrounds = () => {
+//   return (
+//     <>
+//       {/* 상단 배경 1, 2 */}
+//       <div className="absolute w-[80vw] top-0 h-[200vh] flex flex-col items-center">
+//         <div
+//           className="w-[80vw] h-[100vh] flex flex-col items-center"
+//           style={{
+//             backgroundImage: `url('/background/top_bg.png'), linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%)`,
+//             backgroundSize: "100%",
+//             backgroundRepeat: "no-repeat",
+//           }}
+//         />
+//       </div>
+//     </>
+//   );
+// };
 
-const BottomBackgrounds = () => {
-  return (
-    <div
-      className="absolute w-[80vw] top-[300vh] left-0 h-[200vh] z-[-1]"
-      style={{
-        backgroundImage: `url('/background/bt_bg.png')`,
-        backgroundSize: "100%",
-        backgroundRepeat: "no-repeat",
-      }}
-    />
-  );
-};
+// const BottomBackgrounds = () => {
+//   return (
+//     <div
+//       className="absolute w-[80vw] top-[300vh] left-0 h-[200vh] z-[-1]"
+//       style={{
+//         backgroundImage: `url('/background/bt_bg.png')`,
+//         backgroundSize: "100%",
+//         backgroundRepeat: "no-repeat",
+//       }}
+//     />
+//   );
+// };
 
 const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
   const navigate = useNavigate();

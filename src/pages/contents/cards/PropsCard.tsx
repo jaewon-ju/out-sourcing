@@ -7,6 +7,7 @@ interface PropsCardProps {
 }
 
 const PropsCard = ({ singerName, props }: PropsCardProps) => {
+  console.log(singerName);
   const [popupData, setPopupData] = useState<{
     image: string;
     title: string;

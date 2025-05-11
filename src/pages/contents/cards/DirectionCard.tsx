@@ -6,6 +6,7 @@ interface DirectionCardProps {
 }
 
 const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
+  console.log(singerName);
   return (
     <div id="DirectionCards" className={`flex flex-col gap-4 w-[80%]`}>
       {/* 첫번째 카드 */}
