@@ -1,24 +1,14 @@
 import { useDispatch } from "react-redux";
 import { useEffect, useRef } from "react";
 import { setHeight } from "../../../store/slices/heightSlice";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../store";
-
 interface FashionCardProps {
-  singerName: string;
   title: string;
   imageSrc: string;
   description: string;
 }
 
-const FashionCard = ({
-  singerName,
-  title,
-  imageSrc,
-  description,
-}: FashionCardProps) => {
+const FashionCard = ({ title, imageSrc, description }: FashionCardProps) => {
   const dispatch = useDispatch();
-  const height = useSelector((state: RootState) => state.height[singerName]);
   const firstCardRef = useRef<HTMLDivElement>(null);
   const secondCardRef = useRef<HTMLDivElement>(null);
 
@@ -26,7 +16,7 @@ const FashionCard = ({
     const calcHeight = () => {
       const first = firstCardRef.current?.offsetHeight || 0;
       const second = secondCardRef.current?.offsetHeight || 0;
-      const gap = 16; // 예: Tailwind의 gap-4 → 1rem (16px)
+      const gap = 32; // 예: gap + scrollbox의 py
 
       const totalHeight = first + second / 2 + gap;
       console.log(totalHeight);
@@ -36,14 +26,10 @@ const FashionCard = ({
     calcHeight();
     window.addEventListener("resize", calcHeight); // 반응형 대응
     return () => window.removeEventListener("resize", calcHeight);
-  }, [dispatch]);
+  }, []);
 
   return (
-    <div
-      id="FashionCards"
-      className={`flex flex-col gap-4 w-[80%]`}
-      style={{ height: height ? `${height}px` : "auto" }}
-    >
+    <div id="FashionCards" className={`flex flex-col gap-4 w-[80%]`}>
       {/* 첫번째 카드 */}
       <div ref={firstCardRef} className="border border-gray-400 rounded">
         {/* Header */}

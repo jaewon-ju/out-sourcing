@@ -26,23 +26,23 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
         {/* welcome + 컨텐츠 영역 */}
         <div className="w-full flex flex-col items-center">
           {/* welcome + 버튼 영역 */}
-          <div className="flex flex-col items-center justify-between w-full">
+          <div className="flex flex-col items-center w-full">
             {/* welcome to Anemoia */}
-            <div className="mt-10 w-[80%] z-10 bg-[#A2C7E9] py-6 px-8 shadow-md rounded-lg">
+            <div className="mt-10 w-[90%] h-[6rem] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black">
               <div className="flex items-center justify-between gap-4 w-full">
                 {/* 왼쪽 이미지 */}
                 <img
                   src="/images/home2.png"
                   alt="left"
-                  className="h-24 object-contain"
+                  className="h-[5rem] object-contain"
                 />
 
                 {/* 텍스트 */}
-                <div className="text-black text-center whitespace-nowrap">
-                  <span className="text-[50px] font-roboto-condensed italic mr-2 mr-5">
+                <div className="ml-[1rem] text-black text-center whitespace-nowrap">
+                  <span className="text-[2.5rem] font-light font-stretch-ultra-condensed font-roboto-condensed italic mr-2 mr-5">
                     Welcome to
                   </span>
-                  <span className="text-[75px] font-bold font-['snell']">
+                  <span className="text-[4rem] font-bold font-['snell']">
                     Anemoia
                   </span>
                 </div>
@@ -51,7 +51,7 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
                 <img
                   src="/images/home2.png"
                   alt="right"
-                  className="h-24 object-contain"
+                  className="h-[5rem] object-contain"
                 />
               </div>
             </div>
@@ -99,27 +99,27 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
               <ContentContainer singerName={singerName} />
             </div>
 
-            {/* 오른쪽 메뉴 */}
-            <div className="fixed right-[13vw] flex flex-col gap-0 bg-[#A2C7E9] rounded-md shadow-md">
-              {sections.map((section) => (
-                <a
-                  key={section}
-                  href={`#${section}`}
-                  className="text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-3 border-b border-grey"
-                >
-                  {section}
-                </a>
-              ))}
-              <a href="#top">
-                <div className="text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-5">
-                  <span className="w-fit bg-white font-bold px-4 py-2">
-                    UP!
-                  </span>
-                </div>
-              </a>
-            </div>
+            {/* 오른쪽 메뉴를 위해 비워둔 영역*/}
+            <div className="w-[20%]"></div>
           </div>
 
+          {/* 오른쪽 메뉴 */}
+          <div className="fixed top-[40%] left-[77%] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md">
+            {sections.map((section) => (
+              <a
+                key={section}
+                href={`#${section}`}
+                className="text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-3 border-b border-grey"
+              >
+                {section}
+              </a>
+            ))}
+            <a href="#top">
+              <div className="text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-5">
+                <span className="w-fit bg-white font-bold px-4 py-2">UP!</span>
+              </div>
+            </a>
+          </div>
           {videoSrc && <video src={videoSrc} autoPlay muted loop />}
         </div>
       </div>

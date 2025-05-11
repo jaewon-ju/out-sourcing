@@ -3,6 +3,8 @@ import PropsCard from "./cards/PropsCard";
 import SetSpaceCard from "./cards/SetSpaceCard";
 import TypographyCard from "./cards/TypographyCard";
 import DirectionCard from "./cards/DirectionCard";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 export type SectionContent = {
   id: string;
@@ -12,10 +14,11 @@ export type SectionContent = {
 
 const NCTContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Typography", "Direction"];
+  const height = useSelector((state: RootState) => state.height["nct"]);
+
   const cards = {
     Fashion: (
       <FashionCard
-        singerName="nct"
         title="Fashion"
         imageSrc="https://via.placeholder.com/150"
         description="Fashion"
@@ -69,7 +72,11 @@ const NCTContent = () => {
 
           <div
             id="scroll-box"
-            className="flex flex-col justify-center items-center gap-4 bg-gray-200 w-full py-4 overflow-y-auto "
+            className="flex flex-col justify-start items-center w-full py-4
+             overflow-y-auto 
+             scrollbar scrollbar-w-25 scrollbar-h-1/2 scrollbar-thumb-[#CCCCCC] scrollbar-track-white
+             border border-black"
+            style={{ height: height ? `${height}px` : "auto" }}
           >
             {cards[section as keyof typeof cards]}
           </div>

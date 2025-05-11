@@ -1,7 +1,25 @@
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+  preferredstrategy: "pseudoelements";
+}
 @font-face {
   font-family: "Snell";
   src: url("/fonts/Snell.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+
+#scroll-box::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 0.1rem;
+  border-left: 0.1rem solid black;
+  border-bottom: 0.1rem solid black;
+  border-top: 0.1rem solid black;
+}
+
+#scroll-box::-webkit-scrollbar-track {
+  background: white;
+  border-left: 0.1rem solid black;
+  border-top-left-radius: 0.3rem;
 }
