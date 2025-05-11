@@ -98,9 +98,9 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
               className="rounded-xl"
               width="480rem"
               height="270rem"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // 여기에 원하는 유튜브 영상 URL을 삽입
+              src="https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03"
               title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
           </div>
