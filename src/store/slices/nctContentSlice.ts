@@ -137,12 +137,8 @@ const initialState: NCTContentState = {
       "청량한 자연 색감",
     ],
     image: [
-      [
-        "/typography/nct/1.png",
-        "/typography/nct/1_1.png",
-        "/typography/nct/1_2.png",
-      ],
-      ["/typography/nct/2.png"],
+      ["/font/nct/1.png", "/font/nct/1_1.png", "/font/nct/1_2.png"],
+      ["/font/nct/2.png"],
     ],
     description: [
       "18세기~19세기 유럽/미국 고전 영문 필기체 폰트\n당시 미국에서 가장 보편적인 비즈니스 및 사교적 서신체, 수공예적 감성을 연출한다.",

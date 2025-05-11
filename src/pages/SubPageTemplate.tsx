@@ -1,14 +1,97 @@
 import { useNavigate } from "react-router-dom";
 import ContentContainer from "./ContentContainer";
+import { useRef, useEffect, useState } from "react";
 
 interface SubPageTemplateProps {
   singerName: string;
-  videoSrc?: string;
+  audioSrc?: string;
 }
 
-const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
+const TopBackgrounds = () => {
+  return (
+    <>
+      {/* 상단 배경 1, 2 */}
+      <div className="absolute w-[80vw] top-0 h-[200vh] flex flex-col items-center">
+        <div
+          className="w-[80vw] h-[100vh] flex flex-col items-center"
+          style={{
+            backgroundImage: `url('/background/top_bg.png'), linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%)`,
+            backgroundSize: "100%",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+      </div>
+    </>
+  );
+};
+
+const BottomBackgrounds = () => {
+  return (
+    <div
+      className="absolute w-[80vw] top-[300vh] left-0 h-[200vh] z-[-1]"
+      style={{
+        backgroundImage: `url('/background/bt_bg.png')`,
+        backgroundSize: "100%",
+        backgroundRepeat: "no-repeat",
+      }}
+    />
+  );
+};
+
+const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
   const navigate = useNavigate();
-  const sections = ["Fashion", "Props", "Set Space", "Typography", "Direction"];
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  const handleClick = (section: string) => {
+    // 클릭한 항목의 인덱스를 상태로 저장
+    setActiveSection(section);
+  };
+
+  const handleOutsideClick = (event: MouseEvent) => {
+    const menu = document.querySelector("#section-menu"); // 메뉴 요소 선택
+    if (menu && !menu.contains(event.target as Node)) {
+      setActiveSection(null); // 메뉴 외부 클릭 시 null로 설정
+    }
+  };
+
+  const sections = ["Fashion", "Props", "Set Space", "Direction", "Font"];
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!audioSrc || !audioRef.current) return;
+    audioRef.current.volume = 0.3;
+    audioRef.current.loop = true;
+
+    const playAudio = async () => {
+      try {
+        await audioRef.current?.play();
+      } catch (err) {
+        console.warn("Auto-play with sound failed. User interaction needed.");
+      }
+    };
+
+    playAudio();
+  }, [audioSrc]);
+
+  const handleAudio = () => {
+    if (audioRef.current) {
+      if (audioRef.current.paused) {
+        audioRef.current.volume = 0.3;
+        audioRef.current.play().catch((err) => {
+          console.warn("재생 실패:", err);
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  };
 
   return (
     <div
@@ -22,6 +105,16 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
           alt="topbar"
           className="w-full object-contain"
         />
+
+        {/* 고정 음악 버튼 */}
+        {audioSrc && (
+          <img
+            src="/images/apple-bar.png" // 적절한 음악 이미지 경로
+            alt="Play music"
+            onClick={handleAudio}
+            className="max-w-[15rem] fixed top-[7rem] left-[10rem] cursor-pointer hover:scale-105 transition-transform z-15"
+          />
+        )}
 
         {/* welcome + 컨텐츠 영역 */}
         <div className="relative w-full flex flex-col items-center">
@@ -56,8 +149,8 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
               </div>
             </div>
 
+            {/* home survey youtube */}
             <div className="w-full flex flex-col items-center">
-              {/* home survey youtube */}
               <div className="mt-10 flex justify-center items-center gap-18">
                 <div className="flex flex-col items-center gap-2">
                   <img
@@ -84,7 +177,12 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
                     src="/images/youtube.png"
                     alt="youtube"
                     className="h-15 object-contain cursor-pointer"
-                    onClick={() => navigate("/youtube")}
+                    onClick={() =>
+                      window.open(
+                        "https://www.youtube.com/watch?v=IKlkZZv76Ho",
+                        "_blank"
+                      )
+                    }
                   />
                   <div className="text-black">Youtube</div>
                 </div>
@@ -93,39 +191,59 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
           </div>
 
           {/* 유튜브 영상 */}
-          <div className="mt-[2rem] ml-[4rem] w-full flex justify-start">
+          <div className="mt-[2rem] ml-[4rem] w-full flex flex-col justify-start">
             <iframe
               className="rounded-xl"
-              width="480rem"
-              height="270rem"
+              width="640rem"
+              height="360rem"
               src="https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
+            <h1 className="text-black text-center font-bold text-[2rem] flex justify-start">
+              NCT WISH 엔시티 위시 'Steady' MV
+            </h1>
+            <p className="text-black text-center flex justify-start mt-[1rem] text-[1rem]">
+              그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날
+            </p>
           </div>
 
           {/* 컨텐츠 영역 */}
           <div className="relative flex flex-row w-full">
             {/* 왼쪽 콘텐츠 */}
-            <div className="flex flex-row w-[80%] mt-10 ml-10">
+            <div className="flex flex-row w-[80%] mt-[10vh] ml-[2vw]">
               <ContentContainer singerName={singerName} />
             </div>
-
             {/* 오른쪽 메뉴를 위해 비워둔 영역*/}
             <div className="w-[20%]"></div>
           </div>
 
           {/* 오른쪽 메뉴 */}
-          <div className="fixed top-[40%] left-[77%] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md">
-            {sections.map((section) => (
-              <a
-                key={section}
-                href={`#${section}`}
-                className="text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-3 border-b border-grey"
+          <div
+            id="section-menu"
+            className="fixed top-[40%] left-[77%] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md"
+          >
+            {sections.map((section, index: number) => (
+              <div
+                className={`flex flex-col gap-0 border-gray-500 
+                  ${
+                    index === sections.length - 1
+                      ? "border-b-0"
+                      : "border-b-[0.13rem]"
+                  }`}
               >
-                {section}
-              </a>
+                <a
+                  key={index}
+                  href={`#${section}`}
+                  onClick={() => handleClick(section)} // 클릭 시 handleClick 호출
+                  className={`text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-3 
+                  ${activeSection === section ? "text-blue-700" : ""}
+                  `}
+                >
+                  {section}
+                </a>
+              </div>
             ))}
             <a href="#top">
               <div className="text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-5">
@@ -133,9 +251,37 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
               </div>
             </a>
           </div>
-          {videoSrc && <video src={videoSrc} autoPlay muted loop />}
+
+          {/* tags */}
+          <div className="flex flex-row w-full justify-center mt-[10vh] gap-[3vw]">
+            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+              2000s
+            </p>
+            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+              School
+            </p>
+            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+              Japan
+            </p>
+            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+              First Love
+            </p>
+          </div>
+
+          {/* related */}
+          <div className="mt-[10vh] w-[100%]">
+            <p className="bg-[#A2C7E9] text-black rounded-lg w-fit ml-[2rem] px-[1rem] py-[0.5rem]">
+              Related Articles
+            </p>
+            <div className="flex flex-row w-[70%] mt-[4vh] ml-[2rem] gap-[2rem]">
+              <div className="bg-black w-[16vw] aspect-[16/9]"></div>
+              <div className="bg-black w-[16vw] aspect-[16/9]"></div>
+              <div className="bg-black w-[16vw] aspect-[16/9]"></div>
+            </div>
+          </div>
         </div>
       </div>
+      {audioSrc && <audio ref={audioRef} src={audioSrc} loop />}
     </div>
   );
 };
@@ -149,9 +295,6 @@ const containerStyle = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  transition: "background-image 0.7s ease-in-out",
   border: "1px solid #333",
   boxShadow: "0 0 20px rgba(0,0,0,0.3)",
   overflow: "scroll",
