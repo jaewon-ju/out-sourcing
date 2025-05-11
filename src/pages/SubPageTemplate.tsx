@@ -24,11 +24,11 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
         />
 
         {/* welcome + 컨텐츠 영역 */}
-        <div className="w-full flex flex-col items-center">
+        <div className="relative w-full flex flex-col items-center">
           {/* welcome + 버튼 영역 */}
           <div className="flex flex-col items-center w-full">
             {/* welcome to Anemoia */}
-            <div className="mt-10 w-[90%] h-[6rem] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black">
+            <div className="mt-[1rem] w-[90%] h-[6rem] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black">
               <div className="flex items-center justify-between gap-4 w-full">
                 {/* 왼쪽 이미지 */}
                 <img
@@ -90,6 +90,19 @@ const SubPageTemplate = ({ singerName, videoSrc }: SubPageTemplateProps) => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* 유튜브 영상 */}
+          <div className="mt-[2rem] ml-[4rem] w-full flex justify-start">
+            <iframe
+              className="rounded-xl"
+              width="480rem"
+              height="270rem"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // 여기에 원하는 유튜브 영상 URL을 삽입
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
 
           {/* 컨텐츠 영역 */}
