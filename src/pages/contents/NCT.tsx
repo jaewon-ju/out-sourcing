@@ -1,7 +1,7 @@
 import FashionCard from "./cards/FashionCard";
 import PropsCard from "./cards/PropsCard";
 import SetSpaceCard from "./cards/SetSpaceCard";
-import TypographyCard from "./cards/TypographyCard";
+import FontCard from "./cards/FontCard";
 import DirectionCard from "./cards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
@@ -15,46 +15,17 @@ export type SectionContent = {
 const NCTContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Typography", "Direction"];
   const height = useSelector((state: RootState) => state.height["nct"]);
+  const nctContent = useSelector((state: RootState) => state.nctContent);
 
   const cards = {
-    Fashion: (
-      <FashionCard
-        title="Fashion"
-        imageSrc="https://via.placeholder.com/150"
-        description="Fashion"
-      />
-    ),
-    Props: (
-      <PropsCard
-        singerName="nct"
-        title="Props"
-        imageSrc="https://via.placeholder.com/150"
-        description="Props"
-      />
-    ),
+    Fashion: <FashionCard singerName="nct" fashion={nctContent.fashion} />,
+    Props: <PropsCard singerName="nct" props={nctContent.props} />,
     "Set Space": (
-      <SetSpaceCard
-        singerName="nct"
-        title="Set Space"
-        imageSrc="https://via.placeholder.com/150"
-        description="Set Space"
-      />
+      <SetSpaceCard singerName="nct" setSpace={nctContent.setSpace} />
     ),
-    Typography: (
-      <TypographyCard
-        singerName="nct"
-        title="Typography"
-        imageSrc="https://via.placeholder.com/150"
-        description="Typography"
-      />
-    ),
+    Font: <FontCard singerName="nct" font={nctContent.font} />,
     Direction: (
-      <DirectionCard
-        singerName="nct"
-        title="Direction"
-        imageSrc="https://via.placeholder.com/150"
-        description="Direction"
-      />
+      <DirectionCard singerName="nct" direction={nctContent.direction} />
     ),
   };
 
@@ -76,7 +47,9 @@ const NCTContent = () => {
              overflow-y-auto 
              scrollbar scrollbar-w-25 scrollbar-h-1/2 scrollbar-thumb-[#CCCCCC] scrollbar-track-white
              border border-black"
-            style={{ height: height ? `${height}px` : "auto" }}
+            style={{
+              height: section === "Props" ? "auto" : `${height}px`,
+            }}
           >
             {cards[section as keyof typeof cards]}
           </div>
