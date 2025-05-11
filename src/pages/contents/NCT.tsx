@@ -13,7 +13,7 @@ export type SectionContent = {
 };
 
 const NCTContent = () => {
-  const sections = ["Fashion", "Props", "Set Space", "Typography", "Direction"];
+  const sections = ["Fashion", "Props", "Set Space", "Direction", "Font"];
   const height = useSelector((state: RootState) => state.height["nct"]);
   const nctContent = useSelector((state: RootState) => state.nctContent);
 
