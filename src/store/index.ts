@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import uiReducer from "./slices/uiSlice";
-
+import heightReducer from "./slices/heightSlice";
 export const store = configureStore({
   reducer: {
     ui: uiReducer,
+    height: heightReducer,
   },
 });
 

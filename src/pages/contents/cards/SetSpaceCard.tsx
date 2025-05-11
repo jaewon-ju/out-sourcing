@@ -1,12 +1,27 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
+
 interface SetSpaceCardProps {
+  singerName: string;
   title: string;
   imageSrc: string;
   description: string;
 }
 
-const SetSpaceCard = ({ title, imageSrc, description }: SetSpaceCardProps) => {
+const SetSpaceCard = ({
+  singerName,
+  title,
+  imageSrc,
+  description,
+}: SetSpaceCardProps) => {
+  const height = useSelector((state: RootState) => state.height[singerName]);
+
   return (
-    <div className="flex flex-col gap-4 w-[80%]">
+    <div
+      id="SetSpaceCards"
+      className={`flex flex-col gap-4 w-[80%]`}
+      style={{ height: height ? `${height}px` : "auto" }}
+    >
       <div className="border border-gray-400 rounded">
         {/* Header */}
         <div className="bg-blue-400 text-black text-left font-bold px-4 py-2 rounded-t">

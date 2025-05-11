@@ -1,16 +1,26 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
+
 interface DirectionCardProps {
+  singerName: string;
   title: string;
   imageSrc: string;
   description: string;
 }
 
 const DirectionCard = ({
+  singerName,
   title,
   imageSrc,
   description,
 }: DirectionCardProps) => {
+  const height = useSelector((state: RootState) => state.height[singerName]);
   return (
-    <div className="flex flex-col gap-4 w-[80%]">
+    <div
+      id="DirectionCards"
+      className={`flex flex-col gap-4 w-[80%]`}
+      style={{ height: height ? `${height}px` : "auto" }}
+    >
       <div className="border border-gray-400 rounded">
         {/* Header */}
         <div className="bg-blue-400 text-black text-left font-bold px-4 py-2 rounded-t">

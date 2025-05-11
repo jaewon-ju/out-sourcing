@@ -12,10 +12,10 @@ export type SectionContent = {
 
 const NCTContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Typography", "Direction"];
-
   const cards = {
     Fashion: (
       <FashionCard
+        singerName="nct"
         title="Fashion"
         imageSrc="https://via.placeholder.com/150"
         description="Fashion"
@@ -23,6 +23,7 @@ const NCTContent = () => {
     ),
     Props: (
       <PropsCard
+        singerName="nct"
         title="Props"
         imageSrc="https://via.placeholder.com/150"
         description="Props"
@@ -30,6 +31,7 @@ const NCTContent = () => {
     ),
     "Set Space": (
       <SetSpaceCard
+        singerName="nct"
         title="Set Space"
         imageSrc="https://via.placeholder.com/150"
         description="Set Space"
@@ -37,6 +39,7 @@ const NCTContent = () => {
     ),
     Typography: (
       <TypographyCard
+        singerName="nct"
         title="Typography"
         imageSrc="https://via.placeholder.com/150"
         description="Typography"
@@ -44,6 +47,7 @@ const NCTContent = () => {
     ),
     Direction: (
       <DirectionCard
+        singerName="nct"
         title="Direction"
         imageSrc="https://via.placeholder.com/150"
         description="Direction"
@@ -65,7 +69,7 @@ const NCTContent = () => {
 
           <div
             id="scroll-box"
-            className="flex flex-col justify-center items-center gap-4 bg-gray-200 w-full py-4"
+            className="flex flex-col justify-center items-center gap-4 bg-gray-200 w-full py-4 overflow-y-auto "
           >
             {cards[section as keyof typeof cards]}
           </div>
