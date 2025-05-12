@@ -5,7 +5,7 @@ import FontCard from "./cards/FontCard";
 import DirectionCard from "./cards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-
+import { useState } from "react";
 export type SectionContent = {
   id: string;
   label: string;
@@ -16,10 +16,17 @@ const NCTContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Direction", "Font"];
   const height = useSelector((state: RootState) => state.height["nct"]);
   const nctContent = useSelector((state: RootState) => state.nctContent);
+  const [propsHeight, setPropsHeight] = useState(0);
 
   const cards = {
     Fashion: <FashionCard singerName="nct" fashion={nctContent.fashion} />,
-    Props: <PropsCard singerName="nct" props={nctContent.props} />,
+    Props: (
+      <PropsCard
+        singerName="nct"
+        props={nctContent.props}
+        setPropsHeight={setPropsHeight}
+      />
+    ),
     "Set Space": (
       <SetSpaceCard singerName="nct" setSpace={nctContent.setSpace} />
     ),
@@ -43,12 +50,18 @@ const NCTContent = () => {
 
           <div
             id="scroll-box"
-            className="flex flex-col justify-start items-center w-full py-4
-             overflow-y-auto 
-             scrollbar scrollbar-w-25 scrollbar-h-1/2 scrollbar-thumb-[#CCCCCC] scrollbar-track-white
-             border border-black"
+            className={`
+                flex flex-col justify-start items-center w-full py-4
+                border border-black
+                scrollbar-thumb-[#CCCCCC] scrollbar-track-white scrollbar-w-[2vw]
+                ${
+                  section === "Props"
+                    ? "overflow-y-scroll scrollbar scrollbar-h-[100%]"
+                    : "overflow-y-auto scrollbar scrollbar-h-1/2"
+                }
+            `}
             style={{
-              height: section === "Props" ? "auto" : `${height}px`,
+              height: section === "Props" ? propsHeight : `${height}px`,
             }}
           >
             {cards[section as keyof typeof cards]}
