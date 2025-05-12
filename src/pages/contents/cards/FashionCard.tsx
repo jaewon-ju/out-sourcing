@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { setHeight } from "../../../store/slices/heightSlice";
 import { NCTFashion } from "../../../store/slices/nctContentSlice";
 
@@ -13,6 +13,11 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
 
   const firstCardRef = useRef<HTMLDivElement>(null);
   const secondCardRef = useRef<HTMLDivElement>(null);
+  const [imageLoaded, setImageLoaded] = useState(false); // 이미지 로딩 상태 추적
+
+  const handleImageLoad = () => {
+    setImageLoaded(true); // 이미지가 로드되면 상태 변경
+  };
 
   useEffect(() => {
     const calcHeight = () => {
@@ -28,7 +33,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
     calcHeight();
     window.addEventListener("resize", calcHeight); // 반응형 대응
     return () => window.removeEventListener("resize", calcHeight);
-  }, [dispatch, singerName]);
+  }, [dispatch, singerName, imageLoaded]);
 
   return (
     <div id="FashionCards" className={`flex flex-col gap-4 w-[80%]`}>
@@ -47,6 +52,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
                 src={fashion.image[0][0]}
                 alt={fashion.description[0]}
                 className="w-full h-auto object-cover mb-2"
+                onLoad={handleImageLoad} // 이미지 로딩 완료 시 호출
               />
               <p className="text-bold font-bold text-left">
                 {fashion.subTitle[0]}
