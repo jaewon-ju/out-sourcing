@@ -156,7 +156,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   <img
                     src="/images/home.png"
                     alt="home"
-                    className="h-15 object-contain cursor-pointer"
+                    className="h-15 object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/")}
                   />
                   <div className="text-black">Home</div>
@@ -166,7 +166,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   <img
                     src="/images/survey.png"
                     alt="survey"
-                    className="h-13 object-contain cursor-pointer"
+                    className="h-13 object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/survey")}
                   />
                   <div className="text-black">Survey</div>
@@ -176,7 +176,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   <img
                     src="/images/youtube.png"
                     alt="youtube"
-                    className="h-15 object-contain cursor-pointer"
+                    className="h-15 object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() =>
                       window.open(
                         "https://www.youtube.com/watch?v=IKlkZZv76Ho",

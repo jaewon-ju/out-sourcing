@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import MovieBox from "./components/MovieBox";
 import { useEffect, useState } from "react";
-import NavBar from "./components/NavBar";
 
 function MainLayout() {
   const hoveredPage = useSelector((state: RootState) => state.ui.hoveredPage);
@@ -75,6 +74,7 @@ function MainLayout() {
                   className="h-[5rem] object-contain"
                 />
               </div>
+
               <div className="mt-[10vh]">
                 <MovieBox />
               </div>
