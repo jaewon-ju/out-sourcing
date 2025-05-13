@@ -16,17 +16,17 @@ const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
   ]);
 
   return (
-    <div id="SetSpaceCards" className={`flex flex-col gap-4 w-[80%]`}>
+    <div id="SetSpaceCards" className={`flex flex-col gap-4 w-[90%]`}>
       {[0, 1, 2, 3, 4].map((index) => (
         <div className="border border-black">
           {/* Header */}
-          <div className="bg-[#A2C7E9] text-black text-xl text-left font-bold px-4 py-2">
+          <div className="bg-[#A2C7E9] text-black text-[2vh] text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
             {setSpace.title[index]}
           </div>
 
-          <div id="except-title" className="flex flex-row gap-[0.5rem]">
+          <div id="except-title" className="flex flex-row gap-[1vh]">
             {/* Image col */}
-            <div className="flex flex-col p-[0.5rem] w-full">
+            <div className="flex flex-col p-[1vw] w-full">
               <div className="relative flex flex-col items-start justify-center">
                 {/* 기본 이미지 */}
                 <img
@@ -44,18 +44,20 @@ const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
                 `}
                 />
 
-                <div className="flex flex-row gap-[0.5rem] w-full">
-                  <div className="w-[80%] whitespace-pre-line mt-[0.5rem]">
+                <div className="flex flex-row gap-[1vh] w-full">
+                  <div className="w-[80%] whitespace-pre-line mt-[1vh] text-[1.4vw]">
                     {setSpace.description[index]}
                   </div>
-                  <div className="w-[20%] mt-[0.5rem]">
+                  <div className="w-[20%] mt-[1vh]">
                     <button
                       className="
+                      font-[AppleBold]
+                      text-[1.2vw]
                   float-right 
-                  h-[1.5rem] 
+                  h-[3vh] 
                   bg-[#e9e9e9] 
                   border-1 border-black rounded-md 
-                  p-[0.5rem]
+                  p-[0.5vw]
                   flex items-center justify-center
                   hover:bg-[#d9d9d9]
                   "

@@ -112,7 +112,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
             src="/images/apple-bar.png" // 적절한 음악 이미지 경로
             alt="Play music"
             onClick={handleAudio}
-            className="max-w-[15rem] fixed top-[7rem] left-[10rem] cursor-pointer hover:scale-105 transition-transform z-15"
+            className="max-w-[20vw] fixed top-[20vh] left-[12vw] cursor-pointer hover:scale-105 transition-transform z-15"
           />
         )}
 
@@ -121,62 +121,67 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* welcome + 버튼 영역 */}
           <div className="flex flex-col items-center w-full">
             {/* welcome to Anemoia */}
-            <div className="mt-[1rem] w-[90%] h-[6rem] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black">
-              <div className="flex items-center justify-between gap-4 w-full">
+            <div className="mt-[1vh] w-[90%] h-[15vh] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black flex items-center justify-center">
+              <div className="flex items-center justify-center gap-[5vw] w-full">
                 {/* 왼쪽 이미지 */}
                 <img
                   src="/images/home2.png"
                   alt="left"
-                  className="h-[5rem] object-contain"
+                  className="h-[13vh] object-contain"
                 />
 
                 {/* 텍스트 */}
-                <div className="ml-[1rem] text-black text-center whitespace-nowrap">
-                  <span className="text-[2.5rem] font-light font-stretch-ultra-condensed font-roboto-condensed italic mr-2 mr-5">
+                <div className=" text-black text-center mt-[1vw]">
+                  <span className="font-[RobotoItalic] text-[6vh] font-light mr-[1.5vw]">
                     Welcome to
                   </span>
-                  <span className="text-[4rem] font-bold font-['snell']">
-                    Anemoia
-                  </span>
+                  <span className="font-[Snell] text-[10vh]">Anemoia</span>
                 </div>
 
                 {/* 오른쪽 이미지 */}
                 <img
                   src="/images/home2.png"
                   alt="right"
-                  className="h-[5rem] object-contain"
+                  className="h-[13vh] object-contain"
                 />
               </div>
             </div>
 
             {/* home survey youtube */}
             <div className="w-full flex flex-col items-center">
-              <div className="mt-10 flex justify-center items-center gap-18">
-                <div className="flex flex-col items-center gap-2">
+              <div className="mt-[5vh] flex justify-center items-center gap-[5vw]">
+                {/* Home */}
+                <div className="flex flex-col items-center">
                   <img
                     src="/images/home.png"
                     alt="home"
-                    className="h-15 object-contain cursor-pointer hover:scale-120 transition-transform"
+                    className="h-[8vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/")}
                   />
-                  <div className="text-black">Home</div>
+                  <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
+                    Home
+                  </div>
                 </div>
 
-                <div className="flex flex-col items-center gap-2">
+                {/* Survey */}
+                <div className="flex flex-col items-center">
                   <img
                     src="/images/survey.png"
                     alt="survey"
-                    className="h-13 object-contain cursor-pointer hover:scale-120 transition-transform"
+                    className="h-[8vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/survey")}
                   />
-                  <div className="text-black">Survey</div>
+                  <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
+                    Survey
+                  </div>
                 </div>
 
-                <div className="flex flex-col items-center gap-2">
+                {/* YouTube */}
+                <div className="flex flex-col items-center">
                   <img
                     src="/images/youtube.png"
                     alt="youtube"
-                    className="h-15 object-contain cursor-pointer hover:scale-120 transition-transform"
+                    className="h-[8vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() =>
                       window.open(
                         "https://www.youtube.com/watch?v=IKlkZZv76Ho",
@@ -184,27 +189,27 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                       )
                     }
                   />
-                  <div className="text-black">Youtube</div>
+                  <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
+                    Youtube
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* 유튜브 영상 */}
-          <div className="mt-[2rem] ml-[4rem] w-full flex flex-col justify-start">
+          <div className="mt-[3vh] ml-[8vw] w-full flex flex-col justify-start">
             <iframe
-              className="rounded-xl"
-              width="640rem"
-              height="360rem"
+              className="rounded-xl w-[48vw] h-[27vw]"
               src="https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-            <h1 className="text-black text-center font-bold text-[2rem] flex justify-start">
+            <p className="text-black font-[AppleBold] font-bold mt-[2vh] text-[2.4vw] flex justify-start">
               NCT WISH 엔시티 위시 'Steady' MV
-            </h1>
-            <p className="text-black text-center flex justify-start mt-[1rem] text-[1rem]">
+            </p>
+            <p className="font-[Apple] text-black flex justify-start mt-[1vh] text-[1.4vw]">
               그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날
             </p>
           </div>
@@ -222,7 +227,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* 오른쪽 메뉴 */}
           <div
             id="section-menu"
-            className="fixed top-[40%] left-[77%] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md"
+            className="fixed top-[50vh] left-[78vw] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md"
           >
             {sections.map((section, index: number) => (
               <div
@@ -230,14 +235,16 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   ${
                     index === sections.length - 1
                       ? "border-b-0"
-                      : "border-b-[0.13rem]"
+                      : "border-b-[0.13vh]"
                   }`}
               >
                 <a
                   key={index}
                   href={`#${section}`}
                   onClick={() => handleClick(section)} // 클릭 시 handleClick 호출
-                  className={`text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-3 
+                  className={`font-[Serif] text-black text-center hover:text-blue-700 
+                    px-[1vw] py-[1vh]
+                    text-[1.4vw]
                   ${activeSection === section ? "text-blue-700" : ""}
                   `}
                 >
@@ -246,31 +253,33 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
               </div>
             ))}
             <a href="#top">
-              <div className="text-black font-source-serif-pro text-center hover:text-blue-700 px-4 py-5">
-                <span className="w-fit bg-white font-bold px-4 py-2">UP!</span>
+              <div className="text-black font-[Serif] text-center hover:text-blue-700 px-[1vw] py-[1vh]">
+                <span className="w-fit bg-white font-bold px-[0.5vw] py-[0.5vh] text-[1.4vw]">
+                  UP!
+                </span>
               </div>
             </a>
           </div>
 
           {/* tags */}
           <div className="flex flex-row w-full justify-center mt-[10vh] gap-[3vw]">
-            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
               2000s
             </p>
-            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
               School
             </p>
-            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
               Japan
             </p>
-            <p className="text-black font-source-serif-pro text-center px-[1rem] py-[0.5rem] bg-[#A2C7E9] rounded-xl shadow-md">
+            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
               First Love
             </p>
           </div>
 
           {/* related */}
           <div className="mt-[10vh] w-[100%]">
-            <p className="bg-[#A2C7E9] text-black rounded-lg w-fit ml-[2rem] px-[1rem] py-[0.5rem]">
+            <p className="bg-[#A2C7E9] text-black rounded-lg w-fit ml-[2rem] px-[1rem] py-[0.5rem] text-[2vh] font-[AppleBold]">
               Related Articles
             </p>
             <div className="flex flex-row w-[70%] mt-[4vh] ml-[2rem] gap-[2rem]">

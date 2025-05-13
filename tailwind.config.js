@@ -2,11 +2,16 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {
-        "roboto-condensed": ['"Roboto Condensed"', "sans-serif"],
-        "source-serif-pro": ['"Source Serif Pro"', "sans-serif"],
-      },
+    extend: {},
+    fontFamily: {
+      Apple: ["AppleNeoR"],
+      AppleBold: ["AppleNeoB"],
+      AppleExtraBold: ["AppleNeoEB"],
+      Depixel: ["depixelbreit"],
+      DepixelBold: ["depixelbreitfett"],
+      RobotoItalic: ["RobotoItalic"],
+      Serif: ["Serif"],
+      Snell: ["Snell"],
     },
   },
   plugins: [

@@ -42,16 +42,16 @@ const NCTContent = () => {
         <div
           id={section}
           key={section}
-          className="mt-10 flex flex-col justify-center items-center gap-5 overflow-y-auto"
+          className="mt-[5vh] flex flex-col justify-center items-center gap-[4vh] overflow-y-auto"
         >
-          <div className="text-black text-center px-4 py-2 bg-[#A2C7E9] w-fit border border-grey">
+          <div className="text-black text-center text-[2vh] font-[Apple] px-[1vw] py-[0.5vh] bg-[#A2C7E9] w-fit border border-grey-500">
             {section}
           </div>
 
           <div
             id="scroll-box"
             className={`
-                flex flex-col justify-start items-center w-full py-4
+                flex flex-col justify-start items-center w-full py-[2vh] font-[Apple]
                 border border-black
                 scrollbar-thumb-[#CCCCCC] scrollbar-track-white scrollbar-w-[2vw]
                 ${

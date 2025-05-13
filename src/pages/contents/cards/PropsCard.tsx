@@ -56,14 +56,14 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
   return (
     <div
       id="PropsCards"
-      className={`grid grid-cols-2 gap-4 w-[80%] scroll-y-auto`}
+      className={`grid grid-cols-2 gap-4 w-[98%] scroll-y-auto`}
     >
       {/* 첫번째 카드 */}
       <div
         ref={firstCardRef}
-        className="relative bg-gray-200 flex justify-center items-center aspect-square"
+        className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]"
       >
-        <h1 className="text-xl font-semibold absolute top-[1rem] left-[1rem]">
+        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img
@@ -83,9 +83,9 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       {/* 두번째 카드 */}
       <div
         ref={secondCardRef}
-        className="relative bg-gray-200 flex justify-center items-center aspect-square"
+        className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]"
       >
-        <h1 className="text-xl font-semibold absolute top-[1rem] left-[1rem]">
+        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img
@@ -102,8 +102,8 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       </div>
 
       {/* 세번째 카드 */}
-      <div className="relative bg-gray-200 flex justify-center items-center aspect-square">
-        <h1 className="text-xl font-semibold absolute top-[1rem] left-[1rem]">
+      <div className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]">
+        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img
@@ -120,8 +120,8 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       </div>
 
       {/* 네번째 카드 */}
-      <div className="relative bg-gray-200 flex justify-center items-center aspect-square">
-        <h1 className="text-xl font-semibold absolute top-[1rem] left-[1rem]">
+      <div className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]">
+        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img
@@ -140,21 +140,23 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       {/* 팝업 */}
       {popupData && (
         <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white w-[40%] border border-black">
-            <div className="bg-[#A2C7E9] m-[0.5rem] border border-black p-4">
+          <div className="bg-white w-[50%] border border-black">
+            <div className="bg-[#A2C7E9] m-[1vw] border border-black p-[1vw]">
               <button
                 onClick={closePopup}
-                className=" w-[1.5rem] h-[1.5rem] mb-[1rem] text-black text-xl border border-black bg-gray-200 flex justify-center items-center"
+                className=" w-[1.5vw] h-[3vh] mb-[1vh] text-black text-[1vw] border border-black bg-gray-200 flex justify-center items-center text-center"
               >
                 X
               </button>
               <img
                 src={popupData.image}
                 alt={popupData.title}
-                className="w-full h-auto rounded mb-4"
+                className="w-full h-auto rounded mb-[1vh]"
               />
-              <h2 className="text-xl font-bold mb-2">{popupData.title}</h2>
-              <p className="text-sm">{popupData.description}</p>
+              <h2 className="text-[1.5vw] font-[AppleBold] font-bold mb-[1vh] mt-[1vh]">
+                {popupData.title}
+              </h2>
+              <p className="text-[1vw]">{popupData.description}</p>
             </div>
           </div>
         </div>

@@ -3,10 +3,51 @@
   nocompatible: true;
   preferredstrategy: "pseudoelements";
 }
+
+@font-face {
+  font-family: "AppleNeoR";
+  src: url("/fonts/AppleNeoR.woff2") format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AppleNeoB";
+  src: url("/fonts/AppleNeoB.woff2") format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AppleNeoEB";
+  src: url("/fonts/AppleNeoEB.woff2") format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "depixelbreit";
+  src: url("/fonts/depixelbreit.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "depixelbreitfett";
+  src: url("/fonts/depixelbreitfett.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RobotoItalic";
+  src: url("/fonts/RobotoItalic.woff") format("woff");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Serif";
+  src: url("/fonts/serif.woff") format("woff");
+  font-style: normal;
+}
 @font-face {
   font-family: "Snell";
   src: url("/fonts/Snell.woff") format("woff");
-  font-weight: normal;
   font-style: normal;
 }
 
