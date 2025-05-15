@@ -64,3 +64,10 @@
   border-left: 0.1rem solid black;
   border-top-left-radius: 0.3rem;
 }
+
+.bg-dual {
+  background-image: url("/background/top.png"), url("/background/bottom.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+  background-size: 100% auto, 100% auto;
+}

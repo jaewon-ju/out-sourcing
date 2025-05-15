@@ -96,7 +96,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
   return (
     <div
       id="top"
-      className="min-h-screen w-screen flex flex-col items-center justify-center bg-white"
+      className="relative min-h-screen w-screen flex flex-col items-center justify-center bg-white"
     >
       <div style={{ ...containerStyle }}>
         {/* 상단 화면 바 */}
@@ -117,7 +117,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
         )}
 
         {/* welcome + 컨텐츠 영역 */}
-        <div className="relative w-full flex flex-col items-center">
+        <div className="bg-dual relative w-full flex flex-col items-center">
           {/* welcome + 버튼 영역 */}
           <div className="flex flex-col items-center w-full">
             {/* welcome to Anemoia */}
@@ -231,6 +231,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           >
             {sections.map((section, index: number) => (
               <div
+                key={index}
                 className={`flex flex-col gap-0 border-gray-500 
                   ${
                     index === sections.length - 1
@@ -239,7 +240,6 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   }`}
               >
                 <a
-                  key={index}
                   href={`#${section}`}
                   onClick={() => handleClick(section)} // 클릭 시 handleClick 호출
                   className={`font-[Serif] text-black text-center hover:text-blue-700 
@@ -278,11 +278,11 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           </div>
 
           {/* related */}
-          <div className="mt-[10vh] w-[100%]">
-            <p className="bg-[#A2C7E9] text-black rounded-lg w-fit ml-[2rem] px-[1rem] py-[0.5rem] text-[2vh] font-[AppleBold]">
+          <div className="mt-[10vh] mb-[10vh] w-[100%]">
+            <p className="bg-[#A2C7E9] text-black rounded-lg w-fit ml-[2vw] px-[1vw] py-[0.5vh] text-[2vh] font-[AppleBold]">
               Related Articles
             </p>
-            <div className="flex flex-row w-[70%] mt-[4vh] ml-[2rem] gap-[2rem]">
+            <div className="flex flex-row w-[70%] mt-[4vh] ml-[2vw] gap-[2vw]">
               <div className="bg-black w-[16vw] aspect-[16/9]"></div>
               <div className="bg-black w-[16vw] aspect-[16/9]"></div>
               <div className="bg-black w-[16vw] aspect-[16/9]"></div>
@@ -307,4 +307,5 @@ const containerStyle = {
   border: "1px solid #333",
   boxShadow: "0 0 20px rgba(0,0,0,0.3)",
   overflow: "scroll",
+  zIndex: "0",
 } as React.CSSProperties;
