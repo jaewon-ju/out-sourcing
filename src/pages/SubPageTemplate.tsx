@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import ContentContainer from "./ContentContainer";
 import { useRef, useEffect, useState } from "react";
+import MusicPlayer from "../components/MusicPlayer";
 
 interface SubPageTemplateProps {
   singerName: string;
@@ -55,7 +56,6 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
   };
 
   const sections = ["Fashion", "Props", "Set Space", "Direction", "Font"];
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
@@ -64,40 +64,13 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (!audioSrc || !audioRef.current) return;
-    audioRef.current.volume = 0.3;
-    audioRef.current.loop = true;
-
-    const playAudio = async () => {
-      try {
-        await audioRef.current?.play();
-      } catch (err) {
-        console.warn("Auto-play with sound failed. User interaction needed.");
-      }
-    };
-
-    playAudio();
-  }, [audioSrc]);
-
-  const handleAudio = () => {
-    if (audioRef.current) {
-      if (audioRef.current.paused) {
-        audioRef.current.volume = 0.3;
-        audioRef.current.play().catch((err) => {
-          console.warn("재생 실패:", err);
-        });
-      } else {
-        audioRef.current.pause();
-      }
-    }
-  };
-
   return (
     <div
       id="top"
       className="relative min-h-screen w-screen flex flex-col items-center justify-center bg-white"
     >
+      {audioSrc && <MusicPlayer audioSrc={audioSrc} />}
+
       <div style={{ ...containerStyle }}>
         {/* 상단 화면 바 */}
         <img
@@ -105,16 +78,6 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           alt="topbar"
           className="w-full object-contain"
         />
-
-        {/* 고정 음악 버튼 */}
-        {audioSrc && (
-          <img
-            src="/images/apple-bar.png" // 적절한 음악 이미지 경로
-            alt="Play music"
-            onClick={handleAudio}
-            className="max-w-[20vw] fixed top-[20vh] left-[12vw] cursor-pointer hover:scale-105 transition-transform z-15"
-          />
-        )}
 
         {/* welcome + 컨텐츠 영역 */}
         <div className="bg-dual relative w-full flex flex-col items-center">
@@ -290,7 +253,6 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           </div>
         </div>
       </div>
-      {audioSrc && <audio ref={audioRef} src={audioSrc} loop />}
     </div>
   );
 };
@@ -307,5 +269,6 @@ const containerStyle = {
   border: "1px solid #333",
   boxShadow: "0 0 20px rgba(0,0,0,0.3)",
   overflow: "scroll",
+  scrollBehavior: "smooth",
   zIndex: "0",
 } as React.CSSProperties;

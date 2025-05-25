@@ -46,7 +46,7 @@ function MainLayout() {
         <div className="w-full flex flex-col items-center">
           <div className="mt-[5vh] flex justify-center items-center gap-[4vw]">
             {/* {["school", "VHS Video", "Retro", "Music"].map((title, i) => ( */}
-            {["home", "home", "home", "home"].map((title, i) => (
+            {["home", "home", "home", "home"].map((title) => (
               <div className="flex flex-col items-center">
                 <img
                   src={`/images/${title}.png`}
