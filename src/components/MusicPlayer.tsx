@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export default function MusicPlayer({ audioSrc }: { audioSrc: string }) {
+export default function MusicPlayer({
+  audioSrc,
+  isSubPage,
+}: {
+  audioSrc: string;
+  isSubPage: boolean;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isClose, setIsClose] = useState(false);
@@ -12,7 +18,7 @@ export default function MusicPlayer({ audioSrc }: { audioSrc: string }) {
     let currentY = 0;
 
     const update = () => {
-      const targetY = window.scrollY + 320;
+      const targetY = isSubPage ? window.scrollY + 320 : window.scrollY + 50;
       if (currentY < targetY) {
         currentY += (targetY - currentY) * 0.1;
       } else {
@@ -97,13 +103,13 @@ export default function MusicPlayer({ audioSrc }: { audioSrc: string }) {
   return (
     <div
       ref={ref}
-      className="
-        absolute left-[8vw] z-50
+      className={`
+        absolute ${isSubPage ? "left-[8vw]" : "right-[0vw]"} z-50
         w-[20rem] h-[7.5rem] rounded-[1rem] bg-gray-100 
         shadow-xl/30
         flex flex-col justify-between p-[1rem]
         transition-transform will-change-transform
-        "
+        `}
     >
       {/* Top bar */}
       <div className="flex items-center justify-between">

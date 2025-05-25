@@ -8,37 +8,6 @@ interface SubPageTemplateProps {
   audioSrc?: string;
 }
 
-// const TopBackgrounds = () => {
-//   return (
-//     <>
-//       {/* 상단 배경 1, 2 */}
-//       <div className="absolute w-[80vw] top-0 h-[200vh] flex flex-col items-center">
-//         <div
-//           className="w-[80vw] h-[100vh] flex flex-col items-center"
-//           style={{
-//             backgroundImage: `url('/background/top_bg.png'), linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%)`,
-//             backgroundSize: "100%",
-//             backgroundRepeat: "no-repeat",
-//           }}
-//         />
-//       </div>
-//     </>
-//   );
-// };
-
-// const BottomBackgrounds = () => {
-//   return (
-//     <div
-//       className="absolute w-[80vw] top-[300vh] left-0 h-[200vh] z-[-1]"
-//       style={{
-//         backgroundImage: `url('/background/bt_bg.png')`,
-//         backgroundSize: "100%",
-//         backgroundRepeat: "no-repeat",
-//       }}
-//     />
-//   );
-// };
-
 const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -77,7 +46,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           className="w-full object-contain"
         />
 
-        {audioSrc && <MusicPlayer audioSrc={audioSrc} />}
+        {audioSrc && <MusicPlayer audioSrc={audioSrc} isSubPage={true} />}
 
         {/* welcome + 컨텐츠 영역 */}
         <div className="bg-dual relative w-full flex flex-col items-center">
@@ -242,7 +211,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
 
           {/* related */}
           <div className="mt-[10vh] mb-[10vh] w-[100%]">
-            <p className="bg-[#A2C7E9] text-black rounded-lg w-fit ml-[2vw] px-[1vw] py-[0.5vh] text-[2vh] font-[AppleBold]">
+            <p className="bg-[url('/images/bubble.png')] bg-cover bg-center text-black rounded-lg w-fit ml-[2vw] px-[1vw] py-[0.5vh] text-[2vh] font-[AppleBold]">
               Related Articles
             </p>
             <div className="flex flex-row w-[70%] mt-[4vh] ml-[2vw] gap-[2vw]">

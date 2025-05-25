@@ -1,61 +1,68 @@
 // MainLayout.tsx
-import { useSelector } from "react-redux";
-import { RootState } from "./store";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MovieSlider from "./components/MovieSlider";
+import MusicPlayer from "./components/MusicPlayer";
+import FolderBox from "./components/FolderBox";
 
 function MainLayout() {
-  const hoveredPage = useSelector((state: RootState) => state.ui.hoveredPage);
-  const [backgroundImage, setBackgroundImage] = useState("default");
+  const audioSrc = "/music/nct.mp3";
+  const [hoveredButton, setHoveredButton] = useState("default");
+  const [backgroundImage, setBackgroundImage] = useState("none");
+  const [tellUsHovered, setTellUsHovered] = useState(false);
 
-  const backgroundMap: Record<string, string> = {
-    default: "/images/default.jpg",
-    nct: "/images/nct.jpg",
+  const backgroundMap: Record<string, string[]> = {
+    default: ["bg-dual-school-1", "bg-dual-school-2"],
+    school: ["bg-dual-school-1", "bg-dual-school-2"],
+    VHS: ["bg-dual-school-1", "bg-dual-school-2"],
+    retro: ["bg-dual-school-1", "bg-dual-school-2"],
+    music: ["bg-dual-school-1", "bg-dual-school-2"],
   };
 
-  // hoveredPage가 변경될 때 배경 이미지를 동적으로 설정
   useEffect(() => {
-    if (hoveredPage) {
-      setBackgroundImage(backgroundMap[hoveredPage] || "none");
+    if (hoveredButton) {
+      setBackgroundImage(backgroundMap[hoveredButton][0] || "none");
     }
-  }, [hoveredPage]);
+  }, [hoveredButton]);
 
   return (
     <div
       id="top"
-      className="min-h-screen w-screen flex flex-col items-center justify-center"
+      className="min-h-screen w-screen flex flex-col items-center justify-center relative"
     >
+      {/* 상단 네비게이션 바 */}
+      <img
+        src="/images/topBar.png"
+        alt="topbar"
+        className="w-[70vw] object-contain"
+      />
+
       <div
         className={`
-          w-[80vw] min-h-[100vh]
+          w-[70vw] min-h-[100vh]
           relative flex flex-col items-center 
           border-1 border-black box-shadow-20px-black-30% overflow-scroll 
           transition-all duration-700 ease-linear
-          bg-cover bg-center
+          bg-cover bg-center ${backgroundImage}
         `}
-        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        {/* 상단 네비게이션 바 */}
-        <img
-          src="/images/topBar.png"
-          alt="topbar"
-          className="w-full object-contain"
-        />
+        {/* music player */}
+        <MusicPlayer audioSrc={audioSrc} isSubPage={false} />
 
-        {/* Hero 콘텐츠 카드 영역 */}
+        {/* 아이콘 영역 */}
         <div className="w-full flex flex-col items-center">
-          <div className="mt-[5vh] flex justify-center items-center gap-[4vw]">
-            {/* {["school", "VHS Video", "Retro", "Music"].map((title, i) => ( */}
-            {["home", "home", "home", "home"].map((title) => (
+          <div className="mt-[5vh] flex justify-center items-center gap-[3vw]">
+            {["School", "VHS-Video", "Retro", "Music"].map((title) => (
               <div className="flex flex-col items-center">
                 <img
-                  src={`/images/${title}.png`}
+                  src={`/images/main/${title}.png`}
                   alt={title}
                   className="h-[4vh] object-contain cursor-pointer hover:scale-120 transition-transform"
-                  // onClick={() => navigate("/")}
+                  onMouseEnter={() => setHoveredButton(title)}
+                  onMouseLeave={() => setHoveredButton("default")}
                 />
                 <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
-                  Home
+                  {title.replace(/-/g, " ")}
                 </div>
               </div>
             ))}
@@ -63,10 +70,10 @@ function MainLayout() {
         </div>
 
         {/* Welcome 영역 및 MovieBox */}
-        <div className="relative w-full flex flex-col items-center">
+        <div className="relative w-full flex flex-col items-center mt-[2vh]">
           {/* welcome to Anemoia */}
           <div className="mt-[1vh] w-[90%] h-[15vh] z-10 flex items-center justify-center">
-            <div className="flex items-center justify-center gap-[5vw] w-full">
+            <div className="flex items-center justify-center gap-[4vw] w-full">
               {/* 왼쪽 이미지 */}
               <img
                 src="/images/home2.png"
@@ -95,79 +102,99 @@ function MainLayout() {
         {/* Anemoia 철학 및 환영 메시지 */}
         <section
           aria-label="Welcome Description"
-          className="flex flex-col items-center text-center px-8 mt-[25vh] w-full"
+          className="flex flex-col items-center text-center px-8 mt-[40vh] w-full"
         >
-          <p className="text-[2vh]">
-            welcome to a place shaped by memories that were never yours. <br />A
-            Space where longing drifts untethered - half dream, half deja vu
+          <img
+            src="/images/main/cd.png"
+            alt="cd"
+            className="w-[15vw] object-contain"
+          />
+          <p className="text-[2.5vh]">
+            Welcome to a place shaped by memories that were never yours.
+            <br />A space where longing drifts untethered—half dream, half déjà
+            vu
           </p>
-          <p className="text-[2vh] mt-[3vh] font-[Apple]">
+          <p className="text-[2.5vh] mt-[3vh] font-[RobotoItalic] font-thin">
             What does nostalgia mean to you?
           </p>
-          <p className="text-[2vh] mt-[3vh] font-[Apple]">
+          <p className="text-[2.5vh] mt-[3vh] font-[RobotoItalic] font-thin">
             Click
             <br />
-            ⬇︎
           </p>
-          <a
-            href="https://forms.gle/1234567890"
-            className="text-[2vh] mt-[3vh] font-[Apple] underline text-blue-600"
-          >
-            Tell us Here!
-          </a>
+          <img
+            src="/images/main/arrow.png"
+            alt="arrow"
+            className="w-[2.5vh] object-contain"
+          />
+
+          {/* Tell us Here! */}
+          <div className="flex flex-col items-center justify-center mt-[3vh]">
+            <a
+              href="/survey"
+              className="relative inline-block group"
+              onMouseEnter={() => setTellUsHovered(true)}
+              onMouseLeave={() => setTellUsHovered(false)}
+            >
+              {/* 텍스트 + 이미지 라인 */}
+              <span
+                className={`text-[5vh] font-[SerifSemibold] ${
+                  tellUsHovered ? "text-blue-600" : "text-black"
+                } relative z-50`}
+              >
+                Tell us
+                <img
+                  src="/images/main/nostalgia.png"
+                  alt="nostalgia"
+                  className="inline-block w-[30vh] h-[7vh] mx-[1vh] object-contain align-middle z-50 relative"
+                  aria-hidden="true"
+                />
+                Here!
+              </span>
+
+              {/* 밑줄: 전체 a 아래에, 이미지 뒤에 */}
+              <span
+                className={`absolute left-0 right-0 bottom-[1.3vh] h-[0.2vh] z-10 ${
+                  tellUsHovered ? "bg-blue-600" : "bg-black"
+                }`}
+              />
+            </a>
+          </div>
         </section>
 
         {/* 아카이브 이미지 컬렉션 */}
         <MovieSlider />
 
-        {/* 주요 콘텐츠 카드 (정보 설명) */}
-        <section aria-label="Informational Cards" className="mt-28 px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {[...Array(2)].map((_, i) => (
-              <div
-                key={i}
-                className="flex gap-8 items-center bg-white p-6 rounded-3xl shadow-md"
-              >
-                <img
-                  src={`https://via.placeholder.com/276?text=card${i + 1}`}
-                  alt={`card${i + 1}`}
-                  className="w-48 h-48 rounded-xl object-cover"
-                />
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">
-                    Card Title {i + 1}
-                  </h3>
-                  <p className="text-lg">
-                    설명 텍스트가 이곳에 들어갑니다. 필요한 내용을 입력하세요.
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* welcome to a corner */}
+        <div className="flex flex-row items-center justify-start mt-[5vh] ml-[5vw] w-[100%]">
+          <span className="text-[1.7vw] font-[Bodoni] tracking-tighter leading-tight">
+            Welcome to a corner of the internet where memories don’t need to be
+            real to matter.
+            <br />
+            This is a{" "}
+            <span className="text-[#1f25c0]">
+              digital archive of moments you never lived
+            </span>
+            , but somehow miss — screen static, <br />
+            blurry dance moves, fluorescent hallways, songs echoing from a
+            cassette <span className="text-[#1f25c0]">you never owned</span>.
+            <br />
+            We collect them, pixel by pixel, for everyone{" "}
+            <span className="text-[#1f25c0]">
+              who feels nostalgic for times that never existed.
+            </span>
+          </span>
+        </div>
 
-        {/* NCT 관련 큐레이션 콘텐츠 */}
-        <section
-          aria-label="NCT Curation Section"
-          className="mt-28 px-8 text-center"
-        >
-          <h2 className="text-4xl md:text-6xl font-bold mb-10">NCT Curation</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            {[...Array(5)].map((_, i) => (
-              <div
-                key={i}
-                className="w-64 h-64 md:w-72 md:h-72 rounded-3xl overflow-hidden shadow-md bg-white"
-              >
-                <img
-                  src={`https://via.placeholder.com/288?text=nct${i + 1}`}
-                  alt={`nct${i + 1}`}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+        <div className="flex flex-row items-center justify-start mt-[5vh] ml-[5vw] w-[100%]">
+          <img
+            src="/images/main/anemoia.png"
+            alt="anemoia"
+            className="w-[50%] object-center"
+          />
+        </div>
 
+        {/* 폴더 박스 */}
+        <FolderBox />
         {/* 푸터 */}
         <footer className="mt-28 mb-10 px-8 text-center text-sm text-gray-600">
           © 2025 Anemoia. All rights reserved.

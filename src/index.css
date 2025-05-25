@@ -41,13 +41,40 @@
 }
 
 @font-face {
+  font-family: "RobotoItalicThin";
+  src: url("/fonts/RobotoItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("/fonts/RobotoItalic.woff") format("woff");
+  font-style: regular;
+  font-weight: 100;
+}
+
+@font-face {
   font-family: "Serif";
   src: url("/fonts/serif.woff") format("woff");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "SerifSemibold";
+  src: url("/fonts/serifSemibold.woff") format("woff");
+  font-style: normal;
+}
+
 @font-face {
   font-family: "Snell";
   src: url("/fonts/Snell.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bodoni";
+  src: url("/fonts/Bodoni.woff") format("woff");
   font-style: normal;
 }
 
@@ -67,6 +94,22 @@
 
 .bg-dual {
   background-image: url("/background/top.png"), url("/background/bottom.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+  background-size: 100% auto, 100% auto;
+}
+
+.bg-dual-school-1 {
+  background-image: url("/background/main_school1.png"),
+    url("/background/main_bottom.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+  background-size: 100% auto, 100% auto;
+}
+
+.bg-dual-school-2 {
+  background-image: url("/background/main_school2.png"),
+    url("/background/main_bottom.png");
   background-repeat: no-repeat, no-repeat;
   background-position: top, bottom;
   background-size: 100% auto, 100% auto;

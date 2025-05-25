@@ -7,9 +7,9 @@ const MovieBox = () => {
   const { home } = useSelector((state: RootState) => state.nctContent);
 
   return (
-    <div className="flex flex-row gap-[2vw] mt-[10vh]">
+    <div className="flex flex-row gap-[2vw] shadow-xl/30">
       {pages.map((page) => (
-        <div className="flex flex-col items-center w-[30vw] bg-white rounded-lg">
+        <div className="flex flex-col items-center w-[30vw] bg-white rounded-3xl">
           <MovieImage key={page} page={page} />
           <div className="flex flex-row w-full">
             {/* 흰색 배경 + 텍스트 */}
@@ -29,9 +29,12 @@ const MovieBox = () => {
           </div>
 
           {/* 태그 */}
-          <div className="flex flex-row w-full mt-[1vh] bg-blue-400">
+          <div className="flex flex-row w-full mt-[1vh] bg-blue-400 rounded-bl-3xl rounded-br-3xl">
             {home.tags.map((tag) => (
-              <span key={tag} className="text-[2vh] font-[Apple] pl-[1vw]">
+              <span
+                key={tag}
+                className="text-[2vh] font-[Apple] pl-[1vw] rounded-bl-3xl rounded-br-3xl"
+              >
                 {tag}
               </span>
             ))}

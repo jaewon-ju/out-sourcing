@@ -14,22 +14,12 @@ const MovieImage = ({ page }: Props) => {
     navigate(`/sub/${singer}`);
   };
 
-  const handleImageHover = () => {
-    dispatch(setHoveredPage(page));
-  };
-
-  const handleImageLeave = () => {
-    dispatch(setHoveredPage("default"));
-  };
-
   return (
     <img
       src={`/images/${page}.jpg`} // public/images/enter.png 위치
       alt={`${page} Subpage`}
-      className={`cursor-pointer hover:opacity-80 w-[100%] aspect-[16/9]`}
+      className={`cursor-pointer hover:opacity-80 w-[100%] aspect-[16/9] rounded-tl-3xl rounded-tr-3xl`}
       onClick={() => handleImageClick(page)}
-      onMouseOver={handleImageHover}
-      onMouseLeave={handleImageLeave}
     />
   );
 };
