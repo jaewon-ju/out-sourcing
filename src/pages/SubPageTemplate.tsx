@@ -69,8 +69,6 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
       id="top"
       className="relative min-h-screen w-screen flex flex-col items-center justify-center bg-white"
     >
-      {audioSrc && <MusicPlayer audioSrc={audioSrc} />}
-
       <div style={{ ...containerStyle }}>
         {/* 상단 화면 바 */}
         <img
@@ -78,6 +76,8 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           alt="topbar"
           className="w-full object-contain"
         />
+
+        {audioSrc && <MusicPlayer audioSrc={audioSrc} />}
 
         {/* welcome + 컨텐츠 영역 */}
         <div className="bg-dual relative w-full flex flex-col items-center">

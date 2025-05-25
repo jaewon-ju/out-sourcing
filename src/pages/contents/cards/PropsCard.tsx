@@ -144,10 +144,8 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
             <div className="bg-[#A2C7E9] m-[1vw] border border-black p-[1vw]">
               <button
                 onClick={closePopup}
-                className=" w-[1.5vw] h-[3vh] mb-[1vh] text-black text-[1vw] border border-black bg-gray-200 flex justify-center items-center text-center"
-              >
-                X
-              </button>
+                className=" w-[1.5vw] h-[1.5vw] mb-[1vh] bg-[url('/images/X.png')] bg-cover bg-center"
+              ></button>
               <img
                 src={popupData.image}
                 alt={popupData.title}

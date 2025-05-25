@@ -1,11 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export default function MusicPlayer({ audioSrc }: { audioSrc: string }) {
+  const ref = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isClose, setIsClose] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    let currentY = 0;
+
+    const update = () => {
+      const targetY = window.scrollY + 320;
+      if (currentY < targetY) {
+        currentY += (targetY - currentY) * 0.1;
+      } else {
+        currentY -= (currentY - targetY) * 0.1;
+      }
+      if (ref.current) {
+        ref.current.style.transform = `translateY(${currentY}px)`;
+      }
+
+      requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  }, []);
 
   const closePlayer = () => {
     setIsClose(true);
@@ -75,11 +96,13 @@ export default function MusicPlayer({ audioSrc }: { audioSrc: string }) {
 
   return (
     <div
+      ref={ref}
       className="
-        fixed bottom-0 left-0 z-50
+        absolute left-[8vw] z-50
         w-[20rem] h-[7.5rem] rounded-[1rem] bg-gray-100 
         shadow-xl/30
         flex flex-col justify-between p-[1rem]
+        transition-transform will-change-transform
         "
     >
       {/* Top bar */}
