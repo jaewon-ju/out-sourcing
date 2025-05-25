@@ -125,7 +125,7 @@ export default function MusicPlayer({
           <div className="w-[1rem] h-[1rem] rounded-full bg-yellow-400" />
           <div className="w-[1rem] h-[1rem] rounded-full bg-green-500" />
         </div>
-        <div className="text-gray-600 text-[1rem]">
+        <div className="text-gray-600 text-[0.8rem]">
           {formatTime(duration - currentTime)}
         </div>
       </div>

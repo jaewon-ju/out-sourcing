@@ -45,7 +45,7 @@ const FolderBox = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center mt-[10vh] w-[100%]"
+      className="flex flex-col items-center justify-center mt-[15vh] w-[100%]"
       onClick={() => {
         setClickedFolder(null); // 전체 영역 클릭 시 선택 해제
       }}

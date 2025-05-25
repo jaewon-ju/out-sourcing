@@ -100,17 +100,17 @@
 }
 
 .bg-dual-school-1 {
-  background-image: url("/background/main_school1.png"),
-    url("/background/main_bottom.png");
+  background-image: url("/background/main_bottom.png"),
+    url("/background/main_school1.png");
   background-repeat: no-repeat, no-repeat;
-  background-position: top, bottom;
-  background-size: 100% auto, 100% auto;
+  background-position: bottom, top;
+  background-size: 100% auto, cover;
 }
 
 .bg-dual-school-2 {
-  background-image: url("/background/main_school2.png"),
-    url("/background/main_bottom.png");
+  background-image: url("/background/main_bottom.png"),
+    url("/background/main_school2.png");
   background-repeat: no-repeat, no-repeat;
-  background-position: top, bottom;
-  background-size: 100% auto, 100% auto;
+  background-position: bottom, top;
+  background-size: 100% auto, cover;
 }

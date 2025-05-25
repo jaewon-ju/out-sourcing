@@ -12,16 +12,16 @@ function MainLayout() {
   const [tellUsHovered, setTellUsHovered] = useState(false);
 
   const backgroundMap: Record<string, string[]> = {
-    default: ["bg-dual-school-1", "bg-dual-school-2"],
-    school: ["bg-dual-school-1", "bg-dual-school-2"],
-    VHS: ["bg-dual-school-1", "bg-dual-school-2"],
-    retro: ["bg-dual-school-1", "bg-dual-school-2"],
-    music: ["bg-dual-school-1", "bg-dual-school-2"],
+    default: ["bg-dual-school-2", "bg-dual-school-1"],
+    School: ["bg-dual-school-1", "bg-dual-school-2"],
+    "VHS-Video": ["bg-dual-school-1", "bg-dual-school-2"],
+    Retro: ["bg-dual-school-1", "bg-dual-school-2"],
+    Music: ["bg-dual-school-1", "bg-dual-school-2"],
   };
 
   useEffect(() => {
     if (hoveredButton) {
-      setBackgroundImage(backgroundMap[hoveredButton][0] || "none");
+      setBackgroundImage(backgroundMap[hoveredButton][1]);
     }
   }, [hoveredButton]);
 
@@ -41,9 +41,8 @@ function MainLayout() {
         className={`
           w-[70vw] min-h-[100vh]
           relative flex flex-col items-center 
-          border-1 border-black box-shadow-20px-black-30% overflow-scroll 
-          transition-all duration-700 ease-linear
-          bg-cover bg-center ${backgroundImage}
+          border-1 border-black box-shadow-20px-black-30% overflow-scroll scrollbar-none
+          transition-all duration-700 ease-linear bg-cover bg-center ${backgroundImage}
         `}
       >
         {/* music player */}
@@ -51,7 +50,7 @@ function MainLayout() {
 
         {/* 아이콘 영역 */}
         <div className="w-full flex flex-col items-center">
-          <div className="mt-[5vh] flex justify-center items-center gap-[3vw]">
+          <div className="mt-[6vh] flex justify-center items-center gap-[3vw]">
             {["School", "VHS-Video", "Retro", "Music"].map((title) => (
               <div className="flex flex-col items-center">
                 <img
@@ -70,7 +69,7 @@ function MainLayout() {
         </div>
 
         {/* Welcome 영역 및 MovieBox */}
-        <div className="relative w-full flex flex-col items-center mt-[2vh]">
+        <div className="relative w-full flex flex-col items-center mt-[3vh]">
           {/* welcome to Anemoia */}
           <div className="mt-[1vh] w-[90%] h-[15vh] z-10 flex items-center justify-center">
             <div className="flex items-center justify-center gap-[4vw] w-full">
@@ -102,7 +101,7 @@ function MainLayout() {
         {/* Anemoia 철학 및 환영 메시지 */}
         <section
           aria-label="Welcome Description"
-          className="flex flex-col items-center text-center px-8 mt-[40vh] w-full"
+          className="flex flex-col items-center text-center px-8 mt-[45vh] w-full"
         >
           <img
             src="/images/main/cd.png"
@@ -128,7 +127,7 @@ function MainLayout() {
           />
 
           {/* Tell us Here! */}
-          <div className="flex flex-col items-center justify-center mt-[3vh]">
+          <div className="flex flex-col items-center justify-center mt-[4vh]">
             <a
               href="/survey"
               className="relative inline-block group"
@@ -165,7 +164,7 @@ function MainLayout() {
         <MovieSlider />
 
         {/* welcome to a corner */}
-        <div className="flex flex-row items-center justify-start mt-[5vh] ml-[5vw] w-[100%]">
+        <div className="flex flex-row items-center justify-start mt-[6vh] ml-[5vw] w-[100%]">
           <span className="text-[1.7vw] font-[Bodoni] tracking-tighter leading-tight">
             Welcome to a corner of the internet where memories don’t need to be
             real to matter.
@@ -189,15 +188,41 @@ function MainLayout() {
           <img
             src="/images/main/anemoia.png"
             alt="anemoia"
-            className="w-[50%] object-center"
+            className="w-[60%] object-center"
           />
         </div>
 
         {/* 폴더 박스 */}
         <FolderBox />
+
+        <div className="relative flex flex-row items-center justify-center mt-[15vh] w-full">
+          {/* 이미지 */}
+          <img
+            src="/images/main/CdBox.png"
+            alt="CdBox"
+            className="w-[80%] object-center"
+          />
+
+          {/* 텍스트 오버레이 */}
+          <div className="absolute top-[35%] left-[50%] translate-x-[-50%] text-center">
+            <p className="text-[1.5vw] font-[Apple]">
+              Drift further into the feeling
+            </p>
+            <a
+              href="https://www.youtube.com/watch?v=gBIk0pxmByw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline text-[1.5vw] inline-block mt-[-1.5vh]"
+            >
+              https://www.youtube.com/watch?v=gBIk0pxmByw
+            </a>
+          </div>
+        </div>
+
         {/* 푸터 */}
-        <footer className="mt-28 mb-10 px-8 text-center text-sm text-gray-600">
-          © 2025 Anemoia. All rights reserved.
+        <footer className="px-8 text-center text-[1.5vw] font-[Bodoni] mt-[10vh] mb-[10vh]">
+          © Welcome to Anemoia — A collection of unreal nostalgia, curated frame
+          by frame.
         </footer>
       </div>
     </div>

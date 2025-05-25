@@ -14,7 +14,7 @@ const MovieSlider = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-start mt-[15vh]">
+    <div className="w-full flex flex-col items-center justify-start mt-[20vh]">
       {/* 필터링 버튼 */}
       <div className="relative flex flex-row w-full justify-start ml-[5vw]">
         {/* 배경 이미지 */}
