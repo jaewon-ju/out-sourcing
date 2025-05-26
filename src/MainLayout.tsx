@@ -1,5 +1,4 @@
 // MainLayout.tsx
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MovieSlider from "./components/MovieSlider";
 import MusicPlayer from "./components/MusicPlayer";
@@ -108,7 +107,7 @@ function MainLayout() {
             alt="cd"
             className="w-[15vw] object-contain"
           />
-          <p className="text-[2.5vh]">
+          <p className="text-[2.5vh] text-[#000092]">
             Welcome to a place shaped by memories that were never yours.
             <br />A space where longing drifts untethered—half dream, half déjà
             vu
@@ -170,15 +169,15 @@ function MainLayout() {
             real to matter.
             <br />
             This is a{" "}
-            <span className="text-[#1f25c0]">
+            <span className="text-[#0000ee]">
               digital archive of moments you never lived
             </span>
             , but somehow miss — screen static, <br />
             blurry dance moves, fluorescent hallways, songs echoing from a
-            cassette <span className="text-[#1f25c0]">you never owned</span>.
+            cassette <span className="text-[#0000ee]">you never owned</span>.
             <br />
             We collect them, pixel by pixel, for everyone{" "}
-            <span className="text-[#1f25c0]">
+            <span className="text-[#0000ee]">
               who feels nostalgic for times that never existed.
             </span>
           </span>
@@ -205,14 +204,14 @@ function MainLayout() {
 
           {/* 텍스트 오버레이 */}
           <div className="absolute top-[35%] left-[50%] translate-x-[-50%] text-center">
-            <p className="text-[1.5vw] font-[Apple]">
+            <p className="text-[1.5vw] font-[AppleBold] font-semibold">
               Drift further into the feeling
             </p>
             <a
               href="https://www.youtube.com/watch?v=gBIk0pxmByw"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline text-[1.5vw] inline-block mt-[-1.5vh]"
+              className="text-[#0000ee] underline text-[1.5vw] inline-block mt-[-2.5vh]"
             >
               https://www.youtube.com/watch?v=gBIk0pxmByw
             </a>

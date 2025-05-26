@@ -1,8 +1,17 @@
 import MovieBox from "./MovieBox";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const MovieSlider = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [sortDirection, setSortDirection] = useState<string>("DESC");
+
+  const sortAscending = () => {
+    setSortDirection("ASC");
+  };
+
+  const sortDescending = () => {
+    setSortDirection("DESC");
+  };
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -26,10 +35,16 @@ const MovieSlider = () => {
 
         {/* 텍스트 오버레이 */}
         <div className="absolute top-[1.2rem] left-0 flex flex-row items-center justify-start">
-          <span className="text-white text-[2.5rem] font-[AppleExtraBold] ml-[4rem]">
+          <span
+            onClick={() => sortAscending()}
+            className="text-white text-[2.5rem] font-[AppleExtraBold] ml-[4rem] cursor-pointer"
+          >
             Earlier
           </span>
-          <span className="text-white text-[2.5rem] font-[AppleExtraBold] ml-[8.5rem]">
+          <span
+            onClick={() => sortDescending()}
+            className="text-white text-[2.5rem] font-[AppleExtraBold] ml-[8.5rem] cursor-pointer"
+          >
             Later
           </span>
         </div>
@@ -39,7 +54,7 @@ const MovieSlider = () => {
         {/* 좌우 버튼 */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-80 px-3 py-1 rounded-full shadow"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#1f25c0] bg-opacity-80 px-3 py-1 rounded-full shadow cursor-pointer"
         >
           ◀
         </button>
@@ -48,14 +63,14 @@ const MovieSlider = () => {
         <section
           ref={scrollRef}
           aria-label="Anemoia Archive"
-          className="w-full flex ml-[3vw] justify-start overflow-x-scroll scroll-smooth scrollbar-none"
+          className="w-full flex ml-[3vw] justify-start overflow-x-scroll scroll-smooth scrollbar-none pr-[20vw]"
         >
-          <MovieBox />
+          <MovieBox sortDirection={sortDirection} />
         </section>
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-80 px-3 py-1 rounded-full shadow"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#1f25c0] bg-opacity-80 px-3 py-1 rounded-full shadow cursor-pointer"
         >
           ▶
         </button>

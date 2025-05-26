@@ -2,22 +2,33 @@ import MovieImage from "./MovieImage";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/index";
 
-const MovieBox = () => {
-  const pages = ["nct", "nct", "nct", "nct"];
-  const { home } = useSelector((state: RootState) => state.nctContent);
+const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
+  const { home: nctHome } = useSelector((state: RootState) => state.nctContent);
+  const { home: dummyHome } = useSelector(
+    (state: RootState) => state.dummyContent
+  );
+
+  // home.year로 아래의 콘텐츠 정렬
+  // 각 가수의 home을 담고 있는 배열이 필요함.
+  const homeArray = [nctHome, nctHome, dummyHome, dummyHome];
+  if (sortDirection === "ASC") {
+    homeArray.sort((a, b) => a.year - b.year);
+  } else {
+    homeArray.sort((a, b) => b.year - a.year);
+  }
 
   return (
     <div className="flex flex-row gap-[2vw] shadow-xl/30">
-      {pages.map((page) => (
+      {homeArray.map((home, index) => (
         <div className="flex flex-col items-center w-[30vw] bg-white rounded-3xl">
-          <MovieImage key={page} page={page} />
+          <MovieImage key={home.singer} page={home.singer} />
           <div className="flex flex-row w-full">
             {/* 흰색 배경 + 텍스트 */}
             <div className="flex flex-col w-[50%]">
-              <div className="text-[2vh] font-[Apple] mt-[1vh] pl-[1vw] text-left w-full">
+              <div className="text-[2vh] font-[AppleExtraBold] font-bold mt-[1vh] pl-[1vw] text-left w-full text-[#0000ee]">
                 {home.title}
               </div>
-              <div className="text-[2vh] font-[Apple] mt-[1vh] pl-[1vw] text-left w-full">
+              <div className="text-[2vh] font-[Apple] mt-[1vh] pl-[1vw] text-left w-full text-[#0000ee]">
                 {home.groupName}
               </div>
             </div>
@@ -29,7 +40,7 @@ const MovieBox = () => {
           </div>
 
           {/* 태그 */}
-          <div className="flex flex-row w-full mt-[1vh] bg-blue-400 rounded-bl-3xl rounded-br-3xl">
+          <div className="flex flex-row w-full mt-[1vh] bg-[#0000ee] rounded-bl-3xl rounded-br-3xl text-white">
             {home.tags.map((tag) => (
               <span
                 key={tag}

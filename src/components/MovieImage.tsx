@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux";
-import { setHoveredPage } from "../store/slices/uiSlice";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -8,7 +6,6 @@ interface Props {
 
 const MovieImage = ({ page }: Props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleImageClick = (singer: string) => {
     navigate(`/sub/${singer}`);

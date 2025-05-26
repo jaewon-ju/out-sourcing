@@ -1,7 +1,7 @@
 // src/slices/uiSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
 
-export type NCTFashion = {
+export type DummyFashion = {
   title: string[];
   image: string[][];
   subTitle: string[];
@@ -10,7 +10,7 @@ export type NCTFashion = {
   description: string[];
 };
 
-export type NCTProps = {
+export type DummyProps = {
   image: {
     src: string;
     detailImage: string;
@@ -19,26 +19,26 @@ export type NCTProps = {
   }[];
 };
 
-export type NCTSetSpace = {
+export type DummySetSpace = {
   title: string[];
   image: string[];
   hoverImage: string[];
   description: string[];
 };
 
-export type NCTFont = {
+export type DummyFont = {
   title: string[];
   image: string[][];
   description: string[];
 };
 
-export type NCTDirection = {
+export type DummyDirection = {
   title: string[];
   image: string[][];
   description: string[];
 };
 
-export type NCTHome = {
+export type DummyHome = {
   singer: string;
   title: string;
   groupName: string;
@@ -46,22 +46,22 @@ export type NCTHome = {
   year: number;
 };
 
-interface NCTContentState {
-  fashion: NCTFashion;
-  props: NCTProps;
-  setSpace: NCTSetSpace;
-  font: NCTFont;
-  direction: NCTDirection;
-  home: NCTHome;
+interface DummyContentState {
+  fashion: DummyFashion;
+  props: DummyProps;
+  setSpace: DummySetSpace;
+  font: DummyFont;
+  direction: DummyDirection;
+  home: DummyHome;
 }
 
-const initialState: NCTContentState = {
+const initialState: DummyContentState = {
   home: {
-    singer: "nct",
-    title: "Steady",
-    groupName: "NCT WISH",
-    tags: ["Japan", "2000s", "School", "First Love"],
-    year: 2025,
+    singer: "dummy",
+    title: "dummy",
+    groupName: "dummy",
+    tags: ["dummy", "dummy"],
+    year: 2023,
   },
   fashion: {
     title: [
@@ -191,10 +191,10 @@ const initialState: NCTContentState = {
   },
 };
 
-export const nctContentSlice = createSlice({
-  name: "nctContent",
+export const dummyContentSlice = createSlice({
+  name: "dummyContent",
   initialState,
   reducers: {},
 });
 
-export default nctContentSlice.reducer;
+export default dummyContentSlice.reducer;

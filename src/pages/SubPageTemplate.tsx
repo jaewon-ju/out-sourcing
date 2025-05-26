@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import ContentContainer from "./ContentContainer";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MusicPlayer from "../components/MusicPlayer";
 
 interface SubPageTemplateProps {
