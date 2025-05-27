@@ -33,12 +33,12 @@ function MainLayout() {
       <img
         src="/images/topBar.png"
         alt="topbar"
-        className="w-[70vw] object-contain"
+        className="w-[60vw] object-contain"
       />
 
       <div
         className={`
-          w-[70vw] min-h-[100vh]
+          w-[60vw] min-h-[100vh]
           relative flex flex-col items-center 
           border-1 border-black box-shadow-20px-black-30% overflow-scroll scrollbar-none
           transition-all duration-700 ease-linear bg-cover bg-center ${backgroundImage}
@@ -55,7 +55,7 @@ function MainLayout() {
                 <img
                   src={`/images/main/${title}.png`}
                   alt={title}
-                  className="h-[4vh] object-contain cursor-pointer hover:scale-120 transition-transform"
+                  className="h-[3vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                   onMouseEnter={() => setHoveredButton(title)}
                   onMouseLeave={() => setHoveredButton("default")}
                 />
@@ -71,27 +71,27 @@ function MainLayout() {
         <div className="relative w-full flex flex-col items-center mt-[3vh]">
           {/* welcome to Anemoia */}
           <div className="mt-[1vh] w-[90%] h-[15vh] z-10 flex items-center justify-center">
-            <div className="flex items-center justify-center gap-[4vw] w-full">
+            <div className="flex items-center justify-center gap-[3vw] w-full">
               {/* 왼쪽 이미지 */}
               <img
                 src="/images/home2.png"
                 alt="left"
-                className="h-[13vh] object-contain"
+                className="h-[10vh] object-contain"
               />
 
               {/* 텍스트 */}
               <div className=" text-black text-center mt-[1vw]">
-                <span className="font-[RobotoItalic] text-[6vh] font-light mr-[1.5vw]">
+                <span className="font-[RobotoItalic] text-[5vh] font-light mr-[1.5vw]">
                   Welcome to
                 </span>
-                <span className="font-[Snell] text-[10vh]">Anemoia</span>
+                <span className="font-[Snell] text-[8vh]">Anemoia</span>
               </div>
 
               {/* 오른쪽 이미지 */}
               <img
                 src="/images/home2.png"
                 alt="right"
-                className="h-[13vh] object-contain"
+                className="h-[10vh] object-contain"
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ function MainLayout() {
             >
               {/* 텍스트 + 이미지 라인 */}
               <span
-                className={`text-[5vh] font-[SerifSemibold] ${
+                className={`text-[4vh] font-[SerifSemibold] ${
                   tellUsHovered ? "text-blue-600" : "text-black"
                 } relative z-50`}
               >
@@ -143,7 +143,7 @@ function MainLayout() {
                 <img
                   src="/images/main/nostalgia.png"
                   alt="nostalgia"
-                  className="inline-block w-[30vh] h-[7vh] mx-[1vh] object-contain align-middle z-50 relative"
+                  className="inline-block h-[5vh] mx-[1vh] object-contain align-middle z-50 relative"
                   aria-hidden="true"
                 />
                 Here!
@@ -164,7 +164,7 @@ function MainLayout() {
 
         {/* welcome to a corner */}
         <div className="flex flex-row items-center justify-start mt-[6vh] ml-[5vw] w-[100%]">
-          <span className="text-[1.7vw] font-[Bodoni] tracking-tighter leading-tight">
+          <span className="text-[1.4vw] font-[Bodoni] tracking-tighter leading-tight">
             Welcome to a corner of the internet where memories don’t need to be
             real to matter.
             <br />
@@ -187,7 +187,7 @@ function MainLayout() {
           <img
             src="/images/main/anemoia.png"
             alt="anemoia"
-            className="w-[60%] object-center"
+            className="w-[50%] object-center"
           />
         </div>
 
@@ -204,14 +204,14 @@ function MainLayout() {
 
           {/* 텍스트 오버레이 */}
           <div className="absolute top-[35%] left-[50%] translate-x-[-50%] text-center">
-            <p className="text-[1.5vw] font-[AppleBold] font-semibold">
+            <p className="text-[1.2vw] font-[AppleBold] font-semibold">
               Drift further into the feeling
             </p>
             <a
               href="https://www.youtube.com/watch?v=gBIk0pxmByw"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0000ee] underline text-[1.5vw] inline-block mt-[-2.5vh]"
+              className="text-[#0000ee] underline text-[1.2vw] inline-block mt-[-2.5vh]"
             >
               https://www.youtube.com/watch?v=gBIk0pxmByw
             </a>
@@ -219,7 +219,7 @@ function MainLayout() {
         </div>
 
         {/* 푸터 */}
-        <footer className="px-8 text-center text-[1.5vw] font-[Bodoni] mt-[10vh] mb-[10vh]">
+        <footer className="px-8 text-center text-[1.2vw] font-[Bodoni] mt-[10vh] mb-[10vh]">
           © Welcome to Anemoia — A collection of unreal nostalgia, curated frame
           by frame.
         </footer>

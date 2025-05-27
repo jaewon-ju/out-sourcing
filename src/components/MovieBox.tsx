@@ -18,9 +18,9 @@ const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
   }
 
   return (
-    <div className="flex flex-row gap-[2vw] shadow-xl/30">
-      {homeArray.map((home, index) => (
-        <div className="flex flex-col items-center w-[30vw] bg-white rounded-3xl">
+    <div className="flex flex-row gap-[1vw] shadow-xl/30">
+      {homeArray.map((home) => (
+        <div className="flex flex-col items-center w-[25vw] bg-white rounded-3xl">
           <MovieImage key={home.singer} page={home.singer} />
           <div className="flex flex-row w-full">
             {/* 흰색 배경 + 텍스트 */}

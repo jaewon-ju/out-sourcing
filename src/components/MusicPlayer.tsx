@@ -18,7 +18,7 @@ export default function MusicPlayer({
     let currentY = 0;
 
     const update = () => {
-      const targetY = isSubPage ? window.scrollY + 320 : window.scrollY + 50;
+      const targetY = isSubPage ? window.scrollY + 320 : window.scrollY + 10;
       if (currentY < targetY) {
         currentY += (targetY - currentY) * 0.1;
       } else {
@@ -104,7 +104,7 @@ export default function MusicPlayer({
     <div
       ref={ref}
       className={`
-        absolute ${isSubPage ? "left-[8vw]" : "right-[0vw]"} z-50
+        absolute ${isSubPage ? "left-[8vw]" : "right-[2vw]"} z-50
         w-[20rem] h-[7.5rem] rounded-[1rem] bg-gray-100 
         shadow-xl/30
         flex flex-col justify-between p-[1rem]

@@ -31,7 +31,7 @@ const FolderBox = () => {
             key={`${row}-${col}`}
             src={imgSrc}
             alt={`grid-${row}-${col}`}
-            className="h-[12vw] object-cover aspect-video"
+            className="h-[10vw] object-cover aspect-video"
           />
         );
       }
@@ -58,7 +58,7 @@ const FolderBox = () => {
           return (
             <div
               key={item}
-              className="flex flex-col items-center justify-center w-[20%] cursor-pointer"
+              className="flex flex-col items-center justify-center w-[18%] cursor-pointer"
               // 이벤트 버블링 방지 (자신을 클릭한 경우 상위 div의 onClick이 동작하지 않도록)
               onClick={(e) => {
                 e.stopPropagation();
@@ -78,7 +78,7 @@ const FolderBox = () => {
 
               {/* 텍스트 */}
               <span
-                className={`mt-2 text-[1.5vw] font-[Apple] ${
+                className={`mt-2 text-[1.2vw] font-[Apple] ${
                   isSelected ? "text-blue-600 underline" : "text-black"
                 }`}
               >
