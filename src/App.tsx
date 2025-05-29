@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./MainLayout";
 import DynamicSubPage from "./pages/DynamicSubPage";
-import Survey from "./pages/Survey";
+import SurveyPage from "./pages/SurveyPage";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />} />
         <Route path="/sub/:singer" element={<DynamicSubPage />} />
-        <Route path="/survey" element={<Survey />} />
+        <Route path="/survey" element={<SurveyPage />} />
       </Routes>
     </BrowserRouter>
   );

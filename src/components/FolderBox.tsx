@@ -78,7 +78,7 @@ const FolderBox = () => {
 
               {/* 텍스트 */}
               <span
-                className={`mt-2 text-[1.2vw] font-[Apple] ${
+                className={`mt-2 text-[2vh] font-[Apple] ${
                   isSelected ? "text-blue-600 underline" : "text-black"
                 }`}
               >
