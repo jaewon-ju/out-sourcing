@@ -22,53 +22,50 @@ export default function SurveyPage() {
     >
       <div
         id="survey-container"
-        className="w-[60vw]"
-        style={{ backgroundImage: `url('/example.png')` }}
+        className="w-[60vw] bg-cover bg-center"
+        style={{ backgroundImage: `url('/survey/background.png')` }}
       >
         {/* 상단 Navigation */}
-        <div className="flex relative items-center w-full">
-          {/* home Box*/}
-          <div
-            className="absolute left-[4vw] flex justify-between items-center gap-2 cursor-pointer border-2 border-black mt-[5vh]"
-            onClick={() => (window.location.href = "/")}
-          >
-            <div className="text-[1.5vw] font-[Bodoni] tracking-tighter leading-tight">
-              home
-            </div>
+        <div className="flex flex-col relative w-full h-[17vh] mt-[10vh]">
+          <div className="flex items-center w-full">
+            {/* home Box*/}
             <img
-              src="/images/main/home.png"
-              alt="home"
-              className="w-[1.5vw] object-contain ml-[1vw]"
+              src="/survey/homeButton.png"
+              className="absolute left-[5vw] cursor-pointer w-[15vw] h-[7vh]"
+              onClick={() => (window.location.href = "/")}
             />
-          </div>
-          <div className="absolute right-[4vw] flex gap-2 items-center mt-[5vh]">
-            <div
-              className="text-[1.5vw] font-[Bodoni] tracking-tighter leading-tight cursor-pointer border-2 border-black px-4"
-              onClick={() => setLang("ko")}
-            >
-              Korean
-            </div>
-            <div
-              className="text-[1.5vw] font-[Bodoni] tracking-tighter leading-tight cursor-pointer border-2 border-black px-4"
-              onClick={() => setLang("en")}
-            >
-              English
+            <div className="absolute right-[4vw] flex gap-2 items-center">
+              <img
+                src="/survey/koreanButton.png"
+                className="cursor-pointer w-[12vw] h-[5.5vh]"
+                onClick={() => setLang("ko")}
+              ></img>
+              <img
+                src="/survey/englishButton.png"
+                className="cursor-pointer w-[12vw] h-[5.5vh]"
+                onClick={() => setLang("en")}
+              ></img>
             </div>
           </div>
+
+          {/* 상단 메시지 박스 */}
+          <img
+            src="/survey/nostalgia.png"
+            alt="message"
+            className="absolute left-[4vw] top-[3vh] w-[52vw]"
+          />
         </div>
 
-        {/* 상단 메시지 박스 */}
-        <div className="bg-white bg-opacity-70 p-6 mt-6 rounded-xl shadow-md text-center ml-[4vw] mr-[4vw] mt-[5vh]">
-          <h1 className="text-[1.5vw] font-[Bodoni] tracking-tighter leading-tight">
-            What brings you Nostalgia?
-          </h1>
+        <div
+          className="w-[52vw] flex flex-col items-center justify-start my-[10vh] ml-[4vw] 
+    aspect-[2625/3857] bg-[url('/survey/mainBox.png')] bg-contain bg-center"
+        >
+          {/* 설문 입력 영역 */}
+          <SurveyBox placeholder={placeholder} />
+
+          {/* 댓글 영역 */}
+          <CommentBox />
         </div>
-
-        {/* 설문 입력 영역 */}
-        <SurveyBox placeholder={placeholder} />
-
-        {/* 댓글 영역 */}
-        <CommentBox title={commentTitle} />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ export function SurveyBox({ placeholder }: { placeholder: string }) {
   const [email, setEmail] = useState("");
   const [entries, setEntries] = useState<any[]>([]);
 
+  console.log(entries);
   const fetchEntries = async () => {
     const snapshot = await getDocs(collection(db, "surveys"));
     const data = snapshot.docs.map((doc) => doc.data());
@@ -32,25 +33,32 @@ export function SurveyBox({ placeholder }: { placeholder: string }) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center my-[5vh] ml-[4vw] mr-[4vw]">
+    <>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-center w-full space-y-4"
+        className="flex flex-col items-center justify-start w-full"
       >
         <textarea
           value={opinion}
           onChange={(e) => setOpinion(e.target.value)}
           placeholder={placeholder}
-          className="w-full border rounded-md p-2 h-[50vh] placeholder:text-[1.5vw] font-[Bodoni]"
+          className="
+            w-[80%] placeholder:text-[1.2vw] font-[Bodoni] placeholder:p-[2vh]
+            bg-[url('/survey/inputBox.png')] aspect-[2138/1007] bg-contain bg-center
+            mt-[10vh]
+            resize-none
+            "
           required
         />
-        <button
-          type="submit"
-          className="w-[20vw] h-[7vh] bg-black text-white py-2 rounded-md hover:opacity-80"
-        >
-          SEND
-        </button>
+        <img
+          src="/survey/send.png"
+          alt="sendBox"
+          className="w-[35%] mt-[2vh] cursor-pointer"
+          onClick={handleSubmit}
+        />
       </form>
-    </div>
+
+      <div className="w-[40vw] h-[0.1vh] border-b-2 border-[#3a90e5] mt-[5vh]"></div>
+    </>
   );
 }
