@@ -40,13 +40,16 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
       {/* 첫번째 카드 */}
       <div ref={firstCardRef} className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-[2vh] text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
+        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {fashion.title[0]}
         </div>
 
-        <div id="except-title" className="flex flex-row gap-[0.5vh]">
+        <div id="except-title" className="flex flex-row gap-[1.2vw]">
           {/* Image col */}
-          <div className="flex flex-col pl-[0.5vw] pt-[0.5vh] pb-[0.5vh] w-1/2">
+          <div className="flex flex-col pl-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
             <div className="flex flex-col items-start justify-center">
               <img
                 src={fashion.image[0][0]}
@@ -57,7 +60,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
               <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
                 {fashion.subTitle[0]}
               </p>
-              <p className="text-xs mt-[0.25vh] text-[1.2vw]">
+              <p className="text-xs mt-[0.25vh] text-[0.8vw]">
                 {fashion.subDescription[0]}
               </p>
               <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[0]}</p>
@@ -68,14 +71,14 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
           </div>
 
           {/* Image col */}
-          <div className="flex flex-col pr-[0.5vw] pt-[0.5vh] pb-[0.5vh] w-1/2">
+          <div className="flex flex-col pr-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
             <div className="flex flex-col items-start justify-center">
               <img
                 src={fashion.image[0][1]}
                 alt={fashion.description[1]}
                 className="w-full h-auto object-cover mb-2"
               />
-              <p className="text-[1vw] text-left whitespace-pre-line">
+              <p className="text-[0.8vw] text-left whitespace-pre-line">
                 {fashion.description[0]}
               </p>
             </div>
@@ -86,13 +89,16 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
       {/* 두번째 카드 */}
       <div ref={secondCardRef} className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-[2vh] text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
+        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {fashion.title[1]}
         </div>
 
-        <div id="except-title" className="flex flex-row gap-[0.5vh]">
+        <div id="except-title" className="flex flex-row gap-[1.2vw]">
           {/* Image col */}
-          <div className="flex flex-col pl-[0.5vw] pt-[0.5vh] pb-[0.5vh] w-1/2">
+          <div className="flex flex-col pl-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
             <div className="flex flex-col items-start justify-center">
               <img
                 src={fashion.image[1][0]}
@@ -102,7 +108,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
               <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
                 {fashion.subTitle[1]}
               </p>
-              <p className="text-xs mt-[0.25vh] text-[1.2vw]">
+              <p className="text-xs mt-[0.25vh] text-[0.8vw]">
                 {fashion.subDescription[1]}
               </p>
               <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[1]}</p>
@@ -113,14 +119,14 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
           </div>
 
           {/* Image col */}
-          <div className="flex flex-col pr-[0.5vw] pt-[0.5vh] pb-[0.5vh] w-1/2">
+          <div className="flex flex-col pr-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
             <div className="flex flex-col items-start justify-center">
               <img
                 src={fashion.image[1][1]}
                 alt={fashion.description[1]}
                 className="w-full h-auto object-cover mb-2"
               />
-              <p className="text-[1vw] text-left whitespace-pre-line">
+              <p className="text-[0.8vw] text-left whitespace-pre-line">
                 {fashion.description[1]}
               </p>
             </div>

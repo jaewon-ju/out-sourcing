@@ -61,7 +61,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       {/* 첫번째 카드 */}
       <div
         ref={firstCardRef}
-        className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]"
+        className="relative bg-gray-200 flex justify-center items-center aspect-square w-[98%] ml-[1vw]"
       >
         <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
@@ -83,7 +83,8 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       {/* 두번째 카드 */}
       <div
         ref={secondCardRef}
-        className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]"
+        className="relative bg-gray-200 flex justify-center items-center 
+        aspect-square w-[98%] mr-[1vw]"
       >
         <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
@@ -102,8 +103,14 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       </div>
 
       {/* 세번째 카드 */}
-      <div className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]">
-        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
+      <div
+        className="relative bg-gray-200 flex 
+      justify-center items-center aspect-square w-[98%] ml-[1vw]"
+      >
+        <h1
+          className="text-[3vh] font-[AppleBold] 
+        font-bold absolute top-[1vh] left-[1vw]"
+        >
           No.1
         </h1>
         <img
@@ -120,7 +127,10 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       </div>
 
       {/* 네번째 카드 */}
-      <div className="relative bg-gray-200 flex justify-center items-center aspect-square w-[100%]">
+      <div
+        className="relative bg-gray-200 flex justify-center items-center 
+        aspect-square w-[98%] mr-[1vw]"
+      >
         <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>

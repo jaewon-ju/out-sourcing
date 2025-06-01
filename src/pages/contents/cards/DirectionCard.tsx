@@ -12,7 +12,10 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       {/* 첫번째 카드 */}
       <div className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-black text-[2vh] text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-black text-[2.5vh] text-left h-[5vh]
+        font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {direction.title[0]}
         </div>
 
@@ -27,7 +30,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
               />
 
               <div className="flex flex-row gap-[1vh] w-full">
-                <div className="whitespace-pre-line mt-[1vh] text-[1.2vw]">
+                <div className="whitespace-pre-line mt-[1vh] text-[1vw]">
                   {direction.description[0]}
                 </div>
               </div>
@@ -39,7 +42,10 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       {/* 두번째 카드 */}
       <div className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-black text-[2vh] text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh]
+        text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {direction.title[0]}
         </div>
 
@@ -54,7 +60,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
               />
 
               <div className="flex flex-row gap-[1vh] w-full">
-                <div className="whitespace-pre-line mt-[1vh] text-[1.2vw]">
+                <div className="whitespace-pre-line mt-[1vh] text-[1vw]">
                   {direction.description[1]}
                 </div>
               </div>
@@ -76,7 +82,10 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       {/* 세번째 카드 */}
       <div className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-black text-[2vh] text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh]
+        text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {direction.title[2]}
         </div>
 
@@ -91,7 +100,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
               />
 
               <div className="flex flex-row gap-[1vh] w-full">
-                <div className="whitespace-pre-line mt-[1vh] text-[1.2vw]">
+                <div className="whitespace-pre-line mt-[1vh] text-[1vw]">
                   {direction.description[2]}
                 </div>
               </div>
@@ -103,7 +112,10 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       {/* 네번째 카드 */}
       <div className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-black text-[2vh] text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh]
+        text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {direction.title[3]}
         </div>
 
@@ -118,7 +130,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
               />
 
               <div className="flex flex-row gap-[1vh] w-[100%]">
-                <div className="whitespace-pre-line mt-[1vh] text-[1.2vw]">
+                <div className="whitespace-pre-line mt-[1vh] text-[1vw]">
                   {direction.description[3]}
                 </div>
               </div>

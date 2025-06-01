@@ -20,7 +20,7 @@ const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
       {[0, 1, 2, 3, 4].map((index) => (
         <div className="border border-black">
           {/* Header */}
-          <div className="bg-[#A2C7E9] text-black text-[2vh] text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+          <div className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh] flex items-center justify-start text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
             {setSpace.title[index]}
           </div>
 
@@ -45,7 +45,7 @@ const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
                 />
 
                 <div className="flex flex-row gap-[1vh] w-full">
-                  <div className="w-[80%] whitespace-pre-line mt-[1vh] text-[1.4vw]">
+                  <div className="w-[80%] whitespace-pre-line mt-[1vh] text-[0.9vw]">
                     {setSpace.description[index]}
                   </div>
                   <div className="w-[20%] mt-[1vh]">

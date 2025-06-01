@@ -12,7 +12,10 @@ const FontCard = ({ singerName, font }: FontCardProps) => {
       {/* 첫번째 카드 */}
       <div className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-black text-[2vh] text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh] 
+        text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {font.title[0]}
         </div>
 
@@ -27,7 +30,7 @@ const FontCard = ({ singerName, font }: FontCardProps) => {
               />
 
               <div className="flex flex-row gap-[1vh] w-full">
-                <div className="whitespace-pre-line mt-[1vh] text-[1.2vw]">
+                <div className="whitespace-pre-line mt-[1vh] text-[1vw]">
                   {font.description[0]}
                 </div>
               </div>
@@ -51,7 +54,10 @@ const FontCard = ({ singerName, font }: FontCardProps) => {
       {/* 두번째 카드 */}
       <div className="border border-black">
         {/* Header */}
-        <div className="bg-[#A2C7E9] text-[2vh] text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]">
+        <div
+          className="bg-[#A2C7E9] text-[2.5vh] h-[5vh]
+         text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        >
           {font.title[1]}
         </div>
 
@@ -66,7 +72,7 @@ const FontCard = ({ singerName, font }: FontCardProps) => {
               />
 
               <div className="flex flex-row gap-[1vh] w-full">
-                <div className="whitespace-pre-line mt-[1vh] text-[1.2vw]">
+                <div className="whitespace-pre-line mt-[1vh] text-[1vw]">
                   {font.description[1]}
                 </div>
               </div>

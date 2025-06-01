@@ -53,28 +53,28 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* welcome + 버튼 영역 */}
           <div className="flex flex-col items-center w-full">
             {/* welcome to Anemoia */}
-            <div className="mt-[1vh] w-[90%] h-[15vh] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black flex items-center justify-center">
-              <div className="flex items-center justify-center gap-[5vw] w-full">
+            <div className="mt-[4vh] w-[90%] h-[15vh] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black flex items-center justify-center">
+              <div className="flex items-center justify-center gap-[2vw] w-full">
                 {/* 왼쪽 이미지 */}
                 <img
                   src="/images/home2.png"
                   alt="left"
-                  className="h-[13vh] object-contain"
+                  className="h-[11vh] object-contain"
                 />
 
                 {/* 텍스트 */}
                 <div className=" text-black text-center mt-[1vw]">
-                  <span className="font-[RobotoItalic] text-[6vh] font-light mr-[1.5vw]">
+                  <span className="font-[RobotoItalic] text-[6vh] font-light mr-[1vw]">
                     Welcome to
                   </span>
-                  <span className="font-[Snell] text-[10vh]">Anemoia</span>
+                  <span className="font-[Snell] text-[8vh]">Anemoia</span>
                 </div>
 
                 {/* 오른쪽 이미지 */}
                 <img
                   src="/images/home2.png"
                   alt="right"
-                  className="h-[13vh] object-contain"
+                  className="h-[11vh] object-contain"
                 />
               </div>
             </div>
@@ -87,7 +87,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   <img
                     src="/images/home.png"
                     alt="home"
-                    className="h-[8vh] object-contain cursor-pointer hover:scale-120 transition-transform"
+                    className="h-[5vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/")}
                   />
                   <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
@@ -100,7 +100,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   <img
                     src="/images/survey.png"
                     alt="survey"
-                    className="h-[8vh] object-contain cursor-pointer hover:scale-120 transition-transform"
+                    className="h-[5vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/survey")}
                   />
                   <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
@@ -113,7 +113,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   <img
                     src="/images/youtube.png"
                     alt="youtube"
-                    className="h-[8vh] object-contain cursor-pointer hover:scale-120 transition-transform"
+                    className="h-[5vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() =>
                       window.open(
                         "https://www.youtube.com/watch?v=IKlkZZv76Ho",
@@ -132,16 +132,16 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* 유튜브 영상 */}
           <div className="mt-[3vh] ml-[8vw] w-full flex flex-col justify-start">
             <iframe
-              className="rounded-xl w-[48vw] h-[27vw]"
+              className="rounded-xl w-[32vw] h-[18vw]"
               src="https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-            <p className="text-black font-[AppleBold] font-bold mt-[2vh] text-[2.4vw] flex justify-start">
+            <p className="text-black font-[AppleBold] font-bold mt-[2vh] text-[1.8vw] flex justify-start">
               NCT WISH 엔시티 위시 'Steady' MV
             </p>
-            <p className="font-[Apple] text-black flex justify-start mt-[1vh] text-[1.4vw]">
+            <p className="font-[Apple] text-black flex justify-start mt-[0.5vh] text-[1vw]">
               그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날
             </p>
           </div>
@@ -149,7 +149,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* 컨텐츠 영역 */}
           <div className="relative flex flex-row w-full">
             {/* 왼쪽 콘텐츠 */}
-            <div className="flex flex-row w-[80%] mt-[10vh] ml-[2vw]">
+            <div className="flex flex-row w-[80%] mt-[10vh] ml-[4vw]">
               <ContentContainer singerName={singerName} />
             </div>
             {/* 오른쪽 메뉴를 위해 비워둔 영역*/}
@@ -159,7 +159,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* 오른쪽 메뉴 */}
           <div
             id="section-menu"
-            className="fixed top-[50vh] left-[78vw] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md"
+            className="fixed top-[50vh] left-[70vw] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md"
           >
             {sections.map((section, index: number) => (
               <div
@@ -210,7 +210,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           </div>
 
           {/* related */}
-          <div className="mt-[10vh] mb-[10vh] w-[100%]">
+          <div className="mt-[10vh] mb-[10vh] w-[100%] flex flex-col items-center justify-center">
             <p className="bg-[url('/images/bubble.png')] bg-cover bg-center text-black rounded-lg w-fit ml-[2vw] px-[1vw] py-[0.5vh] text-[2vh] font-[AppleBold]">
               Related Articles
             </p>
@@ -229,7 +229,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
 export default SubPageTemplate;
 
 const containerStyle = {
-  width: "80vw",
+  width: "60vw",
   minHeight: "100vh", // 변경된 부분
   position: "relative",
   display: "flex",

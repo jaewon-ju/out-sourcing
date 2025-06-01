@@ -78,6 +78,10 @@
   font-style: normal;
 }
 
+body {
+  word-break: keep-all;
+}
+
 #scroll-box::-webkit-scrollbar-thumb {
   background-color: #cccccc;
   border-radius: 0.1rem;
