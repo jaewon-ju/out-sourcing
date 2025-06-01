@@ -25,10 +25,10 @@ const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
           <div className="flex flex-row w-full">
             {/* 흰색 배경 + 텍스트 */}
             <div className="flex flex-col w-[50%]">
-              <div className="text-[2vh] font-[AppleExtraBold] font-bold mt-[1vh] pl-[1vw] text-left w-full text-[#0000ee]">
+              <div className="text-[3vh] font-[AppleExtraBold] font-bold mt-[1vh] pl-[1vw] text-left w-full text-[#0000ee]">
                 {home.title}
               </div>
-              <div className="text-[2vh] font-[Apple] mt-[1vh] pl-[1vw] text-left w-full text-[#0000ee]">
+              <div className="text-[2vh] font-[Apple] mt-[0.5vh] pl-[1vw] text-left w-full text-[#0000ee]">
                 {home.groupName}
               </div>
             </div>
@@ -40,11 +40,11 @@ const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
           </div>
 
           {/* 태그 */}
-          <div className="flex flex-row w-full mt-[1vh] bg-[#0000ee] rounded-bl-3xl rounded-br-3xl text-white">
+          <div className="flex flex-row w-full mt-[2vh] h-[4vh] bg-[#0000ee] rounded-bl-2xl rounded-br-2xl text-white items-center">
             {home.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[2vh] font-[Apple] pl-[1vw] rounded-bl-3xl rounded-br-3xl"
+                className="text-[2vh] font-[Apple] pl-[1vw] rounded-bl-2xl rounded-br-2xl"
               >
                 {tag}
               </span>

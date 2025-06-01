@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import MovieSlider from "./components/MovieSlider";
 import MusicPlayer from "./components/MusicPlayer";
 import FolderBox from "./components/FolderBox";
+import TopBarWithInput from "./pages/TopBarWithInput";
 
 function MainLayout() {
   const audioSrc = "/music/nct.mp3";
@@ -30,12 +31,6 @@ function MainLayout() {
       className="min-h-screen w-screen flex flex-col items-center justify-center relative"
     >
       {/* 상단 네비게이션 바 */}
-      <img
-        src="/images/topBar.png"
-        alt="topbar"
-        className="w-[60vw] object-contain"
-      />
-
       <div
         className={`
           w-[60vw] min-h-[100vh]
@@ -44,6 +39,8 @@ function MainLayout() {
           transition-all duration-700 ease-linear bg-cover bg-center ${backgroundImage}
         `}
       >
+        <TopBarWithInput />
+
         {/* music player */}
         <MusicPlayer audioSrc={audioSrc} isSubPage={false} />
 
@@ -54,6 +51,7 @@ function MainLayout() {
               <div className="flex flex-col items-center">
                 <img
                   src={`/images/main/${title}.png`}
+                  loading="lazy"
                   alt={title}
                   className="h-[3vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                   onMouseEnter={() => setHoveredButton(title)}
@@ -74,6 +72,7 @@ function MainLayout() {
             <div className="flex items-center justify-center gap-[3vw] w-full">
               {/* 왼쪽 이미지 */}
               <img
+                loading="lazy"
                 src="/images/home2.png"
                 alt="left"
                 className="h-[10vh] object-contain"
@@ -89,6 +88,7 @@ function MainLayout() {
 
               {/* 오른쪽 이미지 */}
               <img
+                loading="lazy"
                 src="/images/home2.png"
                 alt="right"
                 className="h-[10vh] object-contain"
@@ -103,6 +103,7 @@ function MainLayout() {
           className="flex flex-col items-center text-center px-8 mt-[45vh] w-full"
         >
           <img
+            loading="lazy"
             src="/images/main/cd.png"
             alt="cd"
             className="w-[15vw] object-contain"
@@ -120,6 +121,7 @@ function MainLayout() {
             <br />
           </p>
           <img
+            loading="lazy"
             src="/images/main/arrow.png"
             alt="arrow"
             className="w-[2.5vh] object-contain"
@@ -141,6 +143,7 @@ function MainLayout() {
               >
                 Tell us
                 <img
+                  loading="lazy"
                   src="/images/main/nostalgia.png"
                   alt="nostalgia"
                   className="inline-block h-[5vh] mx-[1vh] object-contain align-middle z-50 relative"
@@ -163,28 +166,32 @@ function MainLayout() {
         <MovieSlider />
 
         {/* welcome to a corner */}
-        <div className="flex flex-row items-center justify-start mt-[6vh] ml-[5vw] w-[100%]">
-          <span className="text-[1.4vw] font-[Bodoni] tracking-tighter leading-tight">
-            Welcome to a corner of the internet where memories don’t need to be
-            real to matter.
-            <br />
-            This is a{" "}
+        <div
+          className="flex flex-row items-center justify-start mt-[6vh] ml-[6vw] w-[100%]
+        "
+        >
+          <span className="text-[1.1vw] font-[Bodoni] tracking-tighter leading-relaxed">
             <span className="text-[#0000ee]">
-              digital archive of moments you never lived
+              실제 경험하지 않았더라도, 의미를 가질 수 있는 기억들이 존재합니다.
             </span>
-            , but somehow miss — screen static, <br />
-            blurry dance moves, fluorescent hallways, songs echoing from a
-            cassette <span className="text-[#0000ee]">you never owned</span>.
             <br />
-            We collect them, pixel by pixel, for everyone{" "}
+            이곳은 그런 기억들을 위한 인터넷의 한 공간입니다. 이 아카이브는 직접
+            겪은 적은 없지만 낯설지 않게 느껴지는 장면들을 모아둡니다
+            <br />
+            스크린의 지직거리는 노이즈, 흐릿한 춤 동작, 형광등이 켜진 복도,
+            그리고 한 번도 소유한 적 없는 카세트 테이프에서 들려오는 음악 등.
+            <br />
+            이러한 이미지와 소리들을 픽셀 단위로 수집하며,
             <span className="text-[#0000ee]">
-              who feels nostalgic for times that never existed.
+              존재하지 않았지만 그리운 시간
             </span>
+            에 대한 감정을 공유하고자 합니다.
           </span>
         </div>
 
-        <div className="flex flex-row items-center justify-start mt-[5vh] ml-[5vw] w-[100%]">
+        <div className="flex flex-row items-center justify-start mt-[2vh] ml-[5vw] w-[100%]">
           <img
+            loading="lazy"
             src="/images/main/anemoia.png"
             alt="anemoia"
             className="w-[50%] object-center"
@@ -194,24 +201,25 @@ function MainLayout() {
         {/* 폴더 박스 */}
         <FolderBox />
 
-        <div className="relative flex flex-row items-center justify-center mt-[15vh] w-full">
+        <div className="relative flex flex-row items-center justify-center mt-[20vh] w-full">
           {/* 이미지 */}
           <img
+            loading="lazy"
             src="/images/main/CdBox.png"
             alt="CdBox"
-            className="w-[80%] object-center"
+            className="w-[60%] object-center"
           />
 
           {/* 텍스트 오버레이 */}
           <div className="absolute top-[35%] left-[50%] translate-x-[-50%] text-center">
-            <p className="text-[1.2vw] font-[AppleBold] font-semibold">
+            <p className="text-[1vw] font-[AppleBold] font-semibold">
               Drift further into the feeling
             </p>
             <a
               href="https://www.youtube.com/watch?v=gBIk0pxmByw"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0000ee] underline text-[1.2vw] inline-block mt-[-2.5vh]"
+              className="text-[#0000ee] underline text-[0.8vw] inline-block mt-[1vh] relative top-[-1.5vh]"
             >
               https://www.youtube.com/watch?v=gBIk0pxmByw
             </a>
@@ -219,7 +227,7 @@ function MainLayout() {
         </div>
 
         {/* 푸터 */}
-        <footer className="px-8 text-center text-[1.2vw] font-[Bodoni] mt-[10vh] mb-[10vh]">
+        <footer className="px-8 text-center text-[0.8vw] font-[Bodoni] mt-[10vh] mb-[10vh]">
           © Welcome to Anemoia — A collection of unreal nostalgia, curated frame
           by frame.
         </footer>

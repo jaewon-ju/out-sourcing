@@ -26,7 +26,13 @@ function getRandomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-export function CommentBox({ title }: { title: string }) {
+export function CommentBox({
+  title,
+  addedComment,
+}: {
+  title: string;
+  addedComment: any;
+}) {
   const [entries, setEntries] = useState<any[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const thumbRef = useRef<HTMLDivElement>(null);
@@ -39,7 +45,7 @@ export function CommentBox({ title }: { title: string }) {
 
   useEffect(() => {
     fetchEntries();
-  }, []);
+  }, [addedComment]);
 
   const scrollByAmount = (amount: number) => {
     if (scrollRef.current) {
@@ -65,23 +71,29 @@ export function CommentBox({ title }: { title: string }) {
     if (!scrollEl || !thumbEl) return;
 
     const updateThumbHeight = () => {
-      const { scrollHeight, clientHeight } = scrollEl;
-      const ratio = clientHeight / scrollHeight;
-      const thumbHeight = clientHeight * ratio;
+      const { clientHeight } = scrollEl;
+      const scrollHeight = scrollEl.scrollHeight;
 
+      const ratio = clientHeight / scrollHeight;
+      const thumbHeight = clientHeight * ratio - window.innerWidth * 0.04;
       thumbEl.style.height = `${thumbHeight}px`;
-      console.log(thumbHeight);
     };
 
     updateThumbHeight();
-    window.addEventListener("resize", updateThumbHeight); // 창 크기 변경 대응
-    return () => window.removeEventListener("resize", updateThumbHeight);
-  }, []);
+
+    scrollEl.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", updateThumbHeight);
+
+    return () => {
+      scrollEl.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateThumbHeight);
+    };
+  }, [entries]); // 댓글 수가 바뀔 때마다 재계산
 
   return (
-    <div className="flex flex-col items-center justify-center w-[40vw] mt-[5vh] mb-[10vh] relative">
+    <div className="flex flex-col items-center justify-center w-[40vw] mt-[5vh] mb-[10vh] relative font-[Box109]">
       {/* 타인의 기억 */}
-      <div className="flex items-center justify-start w-full text-[1.2vw] font-[Bodoni]">
+      <div className="flex items-center justify-start w-full text-[1.2vw]">
         <img
           src="/survey/person.png"
           alt="person"
@@ -96,7 +108,7 @@ export function CommentBox({ title }: { title: string }) {
           ref={scrollRef}
           onScroll={handleScroll}
           className="
-          space-y-[1vh] h-[50vh] overflow-y-scroll w-full bg-white p-[2vh] pr-[3vw]
+          h-[50vh] overflow-y-scroll w-full bg-white p-[2vh] pr-[3vw]
           scrollbar-none"
         >
           {entries.map((entry, idx) => {
@@ -106,13 +118,13 @@ export function CommentBox({ title }: { title: string }) {
             return (
               <div
                 key={idx}
-                className="flex flex-col items-start gap-[2vh] rounded-md bg-white bg-opacity-80 mb-[5vh]"
+                className="flex flex-col items-start gap-[2vh] rounded-md bg-white bg-opacity-80 pb-[5vh]"
               >
                 <div className="flex flex-row items-center justify-between px-[1vw] w-[90%] bg-[url('/survey/bar.png')] aspect-[1829/160] bg-contain bg-center bg-no-repeat">
-                  <div className="text-[1.2vw] font-[Bodoni]">{`no.${
+                  <div className="text-[1vw]">{`no.${
                     idx + 1
                   } ${nickname}`}</div>
-                  <div className="text-[1.2vw] font-[Bodoni]">{`<${entry.createdAt
+                  <div className="text-[1vw]">{`<${entry.createdAt
                     .toDate()
                     .toLocaleString()}>`}</div>
                 </div>
@@ -122,9 +134,7 @@ export function CommentBox({ title }: { title: string }) {
                     alt={profile}
                     className="w-[5vw] h-[5vw]"
                   />
-                  <div className="text-[1.2vw] font-[Bodoni]">
-                    {entry.opinion}
-                  </div>
+                  <div className="p-[0.5vw] text-[1vw]">{entry.opinion}</div>
                 </div>
               </div>
             );
@@ -132,19 +142,20 @@ export function CommentBox({ title }: { title: string }) {
         </div>
 
         {/* 커스텀 스크롤바 */}
-        <div className="ml-[1vw] h-[50vh] flex flex-col items-center justify-between">
+        <div className="ml-[1vw] h-[50vh] flex flex-col items-center justify-between relative">
           {/* 위쪽 화살표 */}
           <img
             src="/survey/bar_top.png"
             onClick={() => scrollByAmount(-50)}
-            className="w-[2vw] h-[2vw]"
+            className="w-[2vw] h-[2vw] z-10"
           />
 
           {/* 막대 전체 */}
-          <div className="relative w-[2vw] flex-1 bg-[#D8E9F9] border-1 border-[#2b61a7]">
+          <div className="relative w-[2vw] flex-1 bg-[#D8E9F9] border border-[#2b61a7] overflow-hidden">
             <div
               ref={thumbRef}
-              className="absolute w-full bg-[#acceea] cursor-pointer border-b-1 border-t-1 border-[#2b61a7]"
+              className="absolute w-full bg-[#acceea] cursor-pointer border-y border-[#2b61a7] left-0"
+              style={{ top: 0 }}
             />
           </div>
 
@@ -152,7 +163,7 @@ export function CommentBox({ title }: { title: string }) {
           <img
             src="/survey/bar_bottom.png"
             onClick={() => scrollByAmount(50)}
-            className="w-[2vw] h-[2vw]"
+            className="w-[2vw] h-[2vw] z-10"
           />
         </div>
       </div>

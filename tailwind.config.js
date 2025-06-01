@@ -10,10 +10,13 @@ export default {
       Depixel: ["depixelbreit"],
       DepixelBold: ["depixelbreitfett"],
       RobotoItalic: ["RobotoItalic"],
+      RobotoLightItalic: ["RobotoLightItalic"],
+      RobotoRegular: ["RobotoRegular"],
       Bodoni: ["Bodoni"],
       Serif: ["Serif"],
       SerifSemibold: ["SerifSemibold"],
       Snell: ["Snell"],
+      Box109: ["Box109"],
     },
   },
   plugins: [

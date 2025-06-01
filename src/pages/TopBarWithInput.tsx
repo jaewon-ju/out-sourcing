@@ -35,8 +35,8 @@ const TopBarWithInput = () => {
           h-[4vh]
           px-4
           py-2
-          border
-          border-gray-300
+          border-4
+          border-black
           shadow-md
           text-sm
           bg-white

@@ -30,20 +30,20 @@ const MovieSlider = () => {
         <img
           src="/images/main/filter.png"
           alt="filter"
-          className="w-[35rem] h-[8rem] object-center"
+          className="w-[25rem] h-[5rem] object-center"
         />
 
         {/* 텍스트 오버레이 */}
-        <div className="absolute top-[1.2rem] left-0 flex flex-row items-center justify-start">
+        <div className="absolute top-[0.5rem] left-0 flex flex-row items-center justify-start">
           <span
             onClick={() => sortAscending()}
-            className="text-white text-[2.5rem] font-[AppleExtraBold] ml-[4rem] cursor-pointer"
+            className="text-white text-[2rem] font-[AppleExtraBold] ml-[3rem] cursor-pointer"
           >
             Earlier
           </span>
           <span
             onClick={() => sortDescending()}
-            className="text-white text-[2.5rem] font-[AppleExtraBold] ml-[8.5rem] cursor-pointer"
+            className="text-white text-[2rem] font-[AppleExtraBold] ml-[5rem] cursor-pointer"
           >
             Later
           </span>
@@ -52,12 +52,14 @@ const MovieSlider = () => {
 
       <div className="w-full relative">
         {/* 좌우 버튼 */}
-        <button
+        <img
+          src="/images/left_arrow.png"
+          alt="arrow"
           onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#1f25c0] bg-opacity-80 px-3 py-1 rounded-full shadow cursor-pointer"
-        >
-          ◀
-        </button>
+          className="absolute left-[1.5vw] top-1/2 -translate-y-1/2 z-10 cursor-pointer
+          w-[3vw] object-center
+          "
+        />
 
         {/* 아카이브 이미지 컬렉션 */}
         <section
@@ -68,12 +70,14 @@ const MovieSlider = () => {
           <MovieBox sortDirection={sortDirection} />
         </section>
 
-        <button
+        <img
+          src="/images/right_arrow.png"
+          alt="arrow"
           onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#1f25c0] bg-opacity-80 px-3 py-1 rounded-full shadow cursor-pointer"
-        >
-          ▶
-        </button>
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer
+          w-[3vw] object-center
+          "
+        />
       </div>
     </div>
   );

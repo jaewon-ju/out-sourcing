@@ -6,6 +6,7 @@ import { CommentBox } from "../components/CommentBox";
 
 export default function SurveyPage() {
   const [lang, setLang] = useState<"ko" | "en">("ko");
+  const [addedComment, setAddedComment] = useState(null);
   const placeholder =
     lang === "ko"
       ? "노스텔지어에 대한 개인적 경험이 있다면 무엇이든 공유해주세요."
@@ -26,23 +27,23 @@ export default function SurveyPage() {
         style={{ backgroundImage: `url('/survey/background.png')` }}
       >
         {/* 상단 Navigation */}
-        <div className="flex flex-col relative w-full h-[17vh] mt-[10vh]">
+        <div className="flex flex-col relative w-full h-[14vh] mt-[10vh]">
           <div className="flex items-center w-full">
             {/* home Box*/}
             <img
               src="/survey/homeButton.png"
-              className="absolute left-[5vw] cursor-pointer w-[15vw] h-[7vh]"
+              className="absolute left-[5vw] cursor-pointer w-[12vw] h-[5vh]"
               onClick={() => (window.location.href = "/")}
             />
             <div className="absolute right-[4vw] flex gap-2 items-center">
               <img
                 src="/survey/koreanButton.png"
-                className="cursor-pointer w-[12vw] h-[5.5vh]"
+                className="cursor-pointer w-[8vw] h-[4vh] mb-[0.5vh]"
                 onClick={() => setLang("ko")}
               ></img>
               <img
                 src="/survey/englishButton.png"
-                className="cursor-pointer w-[12vw] h-[5.5vh]"
+                className="cursor-pointer w-[8vw] h-[4vh] mb-[0.5vh]"
                 onClick={() => setLang("en")}
               ></img>
             </div>
@@ -52,7 +53,7 @@ export default function SurveyPage() {
           <img
             src="/survey/nostalgia.png"
             alt="message"
-            className="absolute left-[4vw] top-[3vh] w-[52vw]"
+            className="absolute left-[4vw] top-[2vh] w-[52vw]"
           />
         </div>
 
@@ -64,10 +65,13 @@ export default function SurveyPage() {
           />
           <div className="relative z-10 flex flex-col">
             {/* 설문 입력 영역 */}
-            <SurveyBox placeholder={placeholder} />
+            <SurveyBox
+              placeholder={placeholder}
+              setAddedComment={setAddedComment}
+            />
 
             {/* 댓글 영역 */}
-            <CommentBox title={commentTitle} />
+            <CommentBox title={commentTitle} addedComment={addedComment} />
           </div>
         </div>
       </div>

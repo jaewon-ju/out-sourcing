@@ -46,14 +46,14 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
     <>
       <div id="FashionCards" className={`flex flex-col gap-4 w-[90%]`}>
         {/* 첫번째 카드 */}
-        <div ref={firstCardRef} className="border border-black">
+        <div ref={firstCardRef} className="border-[0.1vw] border-black">
           {/* Header */}
           <div
             className="
     h-[5vh] flex items-center justify-start
     text-black text-left font-[AppleBold] font-bold
     px-[1vw] py-[0.5vh]
-    text-[2.5vh]
+    text-[2vh]
 
     bg-gradient-to-b
     from-[#aaedff]
@@ -87,7 +87,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
               cursor-pointer
               bg-[#e8e8e8]"
                   style={{
-                    boxShadow: "inset 0 0 1ㅔㅌ 1px rgba(0, 0, 0, 0.3)",
+                    boxShadow: "inset 0 0 0.1vw 0.1vw rgba(0, 0, 0, 0.3)",
                   }}
                   onClick={handleClick}
                 >
@@ -113,10 +113,10 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
         </div>
 
         {/* 두번째 카드 */}
-        <div ref={secondCardRef} className="border border-black">
+        <div ref={secondCardRef} className="border-[0.1vw] border-black">
           {/* Header */}
           <div
-            className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
+            className="bg-[#A2C7E9] text-[2vh] h-[5vh] flex items-center justify-start
         text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]
             bg-gradient-to-b
     from-[#aaedff]
@@ -164,22 +164,20 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
         </div>
       </div>
       {isClicked && (
-        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white w-[50%] border border-black">
-            <div className="bg-[#A2C7E9] m-[1vw] border border-black p-[1vw]">
+        <div className="fixed inset-0 bg-opacity-50 flex flex-col items-center justify-center z-50">
+          <div className="bg-white w-[40%] border border-black">
+            <div className="bg-[#A2C7E9] m-[1vw] border border-black pt-[4vh] pb-[4vh] flex flex-col items-center justify-center">
+              <img
+                src="/images/memory.png"
+                alt="memory"
+                className="w-[90%] h-auto rounded"
+              />
               <button
                 onClick={closePopup}
-                className=" w-[1.5vw] h-[1.5vw] mb-[1vh] bg-[url('/images/X.png')] bg-cover bg-center"
-              ></button>
-              <img
-                src={fashion.image[0][0]}
-                alt={fashion.description[0]}
-                className="w-[70%] h-auto rounded mb-[1vh]"
-              />
-              <h2 className="text-[1.5vw] font-[AppleBold] font-bold mb-[1vh] mt-[1vh]">
-                {fashion.subTitle[0]}
-              </h2>
-              <p className="text-[1vw]">{fashion.subDescription[0]}</p>
+                className="w-[10vw] h-[2vw] bg-[#e8e8e8] text-black border border-black mt-[4vh]"
+              >
+                글로 되돌아가기
+              </button>
             </div>
           </div>
         </div>

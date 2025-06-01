@@ -18,14 +18,14 @@ const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
   return (
     <div id="SetSpaceCards" className={`flex flex-col gap-4 w-[90%]`}>
       {[0, 1, 2, 3, 4].map((index) => (
-        <div className="border border-black">
+        <div className="border-[0.1vw] border-black">
           {/* Header */}
           <div
             className="
     h-[5vh] flex items-center justify-start
     text-black text-left font-[AppleBold] font-bold
     px-[1vw] py-[0.5vh]
-    text-[2.5vh]
+      text-[2vh]
 
     bg-gradient-to-b
     from-[#aaedff]

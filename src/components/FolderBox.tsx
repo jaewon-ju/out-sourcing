@@ -31,7 +31,7 @@ const FolderBox = () => {
             key={`${row}-${col}`}
             src={imgSrc}
             alt={`grid-${row}-${col}`}
-            className="h-[10vw] object-cover aspect-video"
+            className="h-[9vw] object-cover aspect-video"
           />
         );
       }
@@ -51,7 +51,7 @@ const FolderBox = () => {
       }}
     >
       {/* folder 이미지 */}
-      <div className="flex flex-row items-center justify-between mt-[5vh] ml-[8vw] mr-[8vw]">
+      <div className="flex flex-row items-center justify-center mt-[5vh] gap-[3vw]">
         {["School Days", "Western Retro", "VHS TV Show"].map((item) => {
           const isSelected = clickedFolder === item;
 
@@ -73,12 +73,12 @@ const FolderBox = () => {
                     : "/images/main/folder.png"
                 }
                 alt="folder"
-                className="object-center w-full"
+                className="object-center w-[60%]"
               />
 
               {/* 텍스트 */}
               <span
-                className={`mt-2 text-[2vh] font-[Apple] ${
+                className={`mt-2 text-[1.8vh] font-[Apple] ${
                   isSelected ? "text-blue-600 underline" : "text-black"
                 }`}
               >

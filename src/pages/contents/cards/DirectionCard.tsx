@@ -10,14 +10,14 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
   return (
     <div id="DirectionCards" className={`flex flex-col gap-4 w-[90%]`}>
       {/* 첫번째 카드 */}
-      <div className="border border-black">
+      <div className="border-[0.1vw] border-black">
         {/* Header */}
         <div
           className="
     h-[5vh] flex items-center justify-start
     text-black text-left font-[AppleBold] font-bold
     px-[1vw] py-[0.5vh]
-    text-[2.5vh]
+    text-[2vh]
 
     bg-gradient-to-b
     from-[#aaedff]
@@ -48,14 +48,14 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       </div>
 
       {/* 두번째 카드 */}
-      <div className="border border-black">
+      <div className="border-[0.1vw] border-black">
         {/* Header */}
         <div
           className="
     h-[5vh] flex items-center justify-start
     text-black text-left font-[AppleBold] font-bold
     px-[1vw] py-[0.5vh]
-    text-[2.5vh]
+    text-[2vh]
 
     bg-gradient-to-b
     from-[#aaedff]
@@ -96,14 +96,14 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       </div>
 
       {/* 세번째 카드 */}
-      <div className="border border-black">
+      <div className="border-[0.1vw] border-black">
         {/* Header */}
         <div
           className="
     h-[5vh] flex items-center justify-start
     text-black text-left font-[AppleBold] font-bold
     px-[1vw] py-[0.5vh]
-    text-[2.5vh]
+    text-[2vh]
 
     bg-gradient-to-b
     from-[#aaedff]
@@ -134,14 +134,14 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       </div>
 
       {/* 네번째 카드 */}
-      <div className="border border-black">
+      <div className="border-[0.1vw] border-black">
         {/* Header */}
         <div
           className="
     h-[5vh] flex items-center justify-start
     text-black text-left font-[AppleBold] font-bold
     px-[1vw] py-[0.5vh]
-    text-[2.5vh]
+    text-[2vh]
 
     bg-gradient-to-b
     from-[#aaedff]

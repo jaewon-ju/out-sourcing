@@ -63,12 +63,12 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         ref={firstCardRef}
         className="relative bg-gray-200 flex justify-center items-center aspect-square w-[94%] ml-[1rem]"
       >
-        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
+        <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img
           src={props.image[0].src}
-          className="w-[45%] hover:w-[60%] transition-all duration-300"
+          className="w-[45%] hover:w-[53%] transition-all duration-300"
           onClick={() =>
             handleClick(
               props.image[0].detailImage,
@@ -86,7 +86,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         className="relative bg-gray-200 flex justify-center items-center 
         aspect-square w-[94%] mr-[1rem]"
       >
-        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
+        <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img
@@ -108,7 +108,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       justify-center items-center aspect-square w-[94%] ml-[1rem]"
       >
         <h1
-          className="text-[3vh] font-[AppleBold] 
+          className="text-[2vh] font-[AppleBold] 
         font-bold absolute top-[1vh] left-[1vw]"
         >
           No.1
@@ -131,7 +131,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         className="relative bg-gray-200 flex justify-center items-center 
         aspect-square w-[94%] mr-[1rem]"
       >
-        <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
+        <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img

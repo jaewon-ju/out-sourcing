@@ -25,7 +25,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
     }
   };
 
-  const sections = ["Fashion", "Props", "Set Space", "Direction", "Font"];
+  const sections = ["Fashion", "Props", "Set Space", "Direction", "Typography"];
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
@@ -154,8 +154,8 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   onClick={() => handleClick(section)}
                   className={`font-[Serif] text-black text-left hover:text-blue-700 
                     flex items-center justify-between
-                    px-[1vw] py-[1vh]
-                    text-[1.3vw]
+                    px-[0.5vw] py-[1vh]
+                    text-[1.2vw]
     ${activeSection === section ? "text-blue-700" : ""}
   `}
                 >
@@ -163,7 +163,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   <img
                     src="/images/arrow.png"
                     alt="arrow"
-                    className="h-[2vh]"
+                    className="h-[1.8vh]"
                   />
                 </a>
               </div>
@@ -205,6 +205,21 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
               <div className="bg-black w-[16vw] aspect-[16/9]"></div>
             </div>
           </div>
+
+          {/* 푸터 */}
+          <img
+            src="/images/tape.png"
+            alt="footer"
+            className="h-[15vh] object-contain"
+          />
+          <a
+            href="https://www.youtube.com/watch?v=IKlkZZv76Ho"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#0000ee] font-[Apple] text-[1vw] mb-[10vh]"
+          >
+            https://www.youtube.com/watch?v=IKlkZZv76Ho
+          </a>
         </div>
       </div>
     </div>
