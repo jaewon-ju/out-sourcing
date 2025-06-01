@@ -44,9 +44,13 @@ const NCTContent = () => {
           key={section}
           className="mt-[15vh] flex flex-col justify-center items-center gap-[3vh] overflow-y-auto"
         >
-          <div className="text-black text-center text-[2vh] font-[Apple] px-[1vw] py-[0.5vh] bg-[#A2C7E9] w-fit border border-grey-500">
-            {section}
-          </div>
+          <img
+            src={`/images/${
+              section.includes(" ") ? section.replace(" ", "_") : section
+            }.png`}
+            alt={section}
+            className="h-[5vh]"
+          />
 
           <div
             id="scroll-box"

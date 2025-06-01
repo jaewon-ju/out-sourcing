@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import ContentContainer from "./ContentContainer";
 import { useEffect, useState } from "react";
 import MusicPlayer from "../components/MusicPlayer";
+import TopBarWithInput from "./TopBarWithInput";
 
 interface SubPageTemplateProps {
   singerName: string;
@@ -40,11 +41,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
     >
       <div style={{ ...containerStyle }}>
         {/* 상단 화면 바 */}
-        <img
-          src="/images/topBar.png"
-          alt="topbar"
-          className="w-full object-contain"
-        />
+        <TopBarWithInput />
 
         {audioSrc && <MusicPlayer audioSrc={audioSrc} isSubPage={true} />}
 
@@ -52,32 +49,11 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
         <div className="bg-dual relative w-full flex flex-col items-center">
           {/* welcome + 버튼 영역 */}
           <div className="flex flex-col items-center w-full">
-            {/* welcome to Anemoia */}
-            <div className="mt-[4vh] w-[90%] h-[15vh] z-10 bg-[#A2C7E9] shadow-md rounded-lg border border-black flex items-center justify-center">
-              <div className="flex items-center justify-center gap-[2vw] w-full">
-                {/* 왼쪽 이미지 */}
-                <img
-                  src="/images/home2.png"
-                  alt="left"
-                  className="h-[11vh] object-contain"
-                />
-
-                {/* 텍스트 */}
-                <div className=" text-black text-center mt-[1vw]">
-                  <span className="font-[RobotoItalic] text-[6vh] font-light mr-[1vw]">
-                    Welcome to
-                  </span>
-                  <span className="font-[Snell] text-[8vh]">Anemoia</span>
-                </div>
-
-                {/* 오른쪽 이미지 */}
-                <img
-                  src="/images/home2.png"
-                  alt="right"
-                  className="h-[11vh] object-contain"
-                />
-              </div>
-            </div>
+            <img
+              src="/images/title.png"
+              alt="title"
+              className="w-[80%] mt-[4vh]"
+            />
 
             {/* home survey youtube */}
             <div className="w-full flex flex-col items-center">
@@ -149,7 +125,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* 컨텐츠 영역 */}
           <div className="relative flex flex-row w-full">
             {/* 왼쪽 콘텐츠 */}
-            <div className="flex flex-row w-[80%] mt-[10vh] ml-[4vw]">
+            <div className="flex flex-row w-[75%] mt-[10vh] ml-[4vw]">
               <ContentContainer singerName={singerName} />
             </div>
             {/* 오른쪽 메뉴를 위해 비워둔 영역*/}
@@ -159,12 +135,14 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           {/* 오른쪽 메뉴 */}
           <div
             id="section-menu"
-            className="fixed top-[50vh] left-[70vw] flex flex-col gap-0 bg-[#A2C7E9] rounded-xl shadow-md"
+            className="fixed top-[50vh] left-[69vw] flex flex-col gap-0 
+            bg-[#a0d7ea] border-[#2b61a7] w-[10vw] border-[0.13vh]
+            shadow-[2px_2px_0_rgba(0,0,0,0.3)] "
           >
             {sections.map((section, index: number) => (
               <div
                 key={index}
-                className={`flex flex-col gap-0 border-gray-500 
+                className={`flex flex-col gap-0 border-white w-full
                   ${
                     index === sections.length - 1
                       ? "border-b-0"
@@ -173,20 +151,30 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
               >
                 <a
                   href={`#${section}`}
-                  onClick={() => handleClick(section)} // 클릭 시 handleClick 호출
-                  className={`font-[Serif] text-black text-center hover:text-blue-700 
+                  onClick={() => handleClick(section)}
+                  className={`font-[Serif] text-black text-left hover:text-blue-700 
+                    flex items-center justify-between
                     px-[1vw] py-[1vh]
                     text-[1.4vw]
-                  ${activeSection === section ? "text-blue-700" : ""}
-                  `}
+    ${activeSection === section ? "text-blue-700" : ""}
+  `}
                 >
-                  {section}
+                  <span className="truncate">{section}</span>
+                  <img
+                    src="/images/arrow.png"
+                    alt="arrow"
+                    className="h-[2vh]"
+                  />
                 </a>
               </div>
             ))}
             <a href="#top">
               <div className="text-black font-[Serif] text-center hover:text-blue-700 px-[1vw] py-[1vh]">
-                <span className="w-fit bg-white font-bold px-[0.5vw] py-[0.5vh] text-[1.4vw]">
+                <span
+                  className="w-fit bg-white font-bold px-[0.8vw] py-[0.5vh] text-[1.4vw]
+                border-[0.13vh] border-black shadow-[2px_2px_0_rgba(0,0,0,0.3)]
+                "
+                >
                   UP!
                 </span>
               </div>
@@ -195,26 +183,23 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
 
           {/* tags */}
           <div className="flex flex-row w-full justify-center mt-[10vh] gap-[3vw]">
-            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
-              2000s
-            </p>
-            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
-              School
-            </p>
-            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
-              Japan
-            </p>
-            <p className="text-black text-[1.2vw] text-center px-[1vw] py-[0.5vh] bg-[#A2C7E9] rounded-xl shadow-md font-[AppleBold]">
-              First Love
-            </p>
+            {[1, 2, 3, 4].map((tag) => (
+              <img
+                src={`/images/nct/tag${tag}.png`}
+                alt="tag"
+                className="h-[5vh] object-contain"
+              />
+            ))}
           </div>
 
           {/* related */}
-          <div className="mt-[10vh] mb-[10vh] w-[100%] flex flex-col items-center justify-center">
-            <p className="bg-[url('/images/bubble.png')] bg-cover bg-center text-black rounded-lg w-fit ml-[2vw] px-[1vw] py-[0.5vh] text-[2vh] font-[AppleBold]">
-              Related Articles
-            </p>
-            <div className="flex flex-row w-[70%] mt-[4vh] ml-[2vw] gap-[2vw]">
+          <div className="relative mt-[10vh] mb-[10vh] h-[20vh] w-[100%] flex flex-col">
+            <img
+              src="/images/related_button.png"
+              alt="related"
+              className="h-[5vh] object-contain absolute top-[0vh] left-[7vw]"
+            />
+            <div className="flex flex-row w-[70%] gap-[2vw] absolute top-[6vh] left-[7vw]">
               <div className="bg-black w-[16vw] aspect-[16/9]"></div>
               <div className="bg-black w-[16vw] aspect-[16/9]"></div>
               <div className="bg-black w-[16vw] aspect-[16/9]"></div>

@@ -56,12 +56,12 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
   return (
     <div
       id="PropsCards"
-      className={`grid grid-cols-2 gap-4 w-[98%] scroll-y-auto`}
+      className={`grid grid-cols-2 gap-4 w-[100%] scroll-y-auto`}
     >
       {/* 첫번째 카드 */}
       <div
         ref={firstCardRef}
-        className="relative bg-gray-200 flex justify-center items-center aspect-square w-[98%] ml-[1vw]"
+        className="relative bg-gray-200 flex justify-center items-center aspect-square w-[94%] ml-[1rem]"
       >
         <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
@@ -84,7 +84,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       <div
         ref={secondCardRef}
         className="relative bg-gray-200 flex justify-center items-center 
-        aspect-square w-[98%] mr-[1vw]"
+        aspect-square w-[94%] mr-[1rem]"
       >
         <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1
@@ -105,7 +105,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       {/* 세번째 카드 */}
       <div
         className="relative bg-gray-200 flex 
-      justify-center items-center aspect-square w-[98%] ml-[1vw]"
+      justify-center items-center aspect-square w-[94%] ml-[1rem]"
       >
         <h1
           className="text-[3vh] font-[AppleBold] 
@@ -129,7 +129,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       {/* 네번째 카드 */}
       <div
         className="relative bg-gray-200 flex justify-center items-center 
-        aspect-square w-[98%] mr-[1vw]"
+        aspect-square w-[94%] mr-[1rem]"
       >
         <h1 className="text-[3vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
           No.1

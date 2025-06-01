@@ -14,6 +14,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
   const firstCardRef = useRef<HTMLDivElement>(null);
   const secondCardRef = useRef<HTMLDivElement>(null);
   const [imageLoaded, setImageLoaded] = useState(false); // 이미지 로딩 상태 추적
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleImageLoad = () => {
     setImageLoaded(true); // 이미지가 로드되면 상태 변경
@@ -35,105 +36,144 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
     return () => window.removeEventListener("resize", calcHeight);
   }, [dispatch, singerName, imageLoaded]);
 
+  const handleClick = () => {
+    setIsClicked(true);
+  };
+
+  const closePopup = () => setIsClicked(false);
+
   return (
-    <div id="FashionCards" className={`flex flex-col gap-4 w-[90%]`}>
-      {/* 첫번째 카드 */}
-      <div ref={firstCardRef} className="border border-black">
-        {/* Header */}
-        <div
-          className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
+    <>
+      <div id="FashionCards" className={`flex flex-col gap-4 w-[90%]`}>
+        {/* 첫번째 카드 */}
+        <div ref={firstCardRef} className="border border-black">
+          {/* Header */}
+          <div
+            className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
         text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
-        >
-          {fashion.title[0]}
+          >
+            {fashion.title[0]}
+          </div>
+
+          <div id="except-title" className="flex flex-row gap-[1.2vw]">
+            {/* Image col */}
+            <div className="flex flex-col pl-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
+              <div className="flex flex-col items-start justify-center">
+                <img
+                  src={fashion.image[0][0]}
+                  alt={fashion.description[0]}
+                  className="w-full h-auto object-cover mb-2"
+                  onLoad={handleImageLoad} // 이미지 로딩 완료 시 호출
+                />
+                <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
+                  {fashion.subTitle[0]}
+                </p>
+                <p className="text-xs mt-[0.25vh] text-[0.8vw]">
+                  {fashion.subDescription[0]}
+                </p>
+                <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[0]}</p>
+                <button
+                  className="
+              mb-[1vh] border border-black 
+              px-[1vw] py-[0.5vh] mt-[1vh] text-[1.2vw]
+              cursor-pointer
+              bg-[#e8e8e8]"
+                  style={{
+                    boxShadow: "inset 0 0 1px 1px rgba(0, 0, 0, 0.3)",
+                  }}
+                  onClick={handleClick}
+                >
+                  Add to Memory
+                </button>
+              </div>
+            </div>
+
+            {/* Image col */}
+            <div className="flex flex-col pr-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
+              <div className="flex flex-col items-start justify-center">
+                <img
+                  src={fashion.image[0][1]}
+                  alt={fashion.description[1]}
+                  className="w-full h-auto object-cover mb-2"
+                />
+                <p className="text-[0.8vw] text-left whitespace-pre-line">
+                  {fashion.description[0]}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div id="except-title" className="flex flex-row gap-[1.2vw]">
-          {/* Image col */}
-          <div className="flex flex-col pl-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
-            <div className="flex flex-col items-start justify-center">
+        {/* 두번째 카드 */}
+        <div ref={secondCardRef} className="border border-black">
+          {/* Header */}
+          <div
+            className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
+        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+          >
+            {fashion.title[1]}
+          </div>
+
+          <div id="except-title" className="flex flex-row gap-[1.2vw]">
+            {/* Image col */}
+            <div className="flex flex-col pl-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
+              <div className="flex flex-col items-start justify-center">
+                <img
+                  src={fashion.image[1][0]}
+                  alt={fashion.description[1]}
+                  className="w-full h-auto object-cover mb-2"
+                />
+                <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
+                  {fashion.subTitle[1]}
+                </p>
+                <p className="text-xs mt-[0.25vh] text-[0.8vw]">
+                  {fashion.subDescription[1]}
+                </p>
+                <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[1]}</p>
+                <button className="mb-[1vh] border border-black px-[1vw] py-[0.5vh] mt-[1vh] text-[1.2vw]">
+                  Add to Memory
+                </button>
+              </div>
+            </div>
+
+            {/* Image col */}
+            <div className="flex flex-col pr-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
+              <div className="flex flex-col items-start justify-center">
+                <img
+                  src={fashion.image[1][1]}
+                  alt={fashion.description[1]}
+                  className="w-full h-auto object-cover mb-2"
+                />
+                <p className="text-[0.8vw] text-left whitespace-pre-line">
+                  {fashion.description[1]}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {isClicked && (
+        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white w-[50%] border border-black">
+            <div className="bg-[#A2C7E9] m-[1vw] border border-black p-[1vw]">
+              <button
+                onClick={closePopup}
+                className=" w-[1.5vw] h-[1.5vw] mb-[1vh] bg-[url('/images/X.png')] bg-cover bg-center"
+              ></button>
               <img
                 src={fashion.image[0][0]}
                 alt={fashion.description[0]}
-                className="w-full h-auto object-cover mb-2"
-                onLoad={handleImageLoad} // 이미지 로딩 완료 시 호출
+                className="w-[70%] h-auto rounded mb-[1vh]"
               />
-              <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
+              <h2 className="text-[1.5vw] font-[AppleBold] font-bold mb-[1vh] mt-[1vh]">
                 {fashion.subTitle[0]}
-              </p>
-              <p className="text-xs mt-[0.25vh] text-[0.8vw]">
-                {fashion.subDescription[0]}
-              </p>
-              <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[0]}</p>
-              <button className="mb-[1vh] border border-black px-[1vw] py-[0.5vh] mt-[1vh] text-[1.2vw]">
-                Add to Memory
-              </button>
-            </div>
-          </div>
-
-          {/* Image col */}
-          <div className="flex flex-col pr-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
-            <div className="flex flex-col items-start justify-center">
-              <img
-                src={fashion.image[0][1]}
-                alt={fashion.description[1]}
-                className="w-full h-auto object-cover mb-2"
-              />
-              <p className="text-[0.8vw] text-left whitespace-pre-line">
-                {fashion.description[0]}
-              </p>
+              </h2>
+              <p className="text-[1vw]">{fashion.subDescription[0]}</p>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* 두번째 카드 */}
-      <div ref={secondCardRef} className="border border-black">
-        {/* Header */}
-        <div
-          className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
-        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
-        >
-          {fashion.title[1]}
-        </div>
-
-        <div id="except-title" className="flex flex-row gap-[1.2vw]">
-          {/* Image col */}
-          <div className="flex flex-col pl-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
-            <div className="flex flex-col items-start justify-center">
-              <img
-                src={fashion.image[1][0]}
-                alt={fashion.description[1]}
-                className="w-full h-auto object-cover mb-2"
-              />
-              <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
-                {fashion.subTitle[1]}
-              </p>
-              <p className="text-xs mt-[0.25vh] text-[0.8vw]">
-                {fashion.subDescription[1]}
-              </p>
-              <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[1]}</p>
-              <button className="mb-[1vh] border border-black px-[1vw] py-[0.5vh] mt-[1vh] text-[1.2vw]">
-                Add to Memory
-              </button>
-            </div>
-          </div>
-
-          {/* Image col */}
-          <div className="flex flex-col pr-[1.2vw] pt-[1.2vw] pb-[1.2vw] w-1/2">
-            <div className="flex flex-col items-start justify-center">
-              <img
-                src={fashion.image[1][1]}
-                alt={fashion.description[1]}
-                className="w-full h-auto object-cover mb-2"
-              />
-              <p className="text-[0.8vw] text-left whitespace-pre-line">
-                {fashion.description[1]}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
