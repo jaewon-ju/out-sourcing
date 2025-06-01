@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -26,8 +26,10 @@ function getRandomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-export function CommentBox() {
+export function CommentBox({ title }: { title: string }) {
   const [entries, setEntries] = useState<any[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const thumbRef = useRef<HTMLDivElement>(null);
 
   const fetchEntries = async () => {
     const snapshot = await getDocs(collection(db, "surveys"));
@@ -39,49 +41,120 @@ export function CommentBox() {
     fetchEntries();
   }, []);
 
+  const scrollByAmount = (amount: number) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ top: amount, behavior: "smooth" });
+    }
+  };
+
+  // 동기화용: 스크롤 시 thumb 위치 조정
+  const handleScroll = () => {
+    const scrollEl = scrollRef.current;
+    const thumbEl = thumbRef.current;
+    if (!scrollEl || !thumbEl) return;
+
+    const { scrollTop, scrollHeight, clientHeight } = scrollEl;
+    const thumbHeightRatio = clientHeight / scrollHeight;
+    const thumbTop = scrollTop * thumbHeightRatio;
+    thumbEl.style.top = `${thumbTop}px`;
+  };
+
+  useEffect(() => {
+    const scrollEl = scrollRef.current;
+    const thumbEl = thumbRef.current;
+    if (!scrollEl || !thumbEl) return;
+
+    const updateThumbHeight = () => {
+      const { scrollHeight, clientHeight } = scrollEl;
+      const ratio = clientHeight / scrollHeight;
+      const thumbHeight = clientHeight * ratio;
+
+      thumbEl.style.height = `${thumbHeight}px`;
+      console.log(thumbHeight);
+    };
+
+    updateThumbHeight();
+    window.addEventListener("resize", updateThumbHeight); // 창 크기 변경 대응
+    return () => window.removeEventListener("resize", updateThumbHeight);
+  }, []);
+
   return (
-    <div className="flex flex-col items-center justify-center w-[40vw] mt-[10vh]">
-      {/* 타인의 기억 들여다보기*/}
+    <div className="flex flex-col items-center justify-center w-[40vw] mt-[5vh] mb-[10vh] relative">
+      {/* 타인의 기억 */}
       <div className="flex items-center justify-start w-full text-[1.2vw] font-[Bodoni]">
         <img
           src="/survey/person.png"
           alt="person"
           className="w-[7vw] h-[7vw]"
         />
-        타인의 기억 들여다보기
+        {title}
       </div>
-      <div className="space-y-[1vh] max-h-[50vh] overflow-y-scroll w-full bg-white p-[2vh]">
-        {entries.map((entry, idx) => {
-          const nickname =
-            getRandomItem(nicknames) + Math.floor(Math.random() * 1000);
-          const profile = getRandomItem(profileImages);
-          return (
-            <div
-              key={idx}
-              className="flex flex-col items-start gap-4 border p-4 rounded-md bg-white bg-opacity-80"
-            >
-              <div
-                className="flex flex-row items-center justify-between px-[1vw] w-[90%]
-              bg-[url('/survey/bar.png')] aspect-[1829/160] bg-cover bg-center"
-              >
-                <div className="text-[1.2vw] font-[Bodoni]">{`no.${
-                  idx + 1
-                } ${nickname}`}</div>
-                <div className="text-[1.2vw] font-[Bodoni]">
-                  {`<${entry.createdAt.toDate().toLocaleString()}>`}
-                </div>
-              </div>
 
-              {/* 표정 + 댓글*/}
-              <div className="flex flex-row items-start gap-4 w-[90%]">
-                <img src={profile} alt={profile} className="w-[5vw] h-[5vw]" />
-                <div className="text-[1.2vw] font-[Bodoni]">
-                  {entry.opinion}
+      {/* 댓글 박스 + 스크롤바 */}
+      <div className="relative w-full flex flex-row">
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="
+          space-y-[1vh] h-[50vh] overflow-y-scroll w-full bg-white p-[2vh] pr-[3vw]
+          scrollbar-none"
+        >
+          {entries.map((entry, idx) => {
+            const nickname =
+              getRandomItem(nicknames) + Math.floor(Math.random() * 1000);
+            const profile = getRandomItem(profileImages);
+            return (
+              <div
+                key={idx}
+                className="flex flex-col items-start gap-[2vh] rounded-md bg-white bg-opacity-80 mb-[5vh]"
+              >
+                <div className="flex flex-row items-center justify-between px-[1vw] w-[90%] bg-[url('/survey/bar.png')] aspect-[1829/160] bg-contain bg-center bg-no-repeat">
+                  <div className="text-[1.2vw] font-[Bodoni]">{`no.${
+                    idx + 1
+                  } ${nickname}`}</div>
+                  <div className="text-[1.2vw] font-[Bodoni]">{`<${entry.createdAt
+                    .toDate()
+                    .toLocaleString()}>`}</div>
+                </div>
+                <div className="flex flex-row items-start gap-4 w-[90%]">
+                  <img
+                    src={profile}
+                    alt={profile}
+                    className="w-[5vw] h-[5vw]"
+                  />
+                  <div className="text-[1.2vw] font-[Bodoni]">
+                    {entry.opinion}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+
+        {/* 커스텀 스크롤바 */}
+        <div className="ml-[1vw] h-[50vh] flex flex-col items-center justify-between">
+          {/* 위쪽 화살표 */}
+          <img
+            src="/survey/bar_top.png"
+            onClick={() => scrollByAmount(-50)}
+            className="w-[2vw] h-[2vw]"
+          />
+
+          {/* 막대 전체 */}
+          <div className="relative w-[2vw] flex-1 bg-[#D8E9F9] border-1 border-[#2b61a7]">
+            <div
+              ref={thumbRef}
+              className="absolute w-full bg-[#acceea] cursor-pointer border-b-1 border-t-1 border-[#2b61a7]"
+            />
+          </div>
+
+          {/* 아래쪽 화살표 */}
+          <img
+            src="/survey/bar_bottom.png"
+            onClick={() => scrollByAmount(50)}
+            className="w-[2vw] h-[2vw]"
+          />
+        </div>
       </div>
     </div>
   );

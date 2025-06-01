@@ -22,7 +22,7 @@ export default function SurveyPage() {
     >
       <div
         id="survey-container"
-        className="w-[60vw] bg-cover bg-center"
+        className="w-[60vw] bg-cover bg-center overflow-visible"
         style={{ backgroundImage: `url('/survey/background.png')` }}
       >
         {/* 상단 Navigation */}
@@ -56,15 +56,19 @@ export default function SurveyPage() {
           />
         </div>
 
-        <div
-          className="w-[52vw] flex flex-col items-center justify-start my-[10vh] ml-[4vw] 
-    aspect-[2625/3857] bg-[url('/survey/mainBox.png')] bg-contain bg-center"
-        >
-          {/* 설문 입력 영역 */}
-          <SurveyBox placeholder={placeholder} />
+        <div className="relative w-[52vw] my-[10vh] ml-[4vw] flex flex-col items-center justify-center">
+          <img
+            src="/survey/mainBox.png"
+            alt="배경"
+            className="w-full h-full absolute z-0"
+          />
+          <div className="relative z-10 flex flex-col">
+            {/* 설문 입력 영역 */}
+            <SurveyBox placeholder={placeholder} />
 
-          {/* 댓글 영역 */}
-          <CommentBox />
+            {/* 댓글 영역 */}
+            <CommentBox title={commentTitle} />
+          </div>
         </div>
       </div>
     </div>
