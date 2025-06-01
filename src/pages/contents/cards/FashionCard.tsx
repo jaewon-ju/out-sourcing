@@ -49,8 +49,16 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
         <div ref={firstCardRef} className="border border-black">
           {/* Header */}
           <div
-            className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
-        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+            className="
+    h-[5vh] flex items-center justify-start
+    text-black text-left font-[AppleBold] font-bold
+    px-[1vw] py-[0.5vh]
+    text-[2.5vh]
+
+    bg-gradient-to-b
+    from-[#aaedff]
+    to-[#599adc]
+  "
           >
             {fashion.title[0]}
           </div>
@@ -79,7 +87,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
               cursor-pointer
               bg-[#e8e8e8]"
                   style={{
-                    boxShadow: "inset 0 0 1px 1px rgba(0, 0, 0, 0.3)",
+                    boxShadow: "inset 0 0 1ㅔㅌ 1px rgba(0, 0, 0, 0.3)",
                   }}
                   onClick={handleClick}
                 >
@@ -109,7 +117,10 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
           {/* Header */}
           <div
             className="bg-[#A2C7E9] text-[2.5vh] h-[5vh] flex items-center justify-start
-        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]
+            bg-gradient-to-b
+    from-[#aaedff]
+    to-[#599adc]"
           >
             {fashion.title[1]}
           </div>

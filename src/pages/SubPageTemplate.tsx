@@ -136,7 +136,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           <div
             id="section-menu"
             className="fixed top-[50vh] left-[69vw] flex flex-col gap-0 
-            bg-[#a0d7ea] border-[#2b61a7] w-[10vw] border-[0.13vh]
+            bg-[#a0d7ea] border-[#2b61a7] w-[9vw] border-[0.13vh]
             shadow-[2px_2px_0_rgba(0,0,0,0.3)] "
           >
             {sections.map((section, index: number) => (
@@ -155,7 +155,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                   className={`font-[Serif] text-black text-left hover:text-blue-700 
                     flex items-center justify-between
                     px-[1vw] py-[1vh]
-                    text-[1.4vw]
+                    text-[1.3vw]
     ${activeSection === section ? "text-blue-700" : ""}
   `}
                 >
@@ -187,7 +187,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
               <img
                 src={`/images/nct/tag${tag}.png`}
                 alt="tag"
-                className="h-[5vh] object-contain"
+                className="h-[4vh] object-contain"
               />
             ))}
           </div>

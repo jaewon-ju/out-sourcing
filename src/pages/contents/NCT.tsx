@@ -56,7 +56,8 @@ const NCTContent = () => {
             id="scroll-box"
             className={`
                 flex flex-col justify-start items-center w-full py-[2vh] font-[Apple]
-                border border-black
+                border-2 border-black
+                bg-white
                 scrollbar-thumb-[#CCCCCC] scrollbar-track-white scrollbar-w-[2vw]
                 ${
                   section === "Props"

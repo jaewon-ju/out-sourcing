@@ -104,8 +104,10 @@ export default function MusicPlayer({
     <div
       ref={ref}
       className={`
-        absolute ${isSubPage ? "left-[8vw]" : "right-[2vw]"} z-50
-        w-[20rem] h-[7.5rem] rounded-[1rem] bg-gray-100 
+        absolute right-[2vw] z-50
+        ${
+          isSubPage ? "w-[18rem]" : "w-[20rem]"
+        } h-[7.5rem] rounded-[1rem] bg-gray-100 
         shadow-xl/30
         flex flex-col justify-between p-[1rem]
         transition-transform will-change-transform
@@ -131,7 +133,7 @@ export default function MusicPlayer({
       </div>
 
       {/* Progress bar with images */}
-      <div className="relative w-full h-[1.5rem] mt-[0.5rem] mb-[1rem]">
+      <div className="relative w-full h-[1.5rem] mt-[0.8rem] mb-[1rem]">
         <img
           src="/images/music/progress_background.png"
           alt="progress bar"

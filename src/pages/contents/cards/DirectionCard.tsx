@@ -13,8 +13,16 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       <div className="border border-black">
         {/* Header */}
         <div
-          className="bg-[#A2C7E9] text-black text-[2.5vh] text-left h-[5vh]
-        font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+          className="
+    h-[5vh] flex items-center justify-start
+    text-black text-left font-[AppleBold] font-bold
+    px-[1vw] py-[0.5vh]
+    text-[2.5vh]
+
+    bg-gradient-to-b
+    from-[#aaedff]
+    to-[#599adc]
+  "
         >
           {direction.title[0]}
         </div>
@@ -43,10 +51,18 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       <div className="border border-black">
         {/* Header */}
         <div
-          className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh]
-        text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+          className="
+    h-[5vh] flex items-center justify-start
+    text-black text-left font-[AppleBold] font-bold
+    px-[1vw] py-[0.5vh]
+    text-[2.5vh]
+
+    bg-gradient-to-b
+    from-[#aaedff]
+    to-[#599adc]
+  "
         >
-          {direction.title[0]}
+          {direction.title[1]}
         </div>
 
         <div id="except-title" className="flex flex-row gap-[1vh]">
@@ -83,8 +99,16 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       <div className="border border-black">
         {/* Header */}
         <div
-          className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh]
-        text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+          className="
+    h-[5vh] flex items-center justify-start
+    text-black text-left font-[AppleBold] font-bold
+    px-[1vw] py-[0.5vh]
+    text-[2.5vh]
+
+    bg-gradient-to-b
+    from-[#aaedff]
+    to-[#599adc]
+  "
         >
           {direction.title[2]}
         </div>
@@ -113,8 +137,16 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
       <div className="border border-black">
         {/* Header */}
         <div
-          className="bg-[#A2C7E9] text-black text-[2.5vh] h-[5vh]
-        text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]"
+          className="
+    h-[5vh] flex items-center justify-start
+    text-black text-left font-[AppleBold] font-bold
+    px-[1vw] py-[0.5vh]
+    text-[2.5vh]
+
+    bg-gradient-to-b
+    from-[#aaedff]
+    to-[#599adc]
+  "
         >
           {direction.title[3]}
         </div>
