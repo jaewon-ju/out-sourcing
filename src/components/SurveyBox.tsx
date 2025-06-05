@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { collection, addDoc, getDocs, Timestamp } from "firebase/firestore";
+import { useState } from "react";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import { v4 as uuidv4 } from "uuid";
 
@@ -33,7 +33,7 @@ export function SurveyBox({
           onChange={(e) => setOpinion(e.target.value)}
           placeholder={placeholder}
           className="
-            w-[80%] placeholder:text-[1.2vw] font-[Box109] placeholder:p-[2vh]
+            w-[100%] placeholder:text-[1.2vw] font-[Box109] placeholder:p-[2vh]
             bg-[url('/survey/inputBox.png')] aspect-[2138/1007] bg-contain bg-center
             mt-[10vh]
             resize-none
@@ -43,7 +43,7 @@ export function SurveyBox({
         <img
           src="/survey/send.png"
           alt="sendBox"
-          className="w-[35%] mt-[2vh] cursor-pointer"
+          className="w-[50%] mt-[4vh] cursor-pointer"
           onClick={handleSubmit}
         />
       </form>

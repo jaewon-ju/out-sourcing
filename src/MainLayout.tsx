@@ -28,7 +28,9 @@ function MainLayout() {
   return (
     <div
       id="top"
-      className="min-h-screen w-screen flex flex-col items-center justify-center relative"
+      className="min-h-screen w-screen flex flex-col items-center justify-center relative
+      bg-[#e2e3e8]
+      "
     >
       {/* 상단 네비게이션 바 */}
       <div

@@ -38,31 +38,15 @@ export type NCTDirection = {
   description: string[];
 };
 
-export type NCTHome = {
-  singer: string;
-  title: string;
-  groupName: string;
-  tags: string[];
-  year: number;
-};
-
 interface NCTContentState {
   fashion: NCTFashion;
   props: NCTProps;
   setSpace: NCTSetSpace;
   font: NCTFont;
   direction: NCTDirection;
-  home: NCTHome;
 }
 
 const initialState: NCTContentState = {
-  home: {
-    singer: "nct",
-    title: "Steady",
-    groupName: "NCT WISH",
-    tags: ["Japan", "2000s", "School", "First Love"],
-    year: 2025,
-  },
   fashion: {
     title: [
       "[NCT WISH | Steady ] Look #1 - [School Badge]",

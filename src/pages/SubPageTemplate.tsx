@@ -37,7 +37,8 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
   return (
     <div
       id="top"
-      className="relative min-h-screen w-screen flex flex-col items-center justify-center bg-white"
+      className="relative min-h-screen w-screen 
+      flex flex-col items-center justify-center bg-[#e2e3e8]"
     >
       <div style={{ ...containerStyle }}>
         {/* 상단 화면 바 */}

@@ -1,44 +1,58 @@
 import { useState } from "react";
 
 const FolderBox = () => {
-  const [clickedFolder, setClickedFolder] = useState<string | null>(null);
+  const [clickedFolder, setClickedFolder] = useState<string>("Original");
 
-  const folderImageMap: Record<string, string> = {
-    "School Days": "/images/School-Days.png",
-    "Western Retro": "/images/Western-Retro.png",
-    "VHS TV Show": "/images/VHS-TV-Show.png",
+  const folderImageMap: Record<string, string[]> = {
+    Original: [
+      "/images/nct.png",
+      "/images/taeyeon.png",
+      "/images/NewJeans2.png",
+      "/images/RIIZE.png",
+      "/images/Hearts2Hearts.png",
+      "/images/Lesserafim.png",
+      "/images/Lucy.png",
+      "/images/TWS.png",
+      "/images/BTS.png",
+    ],
+    "School Days": [
+      "/images/nct.png",
+      "/images/NewJeans2.png",
+      "/images/Hearts2Hearts.png",
+      "/images/RIIZE.png",
+      "/images/TWS.png",
+    ],
+    "Western Retro": [
+      "/images/Hearts2Hearts.png",
+      "/images/taeyeon.png",
+      "/images/Lesserafim.png",
+      "/images/BTS.png",
+    ],
+    "VHS TV Show": [
+      "/images/Hearts2Hearts.png",
+      "/images/NewJeans.png",
+      "/images/NewJeans2.png",
+      "/images/Lucy.png",
+    ],
   };
-
-  // 초기 열별 이미지
-  const columnImages = [
-    "/images/School-Days.png",
-    "/images/Western-Retro.png",
-    "/images/VHS-TV-Show.png",
-  ];
 
   // 3x3 그리드 생성
   const renderImageGrid = () => {
-    const images = [];
+    const images = clickedFolder
+      ? folderImageMap[clickedFolder]
+      : folderImageMap.Original;
 
-    for (let row = 0; row < 3; row++) {
-      for (let col = 0; col < 3; col++) {
-        const imgSrc = clickedFolder
-          ? folderImageMap[clickedFolder]
-          : columnImages[col];
-
-        images.push(
-          <img
-            key={`${row}-${col}`}
-            src={imgSrc}
-            alt={`grid-${row}-${col}`}
-            className="h-[9vw] object-cover aspect-video"
-          />
-        );
-      }
-    }
+    const imageGrid = images.map((imgSrc, index) => (
+      <img
+        key={index}
+        src={imgSrc}
+        alt={`${imgSrc}-${index}`}
+        className="h-[9vw] object-cover aspect-video"
+      />
+    ));
     return (
       <div className="grid grid-cols-3 gap-y-[1vw] gap-[0.5vw] mt-[5vh]">
-        {images}
+        {imageGrid}
       </div>
     );
   };
@@ -47,7 +61,7 @@ const FolderBox = () => {
     <div
       className="flex flex-col items-center justify-center mt-[15vh] w-[100%]"
       onClick={() => {
-        setClickedFolder(null); // 전체 영역 클릭 시 선택 해제
+        setClickedFolder("Original"); // 전체 영역 클릭 시 선택 해제
       }}
     >
       {/* folder 이미지 */}
