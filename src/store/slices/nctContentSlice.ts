@@ -26,10 +26,8 @@ export type NCTSetSpace = {
   description: string[];
 };
 
-export type NCTFont = {
-  title: string[];
-  image: string[][];
-  description: string[];
+export type NCTTypography = {
+  image: string[];
 };
 
 export type NCTDirection = {
@@ -38,12 +36,17 @@ export type NCTDirection = {
   description: string[];
 };
 
+export type NCTRelated = {
+  image: string[];
+};
+
 interface NCTContentState {
   fashion: NCTFashion;
   props: NCTProps;
   setSpace: NCTSetSpace;
-  font: NCTFont;
   direction: NCTDirection;
+  related: NCTRelated;
+  typography: NCTTypography;
 }
 
 const initialState: NCTContentState = {
@@ -129,22 +132,7 @@ const initialState: NCTContentState = {
       "Neo-Gothic과 Neo-Renaissance (19세기 유럽 학원풍 건축물)양식 차용.\n붉은 벽돌과 흰색 몰딩의 조합은 전통적인 유럽 학원 건물의 외관. 양쪽 타워에 뾰족한 첨탑이 올라간 형태는 고딕 건축의 상징적 장식이다.\n중앙부의 반원형 전망구조는 르네상스풍의 '돔 양식'에서 파생되었고, 반복적으로 박공(삼각 지붕)이 올라간 형태는 19세기식 기숙학교 이미지와 유사하다.",
     ],
   },
-  font: {
-    title: [
-      "VHS 시절 영화 자막",
-      "시트 유령 연출",
-      "아날로그 필름카메라",
-      "청량한 자연 색감",
-    ],
-    image: [
-      ["/font/nct/1.png", "/font/nct/1_1.png", "/font/nct/1_2.png"],
-      ["/font/nct/2.png"],
-    ],
-    description: [
-      "18세기~19세기 유럽/미국 고전 영문 필기체 폰트\n당시 미국에서 가장 보편적인 비즈니스 및 사교적 서신체, 수공예적 감성을 연출한다.",
-      "한글로 표기된 아날로그 생활글씨체\n프린트물로 안내하는 방식이 아닌 사람이 직접 손으로 작성하여 안내하는 표지판 사용",
-    ],
-  },
+
   direction: {
     title: [
       "VHS 시절 영화 자막",
@@ -172,6 +160,12 @@ const initialState: NCTContentState = {
       "과도하게 선명하거나 쨍한 색상을 배제, 은은하게 바랜 듯한 파스텔 톤과 따뜻한 색감을사용했다. 교실 씬에서는 나무 책상과 창틀의 갈색, 커튼을 통과한 확산된 자연광이 어우러져 필름 사진처럼 연출했다.",
       "1980년대 후반~1990년대 초반의 일본 드라마나 청춘 만화에서 묘사되던 여름 풍경 소프트 포커스와 필름 그래인이 더해진 듯한 영상 질감. 실제 과거의 한 장면을 엿보는 듯한 색감 연출, 몽환적 분위기를 고조시키며 현실과 환상의 경계를 흐리게 만들고 꿈결 같은 향수를 전달한다.",
     ],
+  },
+  typography: {
+    image: ["/typography/nct/1.png", "/typography/nct/2.png"],
+  },
+  related: {
+    image: ["/images/NewJeans2.png", "/images/RIIZE.png", "/images/TWS.png"],
   },
 };
 

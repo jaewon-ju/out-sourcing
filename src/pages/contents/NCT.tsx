@@ -1,11 +1,11 @@
 import FashionCard from "./cards/FashionCard";
 import PropsCard from "./cards/PropsCard";
 import SetSpaceCard from "./cards/SetSpaceCard";
-import FontCard from "./cards/FontCard";
 import DirectionCard from "./cards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useState } from "react";
+import TypographyCard from "./cards/TypographyCard";
 export type SectionContent = {
   id: string;
   label: string;
@@ -13,7 +13,7 @@ export type SectionContent = {
 };
 
 const NCTContent = () => {
-  const sections = ["Fashion", "Props", "Set Space", "Direction", "Font"];
+  const sections = ["Fashion", "Props", "Set Space", "Direction"];
   const height = useSelector((state: RootState) => state.height["nct"]);
   const nctContent = useSelector((state: RootState) => state.nctContent);
   const [propsHeight, setPropsHeight] = useState(0);
@@ -30,7 +30,6 @@ const NCTContent = () => {
     "Set Space": (
       <SetSpaceCard singerName="nct" setSpace={nctContent.setSpace} />
     ),
-    Font: <FontCard singerName="nct" font={nctContent.font} />,
     Direction: (
       <DirectionCard singerName="nct" direction={nctContent.direction} />
     ),
@@ -73,6 +72,18 @@ const NCTContent = () => {
           </div>
         </div>
       ))}
+      <div
+        id="Typography"
+        key="Typography"
+        className="mt-[15vh] flex flex-col justify-center items-center gap-[3vh]"
+      >
+        <img
+          src={`/images/Typography.png`}
+          alt="Typography"
+          className="h-[5vh]"
+        />
+        <TypographyCard singerName="nct" typography={nctContent.typography} />
+      </div>
     </div>
   );
 };

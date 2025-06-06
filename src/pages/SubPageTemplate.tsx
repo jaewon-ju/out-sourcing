@@ -3,6 +3,7 @@ import ContentContainer from "./ContentContainer";
 import { useEffect, useState } from "react";
 import MusicPlayer from "../components/MusicPlayer";
 import TopBarWithInput from "./TopBarWithInput";
+import Related from "../components/Related";
 
 interface SubPageTemplateProps {
   singerName: string;
@@ -194,18 +195,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           </div>
 
           {/* related */}
-          <div className="relative mt-[10vh] mb-[10vh] h-[20vh] w-[100%] flex flex-col">
-            <img
-              src="/images/related_button.png"
-              alt="related"
-              className="h-[5vh] object-contain absolute top-[0vh] left-[7vw]"
-            />
-            <div className="flex flex-row w-[70%] gap-[2vw] absolute top-[6vh] left-[7vw]">
-              <div className="bg-black w-[16vw] aspect-[16/9]"></div>
-              <div className="bg-black w-[16vw] aspect-[16/9]"></div>
-              <div className="bg-black w-[16vw] aspect-[16/9]"></div>
-            </div>
-          </div>
+          <Related key={singerName} singerName={singerName} />
 
           {/* 푸터 */}
           <img
@@ -240,5 +230,6 @@ const containerStyle = {
   boxShadow: "0 0 20px rgba(0,0,0,0.3)",
   overflow: "scroll",
   scrollBehavior: "smooth",
+  backgroundColor: "white",
   zIndex: "0",
 } as React.CSSProperties;
