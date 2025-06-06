@@ -93,7 +93,7 @@ export function CommentBox({
   return (
     <div className="flex flex-col items-center justify-center w-[40vw] mt-[5vh] mb-[10vh] relative font-[Box109]">
       {/* 타인의 기억 */}
-      <div className="flex items-center justify-start w-full text-[1.2vw]">
+      <div className="flex items-center justify-center w-full text-[1.2vw]">
         <img
           src="/survey/person.png"
           alt="person"

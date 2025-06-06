@@ -63,7 +63,7 @@ export default function SurveyPage() {
             alt="배경"
             className="w-full h-full absolute z-0"
           />
-          <div className="relative z-10 flex flex-col">
+          <div className="relative z-10 flex flex-col w-full items-center justify-center">
             {/* 설문 입력 영역 */}
             <SurveyBox
               placeholder={placeholder}

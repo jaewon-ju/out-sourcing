@@ -20,24 +20,29 @@ export function SurveyBox({
       createdAt: Timestamp.now(),
     });
     setAddedComment(opinion);
+    setOpinion("");
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center justify-center w-full">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-start w-full"
+        className="flex flex-col items-center justify-center w-full"
       >
         <textarea
           value={opinion}
           onChange={(e) => setOpinion(e.target.value)}
           placeholder={placeholder}
           className="
-            w-[100%] placeholder:text-[1.2vw] font-[Box109] placeholder:p-[2vh]
-            bg-[url('/survey/inputBox.png')] aspect-[2138/1007] bg-contain bg-center
-            mt-[10vh]
-            resize-none
-            "
+            w-[80%] aspect-[2138/1007]
+            bg-[url('/survey/inputBox.png')] bg-contain bg-center
+            mt-[10vh] resize-none
+            placeholder:text-[1.2vw] placeholder:p-0 placeholder:text-[#888888]
+            font-[Box109] text-[1.2vw] text-black
+            p-[2vh]  
+            leading-relaxed
+            outline-none
+          "
           required
         />
         <img
@@ -49,6 +54,6 @@ export function SurveyBox({
       </form>
 
       <div className="w-[40vw] h-[0.1vh] border-b-2 border-[#3a90e5] mt-[5vh]"></div>
-    </>
+    </div>
   );
 }
