@@ -1,29 +1,31 @@
 // MainLayout.tsx
 import { useEffect, useState } from "react";
-import MovieSlider from "./components/MovieSlider";
-import MusicPlayer from "./components/MusicPlayer";
-import FolderBox from "./components/FolderBox";
-import TopBarWithInput from "./pages/TopBarWithInput";
+import React, { Suspense } from "react";
+import Spinner from "./components/Spinner";
+const MovieSlider = React.lazy(() => import("./components/MovieSlider"));
+const MusicPlayer = React.lazy(() => import("./components/MusicPlayer"));
+const FolderBox = React.lazy(() => import("./components/FolderBox"));
+const TopBarWithInput = React.lazy(() => import("./pages/TopBarWithInput"));
 
 function MainLayout() {
   const audioSrc = "/music/nct.mp3";
-  const [hoveredButton, setHoveredButton] = useState("default");
+  const [clickedButton, setClickedButton] = useState("default");
   const [backgroundImage, setBackgroundImage] = useState("none");
   const [tellUsHovered, setTellUsHovered] = useState(false);
 
-  const backgroundMap: Record<string, string[]> = {
-    default: ["bg-dual-school-2", "bg-dual-school-1"],
-    School: ["bg-dual-school-1", "bg-dual-school-2"],
-    "VHS-Video": ["bg-dual-school-1", "bg-dual-school-2"],
-    Retro: ["bg-dual-school-1", "bg-dual-school-2"],
-    Music: ["bg-dual-school-1", "bg-dual-school-2"],
+  const backgroundMap: Record<string, string> = {
+    default: "bg-dual-main",
+    School: "bg-dual-school",
+    "VHS-Video": "bg-dual-vhs",
+    Retro: "bg-dual-retro",
+    Music: "bg-dual-music",
   };
 
   useEffect(() => {
-    if (hoveredButton) {
-      setBackgroundImage(backgroundMap[hoveredButton][1]);
+    if (clickedButton) {
+      setBackgroundImage(backgroundMap[clickedButton]);
     }
-  }, [hoveredButton]);
+  }, [clickedButton]);
 
   return (
     <div
@@ -31,6 +33,7 @@ function MainLayout() {
       className="min-h-screen w-screen flex flex-col items-center justify-center relative
       bg-[#e2e3e8]
       "
+      onClick={() => setClickedButton("default")}
     >
       {/* 상단 네비게이션 바 */}
       <div
@@ -38,13 +41,17 @@ function MainLayout() {
           w-[60vw] min-h-[100vh]
           relative flex flex-col items-center 
           border-1 border-black box-shadow-20px-black-30% overflow-scroll scrollbar-none
-          transition-all duration-700 ease-linear bg-cover bg-center ${backgroundImage}
+          bg-cover bg-center ${backgroundImage}
         `}
       >
-        <TopBarWithInput />
+        <Suspense fallback={<Spinner />}>
+          <TopBarWithInput />
+        </Suspense>
 
         {/* music player */}
-        <MusicPlayer audioSrc={audioSrc} isSubPage={false} />
+        <Suspense fallback={<Spinner />}>
+          <MusicPlayer audioSrc={audioSrc} isSubPage={false} />
+        </Suspense>
 
         {/* 아이콘 영역 */}
         <div className="w-full flex flex-col items-center">
@@ -56,8 +63,10 @@ function MainLayout() {
                   loading="lazy"
                   alt={title}
                   className="h-[3vh] object-contain cursor-pointer hover:scale-120 transition-transform"
-                  onMouseEnter={() => setHoveredButton(title)}
-                  onMouseLeave={() => setHoveredButton("default")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setClickedButton(title);
+                  }}
                 />
                 <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
                   {title.replace(/-/g, " ")}
@@ -165,7 +174,9 @@ function MainLayout() {
         </section>
 
         {/* 아카이브 이미지 컬렉션 */}
-        <MovieSlider />
+        <Suspense fallback={<Spinner />}>
+          <MovieSlider />
+        </Suspense>
 
         {/* welcome to a corner */}
         <div
@@ -201,7 +212,9 @@ function MainLayout() {
         </div>
 
         {/* 폴더 박스 */}
-        <FolderBox />
+        <Suspense fallback={<Spinner />}>
+          <FolderBox />
+        </Suspense>
 
         <div className="relative flex flex-row items-center justify-center mt-[20vh] w-full">
           {/* 이미지 */}
