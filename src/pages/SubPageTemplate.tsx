@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import MusicPlayer from "../components/MusicPlayer";
 import TopBarWithInput from "./TopBarWithInput";
 import Related from "../components/Related";
+import { useContentDic } from "../utils/contents";
 
 interface SubPageTemplateProps {
   singerName: string;
@@ -13,6 +14,8 @@ interface SubPageTemplateProps {
 const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const contentDic: Record<string, any> = useContentDic();
+  const content = contentDic[singerName];
 
   const handleClick = (section: string) => {
     // 클릭한 항목의 인덱스를 상태로 저장
@@ -111,16 +114,16 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
           <div className="mt-[3vh] ml-[8vw] w-full flex flex-col justify-start">
             <iframe
               className="rounded-xl w-[32vw] h-[18vw]"
-              src="https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03"
+              src={content.youtube.url}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
             <p className="text-black font-[AppleBold] font-bold mt-[2vh] text-[1.8vw] flex justify-start">
-              NCT WISH 엔시티 위시 'Steady' MV
+              {content.youtube.title}
             </p>
             <p className="font-[Apple] text-black flex justify-start mt-[0.5vh] text-[1vw]">
-              그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날
+              {content.youtube.subTitle}
             </p>
           </div>
 

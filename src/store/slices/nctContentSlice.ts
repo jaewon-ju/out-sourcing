@@ -47,6 +47,11 @@ interface NCTContentState {
   direction: NCTDirection;
   related: NCTRelated;
   typography: NCTTypography;
+  youtube: {
+    url: string;
+    title: string;
+    subTitle: string;
+  };
 }
 
 const initialState: NCTContentState = {
@@ -132,7 +137,6 @@ const initialState: NCTContentState = {
       "Neo-Gothic과 Neo-Renaissance (19세기 유럽 학원풍 건축물)양식 차용.\n붉은 벽돌과 흰색 몰딩의 조합은 전통적인 유럽 학원 건물의 외관. 양쪽 타워에 뾰족한 첨탑이 올라간 형태는 고딕 건축의 상징적 장식이다.\n중앙부의 반원형 전망구조는 르네상스풍의 '돔 양식'에서 파생되었고, 반복적으로 박공(삼각 지붕)이 올라간 형태는 19세기식 기숙학교 이미지와 유사하다.",
     ],
   },
-
   direction: {
     title: [
       "VHS 시절 영화 자막",
@@ -166,6 +170,11 @@ const initialState: NCTContentState = {
   },
   related: {
     image: ["/images/NewJeans2.png", "/images/RIIZE.png", "/images/TWS.png"],
+  },
+  youtube: {
+    url: "https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03",
+    title: "NCT WISH 엔시티 위시 'Steady' MV",
+    subTitle: "그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날",
   },
 };
 

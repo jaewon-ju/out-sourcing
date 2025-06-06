@@ -1,7 +1,9 @@
 import NCTContent from "./contents/NCT";
+import TaeyeonContent from "./contents/Taeyeon";
 
 const content: Record<string, React.ReactNode> = {
   nct: <NCTContent />,
+  taeyeon: <TaeyeonContent />,
 };
 
 const ContentContainer = ({ singerName }: { singerName: string }) => {

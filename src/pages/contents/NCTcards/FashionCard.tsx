@@ -141,7 +141,17 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
                   {fashion.subDescription[1]}
                 </p>
                 <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[1]}</p>
-                <button className="mb-[1vh] border border-black px-[1vw] py-[0.5vh] mt-[1vh] text-[1.2vw]">
+                <button
+                  className="
+                mb-[1vh] border 
+                border-black px-[1vw] py-[0.5vh] mt-[1vh] text-[1.2vw]
+                cursor-pointer
+                bg-[#e8e8e8]"
+                  style={{
+                    boxShadow: "inset 0 0 0.1vw 0.1vw rgba(0, 0, 0, 0.3)",
+                  }}
+                  onClick={handleClick}
+                >
                   Add to Memory
                 </button>
               </div>

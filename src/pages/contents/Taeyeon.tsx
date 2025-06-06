@@ -1,37 +1,44 @@
-import FashionCard from "./NCTcards/FashionCard";
-import PropsCard from "./NCTcards/PropsCard";
-import SetSpaceCard from "./NCTcards/SetSpaceCard";
-import DirectionCard from "./NCTcards/DirectionCard";
+import FashionCard from "./TaeyeonCards/FashionCard";
+import PropsCard from "./TaeyeonCards/PropsCard";
+import SetSpaceCard from "./TaeyeonCards/SetSpaceCard";
+import DirectionCard from "./TaeyeonCards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useState } from "react";
-import TypographyCard from "./NCTcards/TypographyCard";
+import TypographyCard from "./TaeyeonCards/TypographyCard";
 export type SectionContent = {
   id: string;
   label: string;
   content: React.ReactNode;
 };
 
-const NCTContent = () => {
+const TaeyeonContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Direction"];
-  const height = useSelector((state: RootState) => state.height["nct"]);
-  const nctContent = useSelector((state: RootState) => state.nctContent);
+  const height = useSelector((state: RootState) => state.height["taeyeon"]);
+  const taeyeonContent = useSelector(
+    (state: RootState) => state.taeyeonContent
+  );
   const [propsHeight, setPropsHeight] = useState(0);
 
   const cards = {
-    Fashion: <FashionCard singerName="nct" fashion={nctContent.fashion} />,
+    Fashion: (
+      <FashionCard singerName="taeyeon" fashion={taeyeonContent.fashion} />
+    ),
     Props: (
       <PropsCard
-        singerName="nct"
-        props={nctContent.props}
+        singerName="taeyeon"
+        props={taeyeonContent.props}
         setPropsHeight={setPropsHeight}
       />
     ),
     "Set Space": (
-      <SetSpaceCard singerName="nct" setSpace={nctContent.setSpace} />
+      <SetSpaceCard singerName="taeyeon" setSpace={taeyeonContent.setSpace} />
     ),
     Direction: (
-      <DirectionCard singerName="nct" direction={nctContent.direction} />
+      <DirectionCard
+        singerName="taeyeon"
+        direction={taeyeonContent.direction}
+      />
     ),
   };
 
@@ -82,10 +89,13 @@ const NCTContent = () => {
           alt="Typography"
           className="h-[5vh]"
         />
-        <TypographyCard singerName="nct" typography={nctContent.typography} />
+        <TypographyCard
+          singerName="taeyeon"
+          typography={taeyeonContent.typography}
+        />
       </div>
     </div>
   );
 };
 
-export default NCTContent;
+export default TaeyeonContent;

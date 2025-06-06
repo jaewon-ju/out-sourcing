@@ -3,12 +3,14 @@ import uiReducer from "./slices/uiSlice";
 import heightReducer from "./slices/heightSlice";
 import nctContentReducer from "./slices/nctContentSlice";
 import dummyContentReducer from "./slices/dummyContentSlice";
+import taeyeonContentReducer from "./slices/taeyeonSlice";
 
 export const store = configureStore({
   reducer: {
     ui: uiReducer,
     height: heightReducer,
     nctContent: nctContentReducer,
+    taeyeonContent: taeyeonContentReducer,
     dummyContent: dummyContentReducer,
   },
 });
