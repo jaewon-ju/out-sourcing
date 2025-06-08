@@ -4,6 +4,7 @@ import heightReducer from "./slices/heightSlice";
 import nctContentReducer from "./slices/nctContentSlice";
 import dummyContentReducer from "./slices/dummyContentSlice";
 import taeyeonContentReducer from "./slices/taeyeonSlice";
+import Hearts2HeartsContentReducer from "./slices/Hearts2Hearts";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     height: heightReducer,
     nctContent: nctContentReducer,
     taeyeonContent: taeyeonContentReducer,
+    Hearts2HeartsContent: Hearts2HeartsContentReducer,
     dummyContent: dummyContentReducer,
   },
 });

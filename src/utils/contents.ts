@@ -7,9 +7,13 @@ export const useContentDic = () => {
   const taeyeonContent = useSelector(
     (state: RootState) => state.taeyeonContent
   );
+  const Hearts2HeartsContent = useSelector(
+    (state: RootState) => state.Hearts2HeartsContent
+  );
 
   return {
     nct: nctContent,
     taeyeon: taeyeonContent,
+    Hearts2Hearts: Hearts2HeartsContent,
   };
 };

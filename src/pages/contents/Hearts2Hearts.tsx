@@ -1,11 +1,11 @@
-import FashionCard from "./TaeyeonCards/FashionCard";
-import PropsCard from "./TaeyeonCards/PropsCard";
-import SetSpaceCard from "./TaeyeonCards/SetSpaceCard";
-import DirectionCard from "./TaeyeonCards/DirectionCard";
+import FashionCard from "./Hearts2HeartsCards/FashionCard";
+import PropsCard from "./Hearts2HeartsCards/PropsCard";
+import SetSpaceCard from "./Hearts2HeartsCards/SetSpaceCard";
+import DirectionCard from "./Hearts2HeartsCards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useState } from "react";
-import TypographyCard from "./TaeyeonCards/TypographyCard";
+import TypographyCard from "./Hearts2HeartsCards/TypographyCard";
 
 export type SectionContent = {
   id: string;
@@ -13,32 +13,40 @@ export type SectionContent = {
   content: React.ReactNode;
 };
 
-const TaeyeonContent = () => {
+const Hearts2HeartsContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Direction"];
-  const height = useSelector((state: RootState) => state.height["taeyeon"]);
-  const taeyeonContent = useSelector(
-    (state: RootState) => state.taeyeonContent
+  const height = useSelector(
+    (state: RootState) => state.height["Hearts2Hearts"]
+  );
+  const hearts2heartsContent = useSelector(
+    (state: RootState) => state.Hearts2HeartsContent
   );
   const [propsHeight, setPropsHeight] = useState(0);
 
   const cards = {
     Fashion: (
-      <FashionCard singerName="taeyeon" fashion={taeyeonContent.fashion} />
+      <FashionCard
+        singerName="Hearts2Hearts"
+        fashion={hearts2heartsContent.fashion}
+      />
     ),
     Props: (
       <PropsCard
-        singerName="taeyeon"
-        props={taeyeonContent.props}
+        singerName="Hearts2Hearts"
+        props={hearts2heartsContent.props}
         setPropsHeight={setPropsHeight}
       />
     ),
     "Set Space": (
-      <SetSpaceCard singerName="taeyeon" setSpace={taeyeonContent.setSpace} />
+      <SetSpaceCard
+        singerName="Hearts2Hearts"
+        setSpace={hearts2heartsContent.setSpace}
+      />
     ),
     Direction: (
       <DirectionCard
-        singerName="taeyeon"
-        direction={taeyeonContent.direction}
+        singerName="Hearts2Hearts"
+        direction={hearts2heartsContent.direction}
       />
     ),
   };
@@ -91,12 +99,12 @@ const TaeyeonContent = () => {
           className="h-[5vh]"
         />
         <TypographyCard
-          singerName="taeyeon"
-          typography={taeyeonContent.typography}
+          singerName="Hearts2Hearts"
+          typography={hearts2heartsContent.typography}
         />
       </div>
     </div>
   );
 };
 
-export default TaeyeonContent;
+export default Hearts2HeartsContent;

@@ -4,10 +4,12 @@ import SubPageTemplate from "./SubPageTemplate";
 // 각 페이지 콘텐츠 import
 import NCTPage from "./contents/NCT";
 import TaeyeonPage from "./contents/Taeyeon";
+import Hearts2HeartsPage from "./contents/Hearts2Hearts";
 
 const pageContents: Record<string, typeof NCTPage> = {
   nct: NCTPage,
   taeyeon: TaeyeonPage,
+  Hearts2Hearts: Hearts2HeartsPage,
 };
 
 const audioList = {
