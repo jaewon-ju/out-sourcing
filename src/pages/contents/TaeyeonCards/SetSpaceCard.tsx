@@ -6,6 +6,7 @@ interface SetSpaceCardProps {
 }
 
 const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
+  console.log(singerName);
   const [isHovered, setIsHovered] = useState([
     false,
     false,

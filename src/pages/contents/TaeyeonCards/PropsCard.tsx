@@ -88,7 +88,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         aspect-square w-[94%] mr-[1rem]"
       >
         <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
-          No.1
+          No.2
         </h1>
         <img
           src={props.image[1].src}
@@ -112,7 +112,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
           className="text-[2vh] font-[AppleBold] 
         font-bold absolute top-[1vh] left-[1vw]"
         >
-          No.1
+          No.3
         </h1>
         <img
           src={props.image[2].src}
@@ -133,7 +133,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         aspect-square w-[94%] mr-[1rem]"
       >
         <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
-          No.1
+          No.4
         </h1>
         <img
           src={props.image[3].src}
@@ -157,7 +157,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
           className="text-[2vh] font-[AppleBold] 
         font-bold absolute top-[1vh] left-[1vw]"
         >
-          No.1
+          No.5
         </h1>
         <img
           src={props.image[4].src}
@@ -178,7 +178,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         aspect-square w-[94%] mr-[1rem]"
       >
         <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
-          No.1
+          No.6
         </h1>
         <img
           src={props.image[5].src}
@@ -201,7 +201,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
           className="text-[2vh] font-[AppleBold] 
         font-bold absolute top-[1vh] left-[1vw]"
         >
-          No.1
+          No.7
         </h1>
         <img
           src={props.image[6].src}

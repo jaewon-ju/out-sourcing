@@ -83,32 +83,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
               <div className="flex flex-row gap-[1vh] w-[80%] mt-[1vh]">
                 <img
                   src={direction.image[1][1]}
-                  className={`w-[30%] h-auto object-cover`}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="except-title" className="flex flex-row gap-[1vh]">
-          {/* Image col */}
-          <div className="flex flex-col p-[1vw] w-full">
-            <div className="w-[100%] flex flex-col items-start justify-center">
-              {/* 기본 이미지 */}
-              <img
-                src={direction.image[1][0]}
-                className={`w-[100%] h-auto object-cover`}
-              />
-
-              <div className="flex flex-row gap-[1vh] w-full">
-                <div className="whitespace-pre-line mt-[1vh] text-[1vw]">
-                  {direction.description[1]}
-                </div>
-              </div>
-              <div className="flex flex-row gap-[1vh] w-[80%] mt-[1vh]">
-                <img
-                  src={direction.image[1][1]}
-                  className={`w-[30%] h-auto object-cover`}
+                  className={`w-[80%] h-auto object-cover`}
                 />
               </div>
             </div>
@@ -153,7 +128,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
             <div className="flex flex-row gap-[1vh] w-[80%] mt-[1vh]">
               <img
                 src={direction.image[2][1]}
-                className={`w-[30%] h-auto object-cover`}
+                className={`w-[100%] h-auto object-cover`}
               />
             </div>
           </div>
@@ -196,7 +171,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
               <div className="flex flex-row gap-[1vh] w-[100%] mt-[1vh]">
                 <img
                   src={direction.image[3][1]}
-                  className={`w-[30%] h-auto object-cover`}
+                  className={`w-[60%] h-auto object-cover`}
                 />
               </div>
             </div>

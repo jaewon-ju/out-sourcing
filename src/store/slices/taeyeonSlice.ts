@@ -205,9 +205,9 @@ const initialState: TaeyeonContentState = {
     ],
   },
   youtube: {
-    url: "https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03",
-    title: "그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날",
-    subTitle: "그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날",
+    url: "https://www.youtube.com/embed/RmuL-BPFi2Q?si=6UBmKLPT2_CsnVAO",
+    title: "TAEYEON 태연 ‘Weekend’ MV",
+    subTitle: "일상에서 벗어나 자유롭게 주말을 보내고 싶다는 마음을 담은 곡",
   },
 };
 

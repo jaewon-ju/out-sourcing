@@ -207,12 +207,12 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
             className="h-[15vh] object-contain"
           />
           <a
-            href="https://www.youtube.com/watch?v=IKlkZZv76Ho"
+            href={content.youtube.url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#0000ee] font-[Apple] text-[1vw] mb-[10vh]"
           >
-            https://www.youtube.com/watch?v=IKlkZZv76Ho
+            {content.youtube.url}
           </a>
         </div>
       </div>

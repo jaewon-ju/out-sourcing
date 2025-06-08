@@ -13,6 +13,7 @@ const pageContents: Record<string, typeof NCTPage> = {
 const audioList = {
   nct: "/music/nct.mp3",
   taeyeon: "/music/taeyeon.mp3",
+  Hearts2Hearts: "/music/Hearts2Hearts.mp3",
 };
 
 const DynamicSubPage = () => {
