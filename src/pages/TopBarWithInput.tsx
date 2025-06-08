@@ -5,9 +5,8 @@ const TopBarWithInput = () => {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && url.trim() !== "") {
-      // http(s) 없는 경우 자동 추가
-      const finalUrl = url.startsWith("http") ? url : `https://${url}`;
-      window.location.href = finalUrl;
+      // 무조건 /404로 이동
+      window.location.href = "/404";
     }
   };
 
