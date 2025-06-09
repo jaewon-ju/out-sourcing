@@ -52,6 +52,7 @@ interface NCTContentState {
     title: string;
     subTitle: string;
   };
+  tags: string[];
 }
 
 const initialState: NCTContentState = {
@@ -176,6 +177,7 @@ const initialState: NCTContentState = {
     title: "NCT WISH 엔시티 위시 'Steady' MV",
     subTitle: "그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날",
   },
+  tags: ["Japan", "2000s", "School", "First Love"],
 };
 
 export const nctContentSlice = createSlice({

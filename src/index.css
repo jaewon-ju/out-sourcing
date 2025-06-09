@@ -104,44 +104,63 @@ body {
 .bg-dual {
   background-image: url("/background/top.webp"), url("/background/bottom.webp");
   background-repeat: no-repeat, no-repeat;
-  background-position: top, bottom;
+  background-position: top 0px center, bottom -10px center;
   background-size: 100% auto, 100% auto;
 }
 
 .bg-dual-main {
   background-image: url("/background/bottom.webp"), url("/background/main.webp");
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom, top;
+  background-position: bottom -10px center, top;
   background-size: 100% auto, cover;
+  background-attachment: scroll, scroll; /* 반드시 scroll 유지 */
+  will-change: opacity; /* transform 사용 자제 */
 }
 
 .bg-dual-school {
   background-image: url("/background/bottom.webp"),
     url("/background/school.webp");
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom, top;
+  background-position: bottom -10px center, top;
   background-size: 100% auto, cover;
+  background-attachment: scroll, scroll; /* 반드시 scroll 유지 */
+  will-change: opacity; /* transform 사용 자제 */
 }
 
 .bg-dual-music {
   background-image: url("/background/bottom.webp"),
     url("/background/music.webp");
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom, top;
+  background-position: bottom -10px center, top;
   background-size: 100% auto, cover;
+  background-attachment: scroll, scroll; /* 반드시 scroll 유지 */
+  will-change: opacity; /* transform 사용 자제 */
 }
 
 .bg-dual-retro {
   background-image: url("/background/bottom.webp"),
     url("/background/retro.webp");
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom, top;
+  background-position: bottom -10px center, top;
   background-size: 100% auto, cover;
+  background-attachment: scroll, scroll; /* 반드시 scroll 유지 */
+  will-change: opacity; /* transform 사용 자제 */
 }
 
 .bg-dual-vhs {
   background-image: url("/background/bottom.webp"), url("/background/vhs.webp");
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom, top;
+  background-position: bottom -10px center, top;
   background-size: 100% auto, cover;
+  background-attachment: scroll, scroll; /* 반드시 scroll 유지 */
+  will-change: opacity; /* transform 사용 자제 */
+}
+
+body,
+html {
+  font-synthesis: none;
+}
+
+body {
+  font-family: "AppleNeoR";
 }

@@ -11,7 +11,7 @@ const TopBarWithInput = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full z-5">
       {/* 배경 이미지 */}
       <img
         src="/images/top_bar.png"
@@ -29,9 +29,9 @@ const TopBarWithInput = () => {
         className="
           absolute
           left-[8vw]   /* 위치 조정 필요 */
-          top-[58%]    /* 위치 조정 필요 */
+          top-[60%]    /* 위치 조정 필요 */
           w-[60%]
-          h-[4vh]
+          aspect-[880/50]
           px-4
           py-2
           border-4

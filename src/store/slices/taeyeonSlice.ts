@@ -52,6 +52,7 @@ interface TaeyeonContentState {
     title: string;
     subTitle: string;
   };
+  tags: string[];
 }
 
 const initialState: TaeyeonContentState = {
@@ -209,6 +210,7 @@ const initialState: TaeyeonContentState = {
     title: "TAEYEON 태연 ‘Weekend’ MV",
     subTitle: "일상에서 벗어나 자유롭게 주말을 보내고 싶다는 마음을 담은 곡",
   },
+  tags: ["pastel", "retro travel", "early 2000s", "daydream"],
 };
 
 export const taeyeonContentSlice = createSlice({

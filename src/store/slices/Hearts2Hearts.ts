@@ -52,6 +52,7 @@ interface Hearts2HeartsContentState {
     title: string;
     subTitle: string;
   };
+  tags: string[];
 }
 
 const initialState: Hearts2HeartsContentState = {
@@ -170,6 +171,7 @@ const initialState: Hearts2HeartsContentState = {
     title: "Hearts2Hearts ‘Butterflies(2025)’",
     subTitle: "나비를 따라 모여 무대를 준비하며 우정을 쌓아가는 서사",
   },
+  tags: ["first love", "spring fever", "camcode", "school"],
 };
 
 export const hearts2HeartsContentSlice = createSlice({

@@ -188,12 +188,15 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
 
           {/* tags */}
           <div className="flex flex-row w-full justify-center mt-[10vh] gap-[3vw]">
-            {[1, 2, 3, 4].map((tag) => (
-              <img
-                src={`/images/nct/tag${tag}.png`}
-                alt="tag"
-                className="h-[4vh] object-contain"
-              />
+            {content.tags.map((tag: string, index: number) => (
+              <div
+                className="text-[1.2vw] min-w-[6vw] p-[0.5vw] from-[#AAEDFF] to-[#599ADC]
+                aspect-[519/244] bg-gradient-to-b rounded-xl flex items-center justify-center
+                font-[Apple] font-medium
+                border-[0.15vw] border-[#2D6DA6]"
+              >
+                {tag}
+              </div>
             ))}
           </div>
 
@@ -235,4 +238,5 @@ const containerStyle = {
   scrollBehavior: "smooth",
   backgroundColor: "white",
   zIndex: "0",
+  scrollbarWidth: "none",
 } as React.CSSProperties;
