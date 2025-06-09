@@ -42,11 +42,6 @@ function MainLayout() {
         await Promise.all([
           preloadImage("/background/top.webp"),
           preloadImage("/background/bottom.webp"),
-          preloadImage("/background/main.webp"),
-          preloadImage("/background/school.webp"),
-          preloadImage("/background/vhs.webp"),
-          preloadImage("/background/retro.webp"),
-          preloadImage("/background/music.webp"),
           preloadImage("/images/home2.png"),
           preloadImage("/images/main/cd.png"),
           preloadImage("/images/main/arrow.png"),
@@ -113,7 +108,7 @@ function MainLayout() {
               src={backgroundImage}
               loading="eager"
               alt="top background"
-              className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none select-none"
+              className="absolute top-0 left-0 w-full object-cover z-0 pointer-events-none select-none"
             />
 
             {/* Bottom background image */}
@@ -121,7 +116,7 @@ function MainLayout() {
               src={`/background/bottom.webp`}
               loading="eager"
               alt="bottom background"
-              className="absolute bottom-0 left-0 w-full object-cover z-0 pointer-events-none select-none"
+              className="absolute bottom-0 left-0 w-full object-cover z-1 pointer-events-none select-none"
             />
             <MusicPlayer audioSrc={audioSrc} isSubPage={false} />
 
