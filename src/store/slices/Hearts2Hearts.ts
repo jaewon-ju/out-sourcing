@@ -51,6 +51,7 @@ interface Hearts2HeartsContentState {
     url: string;
     title: string;
     subTitle: string;
+    viewUrl: string;
   };
   tags: string[];
 }
@@ -167,6 +168,7 @@ const initialState: Hearts2HeartsContentState = {
     ],
   },
   youtube: {
+    viewUrl: "https://www.youtube.com/watch?v=hJ9Wp3PO3c8",
     url: "https://www.youtube.com/embed/hJ9Wp3PO3c8?si=uQxNrjDdiwOiOLQ1",
     title: "Hearts2Hearts ‘Butterflies(2025)’",
     subTitle: "나비를 따라 모여 무대를 준비하며 우정을 쌓아가는 서사",

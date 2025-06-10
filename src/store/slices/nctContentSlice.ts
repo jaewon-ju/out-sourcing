@@ -51,6 +51,7 @@ interface NCTContentState {
     url: string;
     title: string;
     subTitle: string;
+    viewUrl: string;
   };
   tags: string[];
 }
@@ -173,6 +174,7 @@ const initialState: NCTContentState = {
     image: ["/images/NewJeans2.png", "/images/RIIZE.png", "/images/TWS.png"],
   },
   youtube: {
+    viewUrl: "https://www.youtube.com/watch?v=IKlkZZv76Ho",
     url: "https://www.youtube.com/embed/IKlkZZv76Ho?si=ojqbpcd-mWiDTZ03",
     title: "NCT WISH 엔시티 위시 'Steady' MV",
     subTitle: "그리운 과거의 학창시절, 순정만화 같은 사랑, 유년기의 여름날",

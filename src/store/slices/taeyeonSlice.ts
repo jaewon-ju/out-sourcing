@@ -51,6 +51,7 @@ interface TaeyeonContentState {
     url: string;
     title: string;
     subTitle: string;
+    viewUrl: string;
   };
   tags: string[];
 }
@@ -206,6 +207,7 @@ const initialState: TaeyeonContentState = {
     ],
   },
   youtube: {
+    viewUrl: "https://www.youtube.com/watch?v=RmuL-BPFi2Q",
     url: "https://www.youtube.com/embed/RmuL-BPFi2Q?si=6UBmKLPT2_CsnVAO",
     title: "TAEYEON 태연 ‘Weekend’ MV",
     subTitle: "일상에서 벗어나 자유롭게 주말을 보내고 싶다는 마음을 담은 곡",

@@ -96,10 +96,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                     alt="youtube"
                     className="h-[5vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() =>
-                      window.open(
-                        "https://www.youtube.com/watch?v=IKlkZZv76Ho",
-                        "_blank"
-                      )
+                      window.open(content.youtube.viewUrl, "_blank")
                     }
                   />
                   <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
@@ -188,10 +185,10 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
 
           {/* tags */}
           <div className="flex flex-row w-full justify-center mt-[10vh] gap-[3vw]">
-            {content.tags.map((tag: string, index: number) => (
+            {content.tags.map((tag: string) => (
               <div
                 className="text-[1.2vw] min-w-[6vw] p-[0.5vw] from-[#AAEDFF] to-[#599ADC]
-                aspect-[519/244] bg-gradient-to-b rounded-xl flex items-center justify-center
+                aspect-[519/240] bg-gradient-to-b rounded-xl flex items-center justify-center
                 font-[Apple] font-medium
                 border-[0.15vw] border-[#2D6DA6]"
               >

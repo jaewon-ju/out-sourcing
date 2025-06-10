@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { NCTProps } from "../../../store/slices/nctContentSlice";
+import { Hearts2HeartsProps } from "../../../store/slices/Hearts2Hearts";
 
 interface PropsCardProps {
   singerName: string;
-  props: NCTProps;
+  props: Hearts2HeartsProps;
   setPropsHeight: (height: number) => void;
 }
 

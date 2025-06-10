@@ -31,7 +31,7 @@ const TopBarWithInput = () => {
           left-[8vw]   /* 위치 조정 필요 */
           top-[60%]    /* 위치 조정 필요 */
           w-[60%]
-          aspect-[880/50]
+          h-[4vh]
           px-4
           py-2
           border-4
