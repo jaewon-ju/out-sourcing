@@ -248,7 +248,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
                 />
                 <button
                   onClick={closePopup}
-                  className="w-[10vw] h-[2vw] bg-[#e8e8e8] text-black border border-black mt-[4vh]"
+                  className="w-[10vw] h-[2vw] bg-[#e8e8e8] text-black border border-black mt-[4vh] cursor-pointer"
                 >
                   글로 되돌아가기
                 </button>
