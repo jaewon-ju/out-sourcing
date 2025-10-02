@@ -96,7 +96,6 @@ body {
 }
 
 #scroll-box::-webkit-scrollbar-track {
-  background: white;
   border-left: 0.1rem solid black;
   border-top-left-radius: 1rem;
 }

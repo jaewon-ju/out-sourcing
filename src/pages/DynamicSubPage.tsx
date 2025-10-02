@@ -4,18 +4,21 @@ import SubPageTemplate from "./SubPageTemplate";
 // 각 페이지 콘텐츠 import
 import NCTPage from "./contents/NCT";
 import TaeyeonPage from "./contents/Taeyeon";
+import LucyPage from "./contents/Lucy";
 import Hearts2HeartsPage from "./contents/Hearts2Hearts";
 
 const pageContents: Record<string, typeof NCTPage> = {
   nct: NCTPage,
   taeyeon: TaeyeonPage,
   Hearts2Hearts: Hearts2HeartsPage,
+  lucy: LucyPage,
 };
 
 const audioList = {
   nct: "/music/nct.mp3",
   taeyeon: "/music/taeyeon.mp3",
   Hearts2Hearts: "/music/Hearts2Hearts.mp3",
+  lucy: "/music/lucy.mp3",
 };
 
 const DynamicSubPage = () => {

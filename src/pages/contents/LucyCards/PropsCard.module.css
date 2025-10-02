@@ -1,0 +1,13 @@
+/* PropsCard.module.css */
+.scrollbarCustom::-webkit-scrollbar {
+  width: 12px;
+  background-color: black;
+}
+
+#scroll-box::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 0.1rem;
+  border-left: 0.1rem solid black;
+  border-bottom: 0.1rem solid black;
+  border-top: 0.1rem solid black;
+}

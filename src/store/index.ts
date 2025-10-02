@@ -5,6 +5,7 @@ import nctContentReducer from "./slices/nctContentSlice";
 import dummyContentReducer from "./slices/dummyContentSlice";
 import taeyeonContentReducer from "./slices/taeyeonSlice";
 import Hearts2HeartsContentReducer from "./slices/Hearts2Hearts";
+import lucyContentReducer from "./slices/lucyContentSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     taeyeonContent: taeyeonContentReducer,
     Hearts2HeartsContent: Hearts2HeartsContentReducer,
     dummyContent: dummyContentReducer,
+    lucyContent: lucyContentReducer,
   },
 });
 

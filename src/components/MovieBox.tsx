@@ -8,7 +8,7 @@ const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
     weekend,
     butterflies,
     rightNow,
-    jamkkae,
+    lucy,
     bubbleGum,
     love119,
     comeOver,
@@ -106,8 +106,8 @@ const rightNow: movieSliderType = {
   year: 2024, // 2024년 6월 17일 뮤직비디오 선공개, 6월 21일 싱글 앨범 발매
 };
 
-const jamkkae: movieSliderType = {
-  singer: "Lucy",
+const lucy: movieSliderType = {
+  singer: "lucy",
   title: "잠깨",
   groupName: "루시",
   tags: ["VHS", "dreamy", "morning light", "lo-fi"],
