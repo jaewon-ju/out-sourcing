@@ -7,6 +7,8 @@ import taeyeonContentReducer from "./slices/taeyeonSlice";
 import Hearts2HeartsContentReducer from "./slices/Hearts2Hearts";
 import lucyContentReducer from "./slices/lucyContentSlice";
 import newJeans2ContentReducer from "./slices/newJeans2ContentSlice";
+import newJeans3ContentReducer from "./slices/newjeans3ContentSlice";
+import btsContentReducer from "./slices/btsContentSlice";
 import lesserafimContentReducer from "./slices/lesserafimContentSlice";
 import riizeContentReducer from "./slices/riizeContentSlice";
 
@@ -20,6 +22,8 @@ export const store = configureStore({
     dummyContent: dummyContentReducer,
     lucyContent: lucyContentReducer,
     newJeans2Content: newJeans2ContentReducer,
+    newJeans3Content: newJeans3ContentReducer,
+    btsContent: btsContentReducer,
     lesserafimContent: lesserafimContentReducer,
     riizeContent: riizeContentReducer,
   },

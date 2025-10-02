@@ -100,9 +100,15 @@ const initialState: LesserafimContentState = {
     ],
   },
   setSpace: {
-    title: ["1970s 복고 미국식 슈퍼마켓", "세기말 사이버 문화 속 레트로 퓨처리즘"],
+    title: [
+      "1970s 복고 미국식 슈퍼마켓",
+      "세기말 사이버 문화 속 레트로 퓨처리즘",
+    ],
     image: ["/set-space/lesserafim/1.png", "/set-space/lesserafim/2.png"],
-    hoverImage: ["/set-space/lesserafim/1_hover.png", "/set-space/lesserafim/2_hover.png"],
+    hoverImage: [
+      "/set-space/lesserafim/1_hover.png",
+      "/set-space/lesserafim/2_hover.png",
+    ],
     description: [
       "1970년대의 서양의 슈퍼마켓은 화려한 색감, 그리고 여유로운 분위기가 특징이다. 바쁜 주부들을 위해 냉동식품, 박스에 담긴 믹스 제품 등 조리가 간편한 가공식품이 대량 진열되었고, 제품이 벽처럼 정렬되어 있는 반복적 배열이 돋보인다.",
       "당시 사이버펑크 문화는 데이터가 실질적인 가치를 지니고 가상현실이 현실과 뒤섞이는 세계를 상상했다. 이는 오늘날의 메타버스와 비슷한 개념으로, 레트로 퓨처리즘 미학에는 1980년대 후반부터 2000년대 초까지 사람들이 바라본 미래의 모습이 담겨 있다. 미래적인 느낌을 주기 위해 밝고 강렬한 원색이나 네온 톤을 사용하며, 금속성의 반짝이는 질감을 활용하기도 한다.",
@@ -132,13 +138,18 @@ const initialState: LesserafimContentState = {
     image: ["/typography/lesserafim/1.png"],
   },
   related: {
-    image: ["/images/NCT.png", "/images/NewJeans.png", "/images/RIIZE.png"],
+    image: [
+      "/images/lucy.png",
+      "/images/taeyeon.png",
+      "/images/Hearts2Hearts.png",
+    ],
   },
   youtube: {
     viewUrl: "https://www.youtube.com/watch?v=VzP8V8c3WLo",
     url: "https://www.youtube.com/embed/VzP8V8c3WLo",
     title: "LE SSERAFIM (르세라핌) 'Come Over' OFFICIAL MV",
-    subTitle: "1960~2000년대 레트로 감성과 미래적 요소가 결합된 르세라핌만의 독특한 매력을 느낄 수 있는 곡",
+    subTitle:
+      "1960~2000년대 레트로 감성과 미래적 요소가 결합된 르세라핌만의 독특한 매력을 느낄 수 있는 곡",
   },
   tags: ["1960s", "Retro", "Mods", "Supermarket"],
 };
