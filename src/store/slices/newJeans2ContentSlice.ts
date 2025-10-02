@@ -151,14 +151,14 @@ const initialState: NewJeans2ContentState = {
     image: ["/typography/newjeans2/1.png"],
   },
   related: {
-    image: ["/images/NCT.png", "/images/newjeans.png", "/images/RIIZE.png"],
+    image: ["/images/nct.png", "/images/newjeans3.png", "/images/riize.png"],
   },
   youtube: {
     viewUrl: "https://www.youtube.com/watch?v=ft70sAYrFyY",
     url: "https://www.youtube.com/embed/ft70sAYrFyY",
     title: "NewJeans (뉴진스) 'Bubble Gum' Official MV",
     subTitle:
-      "심플한 드림팝에 시원한 느낌의 기타와 펑드 신스 사운드가 더해진 뉴진스 만의 튀튀팅 매력을 느낄 수 있는 곡",
+      "심플한 드럼패턴에 시원한 느낌의 기타와 패드 신스 사운드가 더해져 뉴진스 만의 통통튀는 매력을 느낄 수 있는 곡",
   },
   tags: ["Y2K", "Beach", "VHS", "Summer"],
 };

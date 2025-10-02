@@ -25,7 +25,8 @@ const audioList = {
   taeyeon: "/music/taeyeon.mp3",
   Hearts2Hearts: "/music/Hearts2Hearts.mp3",
   lucy: "/music/lucy.mp3",
-  newjeans: "/music/newjeans2.mp3",
+  newjeans: "/music/newjeans.mp3",
+  newjeans2: "/music/newjeans2.mp3",
   lesserafim: "/music/lesserafim.mp3",
   riize: "/music/riize.mp3",
 };

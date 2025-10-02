@@ -1,11 +1,11 @@
-import FashionCard from "./NewJeansCards/FashionCard";
-import PropsCard from "./NewJeansCards/PropsCard";
-import SetSpaceCard from "./NewJeansCards/SetSpaceCard";
-import DirectionCard from "./NewJeansCards/DirectionCard";
+import FashionCard from "./NewJeans2Cards/FashionCard";
+import PropsCard from "./NewJeans2Cards/PropsCard";
+import SetSpaceCard from "./NewJeans2Cards/SetSpaceCard";
+import DirectionCard from "./NewJeans2Cards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useState } from "react";
-import TypographyCard from "./NewJeansCards/TypographyCard";
+import TypographyCard from "./NewJeans2Cards/TypographyCard";
 export type SectionContent = {
   id: string;
   label: string;
@@ -15,11 +15,15 @@ export type SectionContent = {
 const NewJeans2Content = () => {
   const sections = ["Fashion", "Props", "Set Space", "Direction"];
   const height = useSelector((state: RootState) => state.height["newjeans2"]);
-  const newJeans2Content = useSelector((state: RootState) => state.newJeans2Content);
+  const newJeans2Content = useSelector(
+    (state: RootState) => state.newJeans2Content
+  );
   const [propsHeight, setPropsHeight] = useState(0);
 
   const cards = {
-    Fashion: <FashionCard singerName="newjeans2" fashion={newJeans2Content.fashion} />,
+    Fashion: (
+      <FashionCard singerName="newjeans2" fashion={newJeans2Content.fashion} />
+    ),
     Props: (
       <PropsCard
         singerName="newjeans2"
@@ -28,10 +32,16 @@ const NewJeans2Content = () => {
       />
     ),
     "Set Space": (
-      <SetSpaceCard singerName="newjeans2" setSpace={newJeans2Content.setSpace} />
+      <SetSpaceCard
+        singerName="newjeans2"
+        setSpace={newJeans2Content.setSpace}
+      />
     ),
     Direction: (
-      <DirectionCard singerName="newjeans2" direction={newJeans2Content.direction} />
+      <DirectionCard
+        singerName="newjeans2"
+        direction={newJeans2Content.direction}
+      />
     ),
   };
 
@@ -60,7 +70,7 @@ const NewJeans2Content = () => {
                 overflow-y-scroll scrollbar
                 scrollbar-w-[2vw]
                 ${
-                  section === "Props" || section === "Fashion"
+                  section === "Fashion"
                     ? " scrollbar-h-[100%] scrollbar-track-[#CCCCCC]"
                     : " scrollbar-h-1/2 scrollbar-thumb-[#CCCCCC] scrollbar-track-white"
                 }
@@ -83,7 +93,10 @@ const NewJeans2Content = () => {
           alt="Typography"
           className="h-[5vh]"
         />
-        <TypographyCard singerName="newjeans2" typography={newJeans2Content.typography} />
+        <TypographyCard
+          singerName="newjeans2"
+          typography={newJeans2Content.typography}
+        />
       </div>
     </div>
   );

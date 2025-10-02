@@ -34,7 +34,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       const gapInRem = 4;
       const gapInPx = gapInRem * rootFontSize;
 
-      const totalHeight = first + gapInPx;
+      const totalHeight = first * 2 + gapInPx;
       console.log(totalHeight);
       setPropsHeight(totalHeight);
     };
@@ -65,7 +65,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
           </h1>
           <img
             src={item.src}
-            className="w-[45%] hover:w-[53%] transition-all duration-300"
+            className="max-w-[50%] max-h-[50%] hover:max-w-[60%] hover:max-h-[60%] transition-all duration-300"
             onClick={() =>
               handleClick(
                 item.detailImage,
