@@ -123,7 +123,7 @@ const bubbleGum: movieSliderType = {
 };
 
 const love119: movieSliderType = {
-  singer: "RIIZE",
+  singer: "riize",
   title: "Love 119",
   groupName: "라이즈",
   tags: ["late 1990s", "School", "youth chaos", "first love"],
@@ -131,7 +131,7 @@ const love119: movieSliderType = {
 };
 
 const comeOver: movieSliderType = {
-  singer: "Lesserafim",
+  singer: "lesserafim",
   title: "Come Over",
   groupName: "르세라핌",
   tags: ["1960s", "millennial pink", "sleepover", "TV static"],

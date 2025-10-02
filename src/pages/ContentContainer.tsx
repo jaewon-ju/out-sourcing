@@ -3,6 +3,8 @@ import TaeyeonContent from "./contents/Taeyeon";
 import Hearts2HeartsContent from "./contents/Hearts2Hearts";
 import LucyContent from "./contents/Lucy";
 import NewJeans2Content from "./contents/NewJeans2";
+import LesserafimContent from "./contents/Lesserafim";
+import RiizeContent from "./contents/Riize";
 
 const content: Record<string, React.ReactNode> = {
   nct: <NCTContent />,
@@ -10,6 +12,8 @@ const content: Record<string, React.ReactNode> = {
   Hearts2Hearts: <Hearts2HeartsContent />,
   lucy: <LucyContent />,
   newjeans2: <NewJeans2Content />,
+  lesserafim: <LesserafimContent />,
+  riize: <RiizeContent />,
 };
 
 const ContentContainer = ({ singerName }: { singerName: string }) => {

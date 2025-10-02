@@ -7,6 +7,8 @@ import TaeyeonPage from "./contents/Taeyeon";
 import LucyPage from "./contents/Lucy";
 import Hearts2HeartsPage from "./contents/Hearts2Hearts";
 import NewJeans2Page from "./contents/NewJeans2";
+import LesserafimPage from "./contents/Lesserafim";
+import RiizePage from "./contents/Riize";
 
 const pageContents: Record<string, typeof NCTPage> = {
   nct: NCTPage,
@@ -14,6 +16,8 @@ const pageContents: Record<string, typeof NCTPage> = {
   Hearts2Hearts: Hearts2HeartsPage,
   lucy: LucyPage,
   newjeans2: NewJeans2Page,
+  lesserafim: LesserafimPage,
+  riize: RiizePage,
 };
 
 const audioList = {
@@ -22,6 +26,8 @@ const audioList = {
   Hearts2Hearts: "/music/Hearts2Hearts.mp3",
   lucy: "/music/lucy.mp3",
   newjeans: "/music/newjeans2.mp3",
+  lesserafim: "/music/lesserafim.mp3",
+  riize: "/music/riize.mp3",
 };
 
 const DynamicSubPage = () => {

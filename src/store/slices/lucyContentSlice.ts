@@ -58,13 +58,13 @@ interface LucyContentState {
 
 const initialState: LucyContentState = {
   fashion: {
-    title: ["[New Jeans | Bubble Gum ] Look #1 - [Japanese School Uniform]"],
+    title: ["[Lucy | 잠깨 ] Look #1 - [Two-piece pajamas]"],
     image: [["/fashion/lucy/1_1.png", "/fashion/lucy/1_2.png"]],
-    subTitle: ["영미권 학교 앰뷸럼"],
-    subDescription: ["Y2K school uniforms 80s anime aesthetic"],
-    timeStamp: ["(02:03 - 02:08)"],
+    subTitle: ["현대식 투피스 파자마"],
+    subDescription: ["Cozy vibe, Homewear, Striped pajamas retro aesthetic"],
+    timeStamp: ["(00:41 - 01:18)"],
     description: [
-      "흰 셔츠와 짙은 플리츠 스커트로 단순화한 교복의 형태는 일본 학원물에서 반복적으로 구축된 시각적 상징으로 여름철 하복(夏服, 나쓰후쿠)에서 이런 미니멀 구성이 전형화되어, 대중매체 속 청춘 이미지로 굳어졌다. 일본 고등학생들의 셔츠를 크게 입는 교복 착용 방식은 90–2000년대 서브컬처에서 강조되며 교복을 규율의 상징이 아니라 개인적 자유와 청춘의 아이콘으로 소비하는 방식과 맞물린다.",
+      "클래식 파자마의 실루엣을 유지하면서, 현대적 색채와 패턴을 결합한 홈웨어 의복. 현대식 파자마는 비교적 일상 속 활용을 고려해 혼방 소재가 주류를 이루고 있다. 전통적인 실크나 새틴소재가 아닌 일상적 파자마의 소재를 사용하여 실제 일상에서 착용 가능한 느낌을 주어 리얼리티와 편안함을 강조한다.",
     ],
   },
   props: {
@@ -86,7 +86,10 @@ const initialState: LucyContentState = {
     ],
   },
   setSpace: {
-    title: ["아날로그 오피스 공간", "원형 메인 스테이지와 둘러싼 사람들로 구성된 무대"],
+    title: [
+      "아날로그 오피스 공간",
+      "원형 메인 스테이지와 둘러싼 사람들로 구성된 무대",
+    ],
     image: ["/set-space/lucy/1.png", "/set-space/lucy/2.png"],
     hoverImage: ["/set-space/lucy/1_hover.png", "/set-space/lucy/2_hover.png"],
     description: [
@@ -124,7 +127,11 @@ const initialState: LucyContentState = {
     image: ["/typography/lucy/1.png"],
   },
   related: {
-    image: ["/images/NCT.png", "/images/NewJeans.png", "/images/RIIZE.png"],
+    image: [
+      "/images/newjeans2.png",
+      "/images/lesserafim.png",
+      "/images/Hearts2Hearts.png",
+    ],
   },
   youtube: {
     viewUrl: "https://www.youtube.com/watch?v=lTESlQNkd5I",
