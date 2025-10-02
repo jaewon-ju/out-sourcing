@@ -99,7 +99,7 @@ const butterflies: movieSliderType = {
 };
 
 const rightNow: movieSliderType = {
-  singer: "NewJeans",
+  singer: "newjeans",
   title: "Right Now",
   groupName: "New Jeans",
   tags: ["digital youth", "early 2000s", "VHS", "city pop"],
@@ -115,7 +115,7 @@ const lucy: movieSliderType = {
 };
 
 const bubbleGum: movieSliderType = {
-  singer: "NewJeans2",
+  singer: "newjeans2",
   title: "Bubble Gum",
   groupName: "New Jeans",
   tags: ["1990s", "slumber party", "y2k", "girlhood"],

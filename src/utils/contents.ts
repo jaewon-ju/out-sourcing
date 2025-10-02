@@ -11,11 +11,15 @@ export const useContentDic = () => {
     (state: RootState) => state.Hearts2HeartsContent
   );
   const lucyContent = useSelector((state: RootState) => state.lucyContent);
+  const newJeans2Content = useSelector(
+    (state: RootState) => state.newJeans2Content
+  );
 
   return {
     nct: nctContent,
     taeyeon: taeyeonContent,
     Hearts2Hearts: Hearts2HeartsContent,
     lucy: lucyContent,
+    newjeans2: newJeans2Content,
   };
 };
