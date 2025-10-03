@@ -42,6 +42,12 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
                     {direction.description[index]}
                   </div>
                 </div>
+                <div className="flex flex-row gap-[1vh] w-[100%] mt-[1vh]">
+                  <img
+                    src={direction.image[index][1]}
+                    className={`w-[100%] h-auto object-cover`}
+                  />
+                </div>
               </div>
             </div>
           </div>

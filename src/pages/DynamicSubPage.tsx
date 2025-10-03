@@ -7,6 +7,7 @@ import TaeyeonPage from "./contents/Taeyeon";
 import LucyPage from "./contents/Lucy";
 import Hearts2HeartsPage from "./contents/Hearts2Hearts";
 import NewJeans2Page from "./contents/NewJeans2";
+import NewJeans3Page from "./contents/NewJeans3";
 import LesserafimPage from "./contents/Lesserafim";
 import RiizePage from "./contents/Riize";
 import BtsPage from "./contents/Bts";
@@ -17,6 +18,7 @@ const pageContents: Record<string, typeof NCTPage> = {
   Hearts2Hearts: Hearts2HeartsPage,
   lucy: LucyPage,
   newjeans2: NewJeans2Page,
+  newjeans3: NewJeans3Page,
   lesserafim: LesserafimPage,
   riize: RiizePage,
   bts: BtsPage,
@@ -29,6 +31,7 @@ const audioList = {
   lucy: "/music/lucy.mp3",
   newjeans: "/music/newjeans.mp3",
   newjeans2: "/music/newjeans2.mp3",
+  newjeans3: "/music/newjeans3.mp3",
   lesserafim: "/music/lesserafim.mp3",
   riize: "/music/riize.mp3",
   bts: "/music/bts.mp3",

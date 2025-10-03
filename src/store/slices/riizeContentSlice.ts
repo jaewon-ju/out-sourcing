@@ -61,27 +61,37 @@ const initialState: RiizeContentState = {
     title: [
       "[RIIZE 라이즈 | Love 119 ] Look #1 - [The North Face 1996 Novelty Nuptse Jacket Woodland Camo]",
       "[RIIZE 라이즈 | Love 119 ] Look #2 - [Adidas Tiro 23 League Windbreaker Jacket]",
+      "[RIIZE 라이즈 | Love 119 ] Look #3 - [IEY MAXI DUFFLE COAT]",
       "[RIIZE 라이즈 | Love 119 ] Look #4 - [Loafer Shoes]",
     ],
     image: [
       ["/fashion/riize/1_1.png", "/fashion/riize/1_2.png"],
       ["/fashion/riize/2_1.png", "/fashion/riize/2_2.png"],
       ["/fashion/riize/3_1.png", "/fashion/riize/3_2.png"],
+      ["/fashion/riize/4_1.png", "/fashion/riize/4_2.png"],
     ],
     subTitle: [
       "노스페이스 1996 노벨티 눕시 카모",
       "아디다스 티로23 리그 윈드브레이커 재킷",
+      "이에이 맥시 더플코트",
       "로퍼 신발",
     ],
     subDescription: [
       "Nuptse, Camo pattern, 1996",
       "Streetwear-ready, Sporty, Outerwear",
+      "Classic, Heritage, Vintage-inspired",
       "JK style, Preppy, Classic",
     ],
-    timeStamp: ["(01:46 - 01:48)", "(01:35 - 01:38)", "(01:07 - 01:09)"],
+    timeStamp: [
+      "(01:46 - 01:48)",
+      "(01:35 - 01:38)",
+      "(02:20 - 02:39)",
+      "(01:07 - 01:09)",
+    ],
     description: [
       "1996년 출시된 눕시 재킷의 디자인에 카모플라주 패턴이 적용된 패딩'. 노벨티(Novelty)'는 새로운 디자인이나 특징을 의미하며, 숲을 연상시키는 짙은 갈색과 녹색 계열의 카모플라주 패턴이 특징이다. 눕시가 가장 인기를 끌던 1996년도에서 따와 1996이라는 숫자가 붙었다.",
       "2022년 출시된 아디다스의 티로 23 리그 컬렉션 제품으로, 가벼운 비와 바람을 막아주는 우븐 발수 쉘이 견고한 보호막을 더해준다. 저지 위로 들뜸 없이 걸칠 수 있는 슬림 핏이 자유로운 활동성을 선사한다.",
+      "전체적으로 오버사이즈의 실루엣과 오버 플랫으로 조금 더 볼드한 분위기를 주는 코트. 1990년도, 더플코트를 교복 위에 걸치는 스타일링이 유행하였다. 현재까지 학생, 예술가, 그리고 젊은층 사이에서 유행하며 자유로움과 개성을 표현하는 상징적인 패션이 됐다. 캠퍼스 패션의 필수 아이템으로 겨울 프레피 룩의 메인 아우터로 사랑받고 있다.",
       "메리제인 신발과 더불어 주로 일본에서 학생들이 교복과 함께 착용하는 신발. 로퍼의 착용을 의무화하는 학교도 다수 있기 때문에 일본 내에서 로퍼 신발은 고등학생이 신는 신발이라는 이미지가 강하다.",
     ],
   },
@@ -171,11 +181,15 @@ const initialState: RiizeContentState = {
     image: ["/typography/riize/1.png"],
   },
   related: {
-    image: ["/images/NCT.png", "/images/NewJeans.png", "/images/RIIZE.png"],
+    image: [
+      "/images/nct.png",
+      "/images/Hearts2Hearts.png",
+      "/images/newjeans2.png",
+    ],
   },
   youtube: {
-    viewUrl: "https://www.youtube.com/watch?v=q9eB_Hb0oC8",
-    url: "https://www.youtube.com/embed/q9eB_Hb0oC8",
+    viewUrl: "https://youtu.be/0TAAUWHo4Ec?si=_yOtf0X9JDsHYEQ2",
+    url: "https://www.youtube.com/embed/0TAAUWHo4Ec?si=_yOtf0X9JDsHYEQ2",
     title: "RIIZE 라이즈 'Love 119' MV",
     subTitle: "일본 감성과 현대적 요소가 결합된 RIIZE의 청춘 로맨스를 담은 곡",
   },

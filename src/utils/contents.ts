@@ -21,6 +21,7 @@ export const useContentDic = () => {
   const lesserafimContent = useSelector(
     (state: RootState) => state.lesserafimContent
   );
+  const riizeContent = useSelector((state: RootState) => state.riizeContent);
 
   return {
     nct: nctContent,
@@ -31,5 +32,6 @@ export const useContentDic = () => {
     newjeans3: newJeans3Content,
     bts: btsContent,
     lesserafim: lesserafimContent,
+    riize: riizeContent,
   };
 };

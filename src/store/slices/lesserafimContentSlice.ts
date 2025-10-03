@@ -145,8 +145,8 @@ const initialState: LesserafimContentState = {
     ],
   },
   youtube: {
-    viewUrl: "https://www.youtube.com/watch?v=VzP8V8c3WLo",
-    url: "https://www.youtube.com/embed/VzP8V8c3WLo",
+    viewUrl: "https://www.youtube.com/watch?v=z_uqieM8VGM",
+    url: "https://www.youtube.com/embed/z_uqieM8VGM?si=HtnL6slExqclj5gO",
     title: "LE SSERAFIM (르세라핌) 'Come Over' OFFICIAL MV",
     subTitle:
       "1960~2000년대 레트로 감성과 미래적 요소가 결합된 르세라핌만의 독특한 매력을 느낄 수 있는 곡",

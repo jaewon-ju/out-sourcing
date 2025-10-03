@@ -34,7 +34,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       const gapInRem = 4;
       const gapInPx = gapInRem * rootFontSize;
 
-      const totalHeight = first + gapInPx;
+      const totalHeight = first * 2 + gapInPx;
       console.log(totalHeight);
       setPropsHeight(totalHeight);
     };

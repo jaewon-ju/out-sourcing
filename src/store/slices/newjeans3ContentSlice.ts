@@ -157,18 +157,26 @@ const initialState: NewJeans3ContentState = {
     ],
   },
   related: {
-    image: [],
+    image: [
+      "/images/newjeans2.png",
+      "/images/lucy.png",
+      "/images/riize.png",
+    ],
   },
   typography: {
-    image: [],
+    image: [
+      "/typography/newjeans3/1.png",
+      "/typography/newjeans3/2.png",
+      "/typography/newjeans3/3.png",
+    ],
   },
   youtube: {
-    url: "https://www.youtube.com/watch?v=m6pTbEz4w3o",
+    url: "https://www.youtube.com/embed/m6pTbEz4w3o",
     title: "NewJeans (뉴진스) 'Supernatural' Official MV (Part.1)",
     subTitle: "운명적인 만남과 재회를 주제로 두 사람 간의 깊어지는 감정과 미래에 대한 기대를 표현한 뉴잭스윙 곡.",
-    viewUrl: "",
+    viewUrl: "https://www.youtube.com/watch?v=m6pTbEz4w3o",
   },
-  tags: [],
+  tags: ["1990s", "New Jack Swing", "City Pop", "Hip-hop"],
 };
 
 const newjeans3ContentSlice = createSlice({

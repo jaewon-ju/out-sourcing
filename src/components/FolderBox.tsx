@@ -8,7 +8,7 @@ const FolderBox = () => {
       "/images/nct.png",
       "/images/taeyeon.png",
       "/images/NewJeans2.png",
-      "/images/RIIZE.png",
+      "/images/riize.png",
       "/images/Hearts2Hearts.png",
       "/images/Lesserafim.png",
       "/images/lucy.png",
@@ -19,7 +19,7 @@ const FolderBox = () => {
       "/images/nct.png",
       "/images/NewJeans2.png",
       "/images/Hearts2Hearts.png",
-      "/images/RIIZE.png",
+      "/images/riize.png",
       "/images/newjeans.png",
     ],
     "Western Retro": [
