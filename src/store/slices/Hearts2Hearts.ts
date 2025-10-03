@@ -162,8 +162,8 @@ const initialState: Hearts2HeartsContentState = {
   },
   related: {
     image: [
-      "/images/Lesserafim.png",
-      "/images/Lucy.png",
+      "/images/lesserafim.png",
+      "/images/lucy.png",
       "/images/NewJeans2.png",
     ],
   },

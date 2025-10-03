@@ -11,8 +11,8 @@ const FolderBox = () => {
       "/images/RIIZE.png",
       "/images/Hearts2Hearts.png",
       "/images/Lesserafim.png",
-      "/images/Lucy.png",
-      "/images/TWS.png",
+      "/images/lucy.png",
+      "/images/newjeans3.png",
       "/images/BTS.png",
     ],
     "School Days": [
@@ -20,7 +20,7 @@ const FolderBox = () => {
       "/images/NewJeans2.png",
       "/images/Hearts2Hearts.png",
       "/images/RIIZE.png",
-      "/images/TWS.png",
+      "/images/newjeans.png",
     ],
     "Western Retro": [
       "/images/Hearts2Hearts.png",

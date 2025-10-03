@@ -7,12 +7,11 @@ const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
     nct,
     weekend,
     butterflies,
-    rightNow,
     lucy,
     bubbleGum,
     love119,
     comeOver,
-    firstMeeting,
+    supernatural,
     dynamite,
   ];
   if (sortDirection === "ASC") {
@@ -98,14 +97,6 @@ const butterflies: movieSliderType = {
   year: 2025, // 2025년 2월 24일 발매 (싱글 앨범 'The Chase'의 B-side)
 };
 
-const rightNow: movieSliderType = {
-  singer: "newjeans",
-  title: "Right Now",
-  groupName: "New Jeans",
-  tags: ["digital youth", "early 2000s", "VHS", "city pop"],
-  year: 2024, // 2024년 6월 17일 뮤직비디오 선공개, 6월 21일 싱글 앨범 발매
-};
-
 const lucy: movieSliderType = {
   singer: "lucy",
   title: "잠깨",
@@ -138,16 +129,16 @@ const comeOver: movieSliderType = {
   year: 2025, // 2025년 3월 31일 발매
 };
 
-const firstMeeting: movieSliderType = {
-  singer: "TWS",
-  title: "첫 만남은 계획대로 되지 않아",
-  groupName: "투어스",
-  tags: ["School", "early 2000s", "awkward love"],
-  year: 2024, // 2024년 1월 22일 발매
+const supernatural: movieSliderType = {
+  singer: "newjeans3",
+  title: "Supernatural",
+  groupName: "New Jeans",
+  tags: ["digital youth", "early 2000s", "VHS", "city pop"],
+  year: 2024, // 2024년 6월 17일 뮤직비디오 선공개, 6월 21일 싱글 앨범 발매
 };
 
 const dynamite: movieSliderType = {
-  singer: "BTS",
+  singer: "bts",
   title: "Dynamite",
   groupName: "BTS",
   tags: ["disco fever", "1970s", "roller rink", "color pop"],

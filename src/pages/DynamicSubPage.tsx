@@ -9,6 +9,7 @@ import Hearts2HeartsPage from "./contents/Hearts2Hearts";
 import NewJeans2Page from "./contents/NewJeans2";
 import LesserafimPage from "./contents/Lesserafim";
 import RiizePage from "./contents/Riize";
+import BtsPage from "./contents/Bts";
 
 const pageContents: Record<string, typeof NCTPage> = {
   nct: NCTPage,
@@ -18,6 +19,7 @@ const pageContents: Record<string, typeof NCTPage> = {
   newjeans2: NewJeans2Page,
   lesserafim: LesserafimPage,
   riize: RiizePage,
+  bts: BtsPage,
 };
 
 const audioList = {
@@ -29,6 +31,7 @@ const audioList = {
   newjeans2: "/music/newjeans2.mp3",
   lesserafim: "/music/lesserafim.mp3",
   riize: "/music/riize.mp3",
+  bts: "/music/bts.mp3",
 };
 
 const DynamicSubPage = () => {

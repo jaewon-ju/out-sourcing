@@ -1,37 +1,37 @@
-import FashionCard from "./RiizeCards/FashionCard";
-import PropsCard from "./RiizeCards/PropsCard";
-import SetSpaceCard from "./RiizeCards/SetSpaceCard";
-import DirectionCard from "./RiizeCards/DirectionCard";
+import FashionCard from "./BTSCards/FashionCard";
+import PropsCard from "./BTSCards/PropsCard";
+import SetSpaceCard from "./BTSCards/SetSpaceCard";
+import DirectionCard from "./BTSCards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useState } from "react";
-import TypographyCard from "./RiizeCards/TypographyCard";
+import TypographyCard from "./BTSCards/TypographyCard";
 export type SectionContent = {
   id: string;
   label: string;
   content: React.ReactNode;
 };
 
-const RiizeContent = () => {
+const BtsContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Direction"];
-  const height = useSelector((state: RootState) => state.height["riize"]);
-  const riizeContent = useSelector((state: RootState) => state.riizeContent);
+  const height = useSelector((state: RootState) => state.height["bts"]);
+  const btsContent = useSelector((state: RootState) => state.btsContent);
   const [propsHeight, setPropsHeight] = useState(0);
 
   const cards = {
-    Fashion: <FashionCard singerName="riize" fashion={riizeContent.fashion} />,
+    Fashion: <FashionCard singerName="bts" fashion={btsContent.fashion} />,
     Props: (
       <PropsCard
-        singerName="riize"
-        props={riizeContent.props}
+        singerName="bts"
+        props={btsContent.props}
         setPropsHeight={setPropsHeight}
       />
     ),
     "Set Space": (
-      <SetSpaceCard singerName="riize" setSpace={riizeContent.setSpace} />
+      <SetSpaceCard singerName="bts" setSpace={btsContent.setSpace} />
     ),
     Direction: (
-      <DirectionCard singerName="riize" direction={riizeContent.direction} />
+      <DirectionCard singerName="bts" direction={btsContent.direction} />
     ),
   };
 
@@ -60,7 +60,7 @@ const RiizeContent = () => {
                 overflow-y-scroll scrollbar
                 scrollbar-w-[2vw]
                 ${
-                  section === "Props" || section === "Fashion"
+                  section === "Props"
                     ? " scrollbar-h-[100%] scrollbar-track-[#CCCCCC]"
                     : " scrollbar-h-1/2 scrollbar-thumb-[#CCCCCC] scrollbar-track-white"
                 }
@@ -83,13 +83,10 @@ const RiizeContent = () => {
           alt="Typography"
           className="h-[5vh]"
         />
-        <TypographyCard
-          singerName="riize"
-          typography={riizeContent.typography}
-        />
+        <TypographyCard singerName="bts" typography={btsContent.typography} />
       </div>
     </div>
   );
 };
 
-export default RiizeContent;
+export default BtsContent;

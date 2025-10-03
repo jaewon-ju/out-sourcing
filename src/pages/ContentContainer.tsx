@@ -5,6 +5,7 @@ import LucyContent from "./contents/Lucy";
 import NewJeans2Content from "./contents/NewJeans2";
 import LesserafimContent from "./contents/Lesserafim";
 import RiizeContent from "./contents/Riize";
+import BtsContent from "./contents/Bts";
 
 const content: Record<string, React.ReactNode> = {
   nct: <NCTContent />,
@@ -14,6 +15,7 @@ const content: Record<string, React.ReactNode> = {
   newjeans2: <NewJeans2Content />,
   lesserafim: <LesserafimContent />,
   riize: <RiizeContent />,
+  bts: <BtsContent />,
 };
 
 const ContentContainer = ({ singerName }: { singerName: string }) => {

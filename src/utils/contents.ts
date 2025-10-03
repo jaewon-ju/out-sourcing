@@ -14,6 +14,9 @@ export const useContentDic = () => {
   const newJeans2Content = useSelector(
     (state: RootState) => state.newJeans2Content
   );
+  const newJeans3Content = useSelector(
+    (state: RootState) => state.newJeans3Content
+  );
   const btsContent = useSelector((state: RootState) => state.btsContent);
   const lesserafimContent = useSelector(
     (state: RootState) => state.lesserafimContent
@@ -25,6 +28,7 @@ export const useContentDic = () => {
     Hearts2Hearts: Hearts2HeartsContent,
     lucy: lucyContent,
     newjeans2: newJeans2Content,
+    newjeans3: newJeans3Content,
     bts: btsContent,
     lesserafim: lesserafimContent,
   };

@@ -1,37 +1,47 @@
-import FashionCard from "./RiizeCards/FashionCard";
-import PropsCard from "./RiizeCards/PropsCard";
-import SetSpaceCard from "./RiizeCards/SetSpaceCard";
-import DirectionCard from "./RiizeCards/DirectionCard";
+import FashionCard from "./NewJeans3Cards/FashionCard";
+import PropsCard from "./NewJeans3Cards/PropsCard";
+import SetSpaceCard from "./NewJeans3Cards/SetSpaceCard";
+import DirectionCard from "./NewJeans3Cards/DirectionCard";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useState } from "react";
-import TypographyCard from "./RiizeCards/TypographyCard";
+import TypographyCard from "./NewJeans3Cards/TypographyCard";
 export type SectionContent = {
   id: string;
   label: string;
   content: React.ReactNode;
 };
 
-const RiizeContent = () => {
+const NewJeans3Content = () => {
   const sections = ["Fashion", "Props", "Set Space", "Direction"];
-  const height = useSelector((state: RootState) => state.height["riize"]);
-  const riizeContent = useSelector((state: RootState) => state.riizeContent);
+  const height = useSelector((state: RootState) => state.height["newjeans3"]);
+  const newJeans3Content = useSelector(
+    (state: RootState) => state.newJeans3Content
+  );
   const [propsHeight, setPropsHeight] = useState(0);
 
   const cards = {
-    Fashion: <FashionCard singerName="riize" fashion={riizeContent.fashion} />,
+    Fashion: (
+      <FashionCard singerName="newjeans3" fashion={newJeans3Content.fashion} />
+    ),
     Props: (
       <PropsCard
-        singerName="riize"
-        props={riizeContent.props}
+        singerName="newjeans3"
+        props={newJeans3Content.props}
         setPropsHeight={setPropsHeight}
       />
     ),
     "Set Space": (
-      <SetSpaceCard singerName="riize" setSpace={riizeContent.setSpace} />
+      <SetSpaceCard
+        singerName="newjeans3"
+        setSpace={newJeans3Content.setSpace}
+      />
     ),
     Direction: (
-      <DirectionCard singerName="riize" direction={riizeContent.direction} />
+      <DirectionCard
+        singerName="newjeans3"
+        direction={newJeans3Content.direction}
+      />
     ),
   };
 
@@ -84,12 +94,12 @@ const RiizeContent = () => {
           className="h-[5vh]"
         />
         <TypographyCard
-          singerName="riize"
-          typography={riizeContent.typography}
+          singerName="newjeans3"
+          typography={newJeans3Content.typography}
         />
       </div>
     </div>
   );
 };
 
-export default RiizeContent;
+export default NewJeans3Content;
