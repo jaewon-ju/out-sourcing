@@ -70,7 +70,7 @@ const NewJeans3Content = () => {
                 overflow-y-scroll scrollbar
                 scrollbar-w-[2vw]
                 ${
-                  section === "Props" || section === "Fashion"
+                  section === "Props"
                     ? " scrollbar-h-[100%] scrollbar-track-[#CCCCCC]"
                     : " scrollbar-h-1/2 scrollbar-thumb-[#CCCCCC] scrollbar-track-white"
                 }

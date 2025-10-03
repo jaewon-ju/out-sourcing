@@ -24,14 +24,15 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
       const first = firstCardRef.current?.offsetHeight || 0;
       const gap = 32;
 
-      const totalHeight = first * fashion.title.length + gap * (fashion.title.length - 1) + gap;
+      const totalHeight = first * 2 + gap;
+      console.log(totalHeight);
       dispatch(setHeight({ singer: singerName, height: totalHeight }));
     };
 
     calcHeight();
     window.addEventListener("resize", calcHeight);
     return () => window.removeEventListener("resize", calcHeight);
-  }, [dispatch, singerName, imageLoaded, fashion.title.length]);
+  }, [dispatch, singerName, imageLoaded]);
 
   const handleClick = () => {
     setIsClicked(true);
@@ -46,13 +47,17 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
         className={`flex flex-col gap-4 w-[90%] h-[100%] scrollbar-track-[#CCCCCC]`}
       >
         {fashion.title.map((title, index) => (
-          <div key={index} ref={index === 0 ? firstCardRef : null} className="border-[0.1vw] border-black">
+          <div
+            key={index}
+            ref={index === 0 ? firstCardRef : null}
+            className="border-[0.1vw] border-black"
+          >
             <div
               className="
     h-[5vh] flex items-center justify-start
     text-black text-left font-[AppleBold] font-bold
     px-[1vw] py-[0.5vh]
-    text-[2vh]
+    text-[1.7vh]
 
     bg-gradient-to-b
     from-[#aaedff]
@@ -71,13 +76,15 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
                     className="w-full h-auto object-cover mb-2"
                     onLoad={index === 0 ? handleImageLoad : undefined}
                   />
-                  <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
+                  <p className="font-[AppleBold] font-bold text-left text-[1vw]">
                     {fashion.subTitle[index]}
                   </p>
                   <p className="text-xs mt-[0.25vh] text-[0.8vw]">
                     {fashion.subDescription[index]}
                   </p>
-                  <p className="mt-[2vh] text-[1.2vw]">{fashion.timeStamp[index]}</p>
+                  <p className="mt-[2vh] text-[1.2vw]">
+                    {fashion.timeStamp[index]}
+                  </p>
                   <button
                     className="
               mb-[1vh] border border-black

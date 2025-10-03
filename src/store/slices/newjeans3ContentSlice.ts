@@ -70,7 +70,7 @@ const initialState: NewJeans3ContentState = {
     ],
     subTitle: [
       "헤븐바이 마크제이콥스 I FEEL ANGRY ZIP-UP 후드집업",
-      "헤븐바이 마크제이콥스 I FEEL ANGRY ZIP-UP 후드집업",
+      "헤어 반다나 스타일링",
       "1990년대 올드스쿨 패션",
     ],
     subDescription: [
@@ -160,7 +160,7 @@ const initialState: NewJeans3ContentState = {
     image: [
       "/images/newjeans2.png",
       "/images/lucy.png",
-      "/images/riize.png",
+      "/images/Hearts2Hearts.png",
     ],
   },
   typography: {
@@ -173,7 +173,8 @@ const initialState: NewJeans3ContentState = {
   youtube: {
     url: "https://www.youtube.com/embed/m6pTbEz4w3o",
     title: "NewJeans (뉴진스) 'Supernatural' Official MV (Part.1)",
-    subTitle: "운명적인 만남과 재회를 주제로 두 사람 간의 깊어지는 감정과 미래에 대한 기대를 표현한 뉴잭스윙 곡.",
+    subTitle:
+      "운명적인 만남과 재회를 주제로 두 사람 간의 깊어지는 감정과 미래에 대한 기대를 표현한 뉴잭스윙 곡.",
     viewUrl: "https://www.youtube.com/watch?v=m6pTbEz4w3o",
   },
   tags: ["1990s", "New Jack Swing", "City Pop", "Hip-hop"],
