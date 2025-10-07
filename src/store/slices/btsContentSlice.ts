@@ -159,7 +159,7 @@ const initialState: BTSContentState = {
       "밝고 경쾌한 분위기의 디스코 팝 장르로, 팬들을 위한 희망의 메시지를 담았다.",
     viewUrl: "https://www.youtube.com/watch?v=gdZLi9oWNZg",
   },
-  tags: [],
+  tags: ["disco fever", "1970s", "roller rink", "color pop"],
 };
 
 const btsContentSlice = createSlice({

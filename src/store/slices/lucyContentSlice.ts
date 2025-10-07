@@ -139,7 +139,7 @@ const initialState: LucyContentState = {
     title: "LUCY ‘잠깨’ Official MV",
     subTitle: "시작을 상징하는 봄, 새로운 챕터를 피우는 곡",
   },
-  tags: ["Spring", "Office", "Retro", "Comedy"],
+  tags: ["VHS", "dreamy", "morning light", "lo-fi"],
 };
 
 export const lucyContentSlice = createSlice({

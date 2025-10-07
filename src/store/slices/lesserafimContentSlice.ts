@@ -151,7 +151,7 @@ const initialState: LesserafimContentState = {
     subTitle:
       "1960~2000년대 레트로 감성과 미래적 요소가 결합된 르세라핌만의 독특한 매력을 느낄 수 있는 곡",
   },
-  tags: ["1960s", "Retro", "Mods", "Supermarket"],
+  tags: ["1960s", "millenial pink", "sleepover", "TV static"],
 };
 
 export const lesserafimContentSlice = createSlice({

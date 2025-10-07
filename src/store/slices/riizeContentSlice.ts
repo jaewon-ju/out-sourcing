@@ -193,7 +193,7 @@ const initialState: RiizeContentState = {
     title: "RIIZE 라이즈 'Love 119' MV",
     subTitle: "일본 감성과 현대적 요소가 결합된 RIIZE의 청춘 로맨스를 담은 곡",
   },
-  tags: ["Japan", "Youth", "Romance", "2000s"],
+  tags: ["1990s", "School", "youth chaos", "first love"],
 };
 
 export const riizeContentSlice = createSlice({
