@@ -78,7 +78,7 @@ const nct: movieSliderType = {
   title: "Steady",
   groupName: "NCT WISH",
   tags: ["Japan", "2000s", "School", "First Love"],
-  year: 2025, // 2024년 9월 24일 발매
+  year: 2024,
 };
 
 const weekend: movieSliderType = {
@@ -86,7 +86,7 @@ const weekend: movieSliderType = {
   title: "Weekend",
   groupName: "태연",
   tags: ["pastel", "retro travel", "early 2000s", "daydream"],
-  year: 2025, // 2021년 7월 6일 발매
+  year: 2021,
 };
 
 const butterflies: movieSliderType = {
@@ -94,7 +94,7 @@ const butterflies: movieSliderType = {
   title: "Butterflies",
   groupName: "하츠투하츠",
   tags: ["first love", "spring fever", "camcorder", "School"],
-  year: 2025, // 2025년 2월 24일 발매 (싱글 앨범 'The Chase'의 B-side)
+  year: 2025,
 };
 
 const lucy: movieSliderType = {
@@ -102,7 +102,7 @@ const lucy: movieSliderType = {
   title: "잠깨",
   groupName: "루시",
   tags: ["VHS", "dreamy", "morning light", "lo-fi"],
-  year: 2025, // 2025년 3월 27일 발매
+  year: 2025,
 };
 
 const bubbleGum: movieSliderType = {
@@ -110,7 +110,7 @@ const bubbleGum: movieSliderType = {
   title: "Bubble Gum",
   groupName: "New Jeans",
   tags: ["1990s", "slumber party", "y2k", "girlhood"],
-  year: 2024, // 2024년 5월 24일 발매
+  year: 2024,
 };
 
 const love119: movieSliderType = {
@@ -118,7 +118,7 @@ const love119: movieSliderType = {
   title: "Love 119",
   groupName: "라이즈",
   tags: ["late 1990s", "School", "youth chaos", "first love"],
-  year: 2024, // 2024년 1월 5일 발매
+  year: 2024,
 };
 
 const comeOver: movieSliderType = {
@@ -126,7 +126,7 @@ const comeOver: movieSliderType = {
   title: "Come Over",
   groupName: "르세라핌",
   tags: ["1960s", "millennial pink", "sleepover", "TV static"],
-  year: 2025, // 2025년 3월 31일 발매
+  year: 2025,
 };
 
 const supernatural: movieSliderType = {
@@ -134,7 +134,7 @@ const supernatural: movieSliderType = {
   title: "Supernatural",
   groupName: "New Jeans",
   tags: ["digital youth", "early 2000s", "VHS", "city pop"],
-  year: 2024, // 2024년 6월 17일 뮤직비디오 선공개, 6월 21일 싱글 앨범 발매
+  year: 2024,
 };
 
 const dynamite: movieSliderType = {
@@ -142,7 +142,7 @@ const dynamite: movieSliderType = {
   title: "Dynamite",
   groupName: "BTS",
   tags: ["disco fever", "1970s", "roller rink", "color pop"],
-  year: 2020, // 2020년 8월 21일 발매
+  year: 2020,
 };
 
 export default MovieBox;
