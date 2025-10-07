@@ -70,7 +70,7 @@ const Hearts2HeartsContent = () => {
           <div
             id="scroll-box"
             className={`
-                flex flex-col justify-start items-center w-full py-[2vh] font-[Apple]
+                flex flex-col justify-start items-center w-full py-[2vh] font-[AppleNeoR]
                 border-2 border-black
                 bg-white
                 scrollbar-thumb-[#CCCCCC] scrollbar-track-white scrollbar-w-[2vw]

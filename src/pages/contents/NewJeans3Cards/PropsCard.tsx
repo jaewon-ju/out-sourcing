@@ -53,9 +53,11 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         <div
           key={index}
           ref={index === 0 ? firstCardRef : null}
-          className={`relative bg-gray-200 flex justify-center items-center aspect-square ${index % 2 === 0 ? 'w-[94%] ml-[1rem]' : 'w-[94%] mr-[1rem]'}`}
+          className={`relative bg-gray-200 flex justify-center items-center aspect-square ${
+            index % 2 === 0 ? "w-[94%] ml-[1rem]" : "w-[94%] mr-[1rem]"
+          }`}
         >
-          <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1rem] left-[1rem]">
+          <h1 className="text-[2vh] font-[AppleNeoB] absolute top-[1rem] left-[1rem]">
             No.{index + 1}
           </h1>
           <img
@@ -86,7 +88,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
                 alt={popupData.title}
                 className="w-full h-auto rounded mb-[1vh]"
               />
-              <h2 className="text-[1.5vw] font-[AppleBold] font-bold mb-[1vh] mt-[1vh]">
+              <h2 className="text-[1.5vw] font-[AppleNeoB] mb-[1vh] mt-[1vh]">
                 {popupData.title}
               </h2>
               <p className="text-[1vw]">{popupData.description}</p>

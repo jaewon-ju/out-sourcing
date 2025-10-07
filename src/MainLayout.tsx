@@ -135,7 +135,7 @@ function MainLayout() {
                         setClickedButton(title);
                       }}
                     />
-                    <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
+                    <div className="mt-[1vh] font-[AppleNeoR] text-black text-[2vh]">
                       {title.replace(/-/g, " ")}
                     </div>
                   </div>
@@ -263,7 +263,7 @@ function MainLayout() {
                 <br />
                 이러한 이미지와 소리들을 픽셀 단위로 수집하며,
                 <span className="text-[#0000ee]">
-                  존재하지 않았지만 그리운 시간
+                  <span> </span>존재하지 않았지만 그리운 시간
                 </span>
                 에 대한 감정을 공유하고자 합니다.
               </span>
@@ -292,7 +292,7 @@ function MainLayout() {
 
               {/* 텍스트 오버레이 */}
               <div className="absolute top-[35%] left-[50%] translate-x-[-50%] text-center">
-                <p className="text-[1vw] font-[AppleBold] font-semibold">
+                <p className="text-[1vw] font-[AppleNeoB]">
                   Drift further into the feeling
                 </p>
                 <a

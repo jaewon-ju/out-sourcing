@@ -71,7 +71,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                     className="h-[5vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/")}
                   />
-                  <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
+                  <div className="mt-[1vh] font-[AppleNeoR] text-black text-[2vh]">
                     Home
                   </div>
                 </div>
@@ -84,7 +84,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                     className="h-[5vh] object-contain cursor-pointer hover:scale-120 transition-transform"
                     onClick={() => navigate("/survey")}
                   />
-                  <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
+                  <div className="mt-[1vh] font-[AppleNeoR] text-black text-[2vh]">
                     Survey
                   </div>
                 </div>
@@ -99,7 +99,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
                       window.open(content.youtube.viewUrl, "_blank")
                     }
                   />
-                  <div className="mt-[1vh] font-[Apple] text-black text-[2vh]">
+                  <div className="mt-[1vh] font-[AppleNeoR] text-black text-[2vh]">
                     Youtube
                   </div>
                 </div>
@@ -116,10 +116,10 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-            <p className="text-black font-[AppleBold] font-bold mt-[2vh] text-[1.8vw] flex justify-start">
+            <p className="text-black font-[AppleNeoB] mt-[2vh] text-[1.8vw] flex justify-start">
               {content.youtube.title}
             </p>
-            <p className="font-[Apple] text-black flex justify-start mt-[0.5vh] text-[1vw]">
+            <p className="font-[AppleNeoR] text-black flex justify-start mt-[0.5vh] text-[1vw]">
               {content.youtube.subTitle}
             </p>
           </div>
@@ -189,7 +189,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
               <div
                 className="text-[1.2vw] min-w-[6vw] p-[0.5vw] from-[#AAEDFF] to-[#599ADC]
                 aspect-[519/240] bg-gradient-to-b rounded-xl flex items-center justify-center
-                font-[Apple] font-medium
+                font-[AppleNeoR]
                 border-[0.15vw] border-[#2D6DA6]"
               >
                 {tag}
@@ -210,7 +210,7 @@ const SubPageTemplate = ({ singerName, audioSrc }: SubPageTemplateProps) => {
             href={content.youtube.viewUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#0000ee] font-[Apple] text-[1vw] mb-[10vh]"
+            className="text-[#0000ee] font-[AppleNeoR] text-[1vw] mb-[10vh]"
           >
             {content.youtube.viewUrl}
           </a>

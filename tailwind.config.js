@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
-      Apple: ["AppleNeoR"],
-      AppleBold: ["AppleNeoB"],
-      AppleExtraBold: ["AppleNeoEB"],
+      AppleNeoR: ["AppleNeoR"],
+      AppleNeoB: ["AppleNeoB"],
+      AppleNeoEB: ["AppleNeoEB"],
       Depixel: ["depixelbreit"],
       DepixelBold: ["depixelbreitfett"],
       RobotoItalic: ["RobotoItalic"],

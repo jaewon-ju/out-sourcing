@@ -34,16 +34,16 @@ const MovieSlider = () => {
         />
 
         {/* 텍스트 오버레이 */}
-        <div className="absolute top-[0.5rem] left-0 flex flex-row items-center justify-start">
+        <div className="absolute top-[0.2rem] left-0 flex flex-row items-center justify-start">
           <span
             onClick={() => sortAscending()}
-            className="text-white text-[2rem] font-[AppleExtraBold] ml-[3rem] cursor-pointer"
+            className="text-white text-[2rem] font-[AppleNeoB] ml-[2.5rem] cursor-pointer"
           >
             Earlier
           </span>
           <span
             onClick={() => sortDescending()}
-            className="text-white text-[2rem] font-[AppleExtraBold] ml-[5rem] cursor-pointer"
+            className="text-white text-[2rem] font-[AppleNeoB] ml-[5rem] cursor-pointer"
           >
             Later
           </span>

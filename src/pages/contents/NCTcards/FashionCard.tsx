@@ -51,7 +51,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
           <div
             className="
     h-[5vh] flex items-center justify-start
-    text-black text-left font-[AppleBold] font-bold
+    text-black text-left font-[AppleNeoB]
     px-[1vw] py-[0.5vh]
     text-[2vh]
 
@@ -73,7 +73,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
                   className="w-full h-auto object-cover mb-2"
                   onLoad={handleImageLoad} // 이미지 로딩 완료 시 호출
                 />
-                <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
+                <p className="font-[AppleNeoB] text-left text-[1.5vw]">
                   {fashion.subTitle[0]}
                 </p>
                 <p className="text-xs mt-[0.25vh] text-[0.8vw]">
@@ -117,7 +117,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
           {/* Header */}
           <div
             className="bg-[#A2C7E9] text-[2vh] h-[5vh] flex items-center justify-start
-        text-black text-left font-[AppleBold] font-bold px-[1vw] py-[0.5vh]
+        text-black text-left font-[AppleNeoB] px-[1vw] py-[0.5vh]
             bg-gradient-to-b
     from-[#aaedff]
     to-[#599adc]"
@@ -134,7 +134,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
                   alt={fashion.description[1]}
                   className="w-full h-auto object-cover mb-2"
                 />
-                <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
+                <p className="font-[AppleNeoB] text-left text-[1.5vw]">
                   {fashion.subTitle[1]}
                 </p>
                 <p className="text-xs mt-[0.25vh] text-[0.8vw]">

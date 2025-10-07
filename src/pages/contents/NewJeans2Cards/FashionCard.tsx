@@ -52,7 +52,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
           <div
             className="
     h-[5vh] flex items-center justify-start
-    text-black text-left font-[AppleBold] font-bold
+    text-black text-left font-[AppleNeoB]
     px-[1vw] py-[0.5vh]
     text-[2vh]
 
@@ -74,7 +74,7 @@ const FashionCard = ({ singerName, fashion }: FashionCardProps) => {
                   className="w-full h-auto object-cover mb-2"
                   onLoad={handleImageLoad}
                 />
-                <p className="font-[AppleBold] font-bold text-left text-[1.5vw]">
+                <p className="font-[AppleNeoB] text-left text-[1.5vw]">
                   {fashion.subTitle[0]}
                 </p>
                 <p className="text-xs mt-[0.25vh] text-[0.8vw]">

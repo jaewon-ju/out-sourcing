@@ -15,7 +15,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
         <div
           className="
     h-[5vh] flex items-center justify-start
-    text-black text-left font-[AppleBold] font-bold
+    text-black text-left font-[AppleNeoB]
     px-[1vw] py-[0.5vh]
     text-[2vh]
 
@@ -53,7 +53,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
         <div
           className="
     h-[5vh] flex items-center justify-start
-    text-black text-left font-[AppleBold] font-bold
+    text-black text-left font-[AppleNeoB]
     px-[1vw] py-[0.5vh]
     text-[2vh]
 
@@ -97,7 +97,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
         <div
           className="
     h-[5vh] flex items-center justify-start
-    text-black text-left font-[AppleBold] font-bold
+    text-black text-left font-[AppleNeoB]
     px-[1vw] py-[0.5vh]
     text-[2vh]
 
@@ -141,7 +141,7 @@ const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
         <div
           className="
     h-[5vh] flex items-center justify-start
-    text-black text-left font-[AppleBold] font-bold
+    text-black text-left font-[AppleNeoB]
     px-[1vw] py-[0.5vh]
     text-[2vh]
 

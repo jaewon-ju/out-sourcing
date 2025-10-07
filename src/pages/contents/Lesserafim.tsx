@@ -15,11 +15,18 @@ export type SectionContent = {
 const LesserafimContent = () => {
   const sections = ["Fashion", "Props", "Set Space", "Direction"];
   const height = useSelector((state: RootState) => state.height["lesserafim"]);
-  const lesserafimContent = useSelector((state: RootState) => state.lesserafimContent);
+  const lesserafimContent = useSelector(
+    (state: RootState) => state.lesserafimContent
+  );
   const [propsHeight, setPropsHeight] = useState(0);
 
   const cards = {
-    Fashion: <FashionCard singerName="lesserafim" fashion={lesserafimContent.fashion} />,
+    Fashion: (
+      <FashionCard
+        singerName="lesserafim"
+        fashion={lesserafimContent.fashion}
+      />
+    ),
     Props: (
       <PropsCard
         singerName="lesserafim"
@@ -28,10 +35,16 @@ const LesserafimContent = () => {
       />
     ),
     "Set Space": (
-      <SetSpaceCard singerName="lesserafim" setSpace={lesserafimContent.setSpace} />
+      <SetSpaceCard
+        singerName="lesserafim"
+        setSpace={lesserafimContent.setSpace}
+      />
     ),
     Direction: (
-      <DirectionCard singerName="lesserafim" direction={lesserafimContent.direction} />
+      <DirectionCard
+        singerName="lesserafim"
+        direction={lesserafimContent.direction}
+      />
     ),
   };
 
@@ -54,7 +67,7 @@ const LesserafimContent = () => {
           <div
             id="scroll-box"
             className={`
-                flex flex-col justify-start items-center w-full py-[2vh] font-[Apple]
+                flex flex-col justify-start items-center w-full py-[2vh] font-[AppleNeoR]
                 border-2 border-black
                 bg-white
                 overflow-y-scroll scrollbar
@@ -83,7 +96,10 @@ const LesserafimContent = () => {
           alt="Typography"
           className="h-[5vh]"
         />
-        <TypographyCard singerName="lesserafim" typography={lesserafimContent.typography} />
+        <TypographyCard
+          singerName="lesserafim"
+          typography={lesserafimContent.typography}
+        />
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
           <div
             className="
     h-[5vh] flex items-center justify-start
-    text-black text-left font-[AppleBold] font-bold
+    text-black text-left font-[AppleNeoB]
     px-[1vw] py-[0.5vh]
       text-[2vh]
 
@@ -62,7 +62,7 @@ const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
                   <div className="w-[20%] mt-[1vh]">
                     <button
                       className="
-                      font-[AppleBold]
+                      font-[AppleNeoB]
                       text-[1.2vw]
                   float-right
                   h-[3vh]

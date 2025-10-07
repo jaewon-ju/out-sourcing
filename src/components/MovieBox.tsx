@@ -33,16 +33,16 @@ const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
                   home.title.length > 10 ? "text-[2.5vh]" : "text-[3vh]"
                 } 
                 h-[3vh]
-                font-[AppleExtraBold] font-bold mt-[1vh] pl-[1vw] text-left w-full text-[#0000ee]`}
+                font-[AppleNeoB] mt-[1vh] pl-[1vw] text-left w-full text-[#0000ee]`}
               >
                 {home.title}
               </div>
-              <div className="text-[2vh] font-[Apple] mt-[0.5vh] pl-[1vw] text-left w-full text-[#0000ee]">
+              <div className="text-[2vh] font-[AppleNeoR] mt-[0.5vh] pl-[1vw] text-left w-full text-[#0000ee]">
                 {home.groupName}
               </div>
             </div>
             <div className="flex flex-col w-[30%]">
-              <div className="text-[2vh] font-[Apple] mt-[1vh] pr-[1vw] text-right w-full">
+              <div className="text-[2vh] font-[AppleNeoR] mt-[1vh] pr-[1vw] text-right w-full">
                 {home.year}
               </div>
             </div>
@@ -53,7 +53,7 @@ const MovieBox = ({ sortDirection }: { sortDirection: string }) => {
             {home.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[2vh] font-[Apple] pl-[1vw] rounded-bl-2xl rounded-br-2xl"
+                className="text-[2vh] font-[AppleNeoR] pl-[1vw] rounded-bl-2xl rounded-br-2xl"
               >
                 {tag}
               </span>

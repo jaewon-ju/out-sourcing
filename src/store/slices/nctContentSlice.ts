@@ -172,7 +172,7 @@ const initialState: NCTContentState = {
   },
   related: {
     image: [
-      "/images/newjeans.png",
+      "/images/newjeans2.png",
       "/images/riize.png",
       "/images/newjeans3.png",
     ],

@@ -63,7 +63,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         ref={firstCardRef}
         className="relative bg-gray-200 flex justify-center items-center aspect-square w-[94%] ml-[1rem]"
       >
-        <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
+        <h1 className="text-[2vh] font-[AppleNeoB] absolute top-[1vh] left-[1vw]">
           No.1
         </h1>
         <img
@@ -86,7 +86,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         className="relative bg-gray-200 flex justify-center items-center 
         aspect-square w-[94%] mr-[1rem]"
       >
-        <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
+        <h1 className="text-[2vh] font-[AppleNeoB] absolute top-[1vh] left-[1vw]">
           No.2
         </h1>
         <img
@@ -108,7 +108,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
       justify-center items-center aspect-square w-[94%] ml-[1rem]"
       >
         <h1
-          className="text-[2vh] font-[AppleBold] 
+          className="text-[2vh] font-[AppleNeoB] 
         font-bold absolute top-[1vh] left-[1vw]"
         >
           No.3
@@ -131,7 +131,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
         className="relative bg-gray-200 flex justify-center items-center 
         aspect-square w-[94%] mr-[1rem]"
       >
-        <h1 className="text-[2vh] font-[AppleBold] font-bold absolute top-[1vh] left-[1vw]">
+        <h1 className="text-[2vh] font-[AppleNeoB] absolute top-[1vh] left-[1vw]">
           No.4
         </h1>
         <img
@@ -161,7 +161,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
                 alt={popupData.title}
                 className="w-full h-auto rounded mb-[1vh]"
               />
-              <h2 className="text-[1.5vw] font-[AppleBold] font-bold mb-[1vh] mt-[1vh]">
+              <h2 className="text-[1.5vw] font-[AppleNeoB] mb-[1vh] mt-[1vh]">
                 {popupData.title}
               </h2>
               <p className="text-[1vw]">{popupData.description}</p>

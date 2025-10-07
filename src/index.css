@@ -13,13 +13,11 @@
 @font-face {
   font-family: "AppleNeoB";
   src: url("/fonts/AppleNeoB.woff2") format("woff2");
-  font-style: normal;
 }
 
 @font-face {
   font-family: "AppleNeoEB";
   src: url("/fonts/AppleNeoEB.woff2") format("woff2");
-  font-style: normal;
 }
 
 @font-face {
@@ -161,5 +159,5 @@ html {
 }
 
 body {
-  font-family: "AppleNeoR";
+  font-family: "font-[AppleNeoR]";
 }
