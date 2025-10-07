@@ -5,7 +5,7 @@ interface DirectionCardProps {
   direction: Direction;
 }
 
-const DirectionCard = ({ singerName, direction }: DirectionCardProps) => {
+const DirectionCard = ({ direction }: DirectionCardProps) => {
   return (
     <div id="DirectionCards" className={`flex flex-col gap-4 w-[90%]`}>
       {direction.title.map((title, index) => (

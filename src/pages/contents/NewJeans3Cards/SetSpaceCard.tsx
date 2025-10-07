@@ -5,7 +5,7 @@ interface SetSpaceCardProps {
   setSpace: SetSpace;
 }
 
-const SetSpaceCard = ({ singerName, setSpace }: SetSpaceCardProps) => {
+const SetSpaceCard = ({ setSpace }: SetSpaceCardProps) => {
   const [isHovered, setIsHovered] = useState(
     Array(setSpace.title.length).fill(false)
   );
