@@ -154,7 +154,7 @@ const PropsCard = ({ singerName, props, setPropsHeight }: PropsCardProps) => {
             <div className="bg-[#A2C7E9] m-[1vw] border border-black p-[1vw]">
               <button
                 onClick={closePopup}
-                className=" w-[1.5vw] h-[1.5vw] mb-[1vh] bg-[url('/images/X.png')] bg-cover bg-center"
+                className=" w-[1.5vw] h-[1.5vw] mb-[1vh] bg-[url('/images/X.png')] bg-cover bg-center cursor-pointer"
               ></button>
               <img
                 src={popupData.image}

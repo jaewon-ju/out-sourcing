@@ -7,17 +7,17 @@ const FolderBox = () => {
     Original: [
       "/images/nct.png",
       "/images/taeyeon.png",
-      "/images/NewJeans2.png",
+      "/images/newjeans2.png",
       "/images/riize.png",
       "/images/Hearts2Hearts.png",
-      "/images/Lesserafim.png",
+      "/images/lesserafim.png",
       "/images/lucy.png",
       "/images/newjeans3.png",
-      "/images/BTS.png",
+      "/images/bts.png",
     ],
     "School Days": [
       "/images/nct.png",
-      "/images/NewJeans2.png",
+      "/images/newjeans2.png",
       "/images/Hearts2Hearts.png",
       "/images/riize.png",
       "/images/newjeans.png",
@@ -25,14 +25,14 @@ const FolderBox = () => {
     "Western Retro": [
       "/images/Hearts2Hearts.png",
       "/images/taeyeon.png",
-      "/images/Lesserafim.png",
-      "/images/BTS.png",
+      "/images/lesserafim.png",
+      "/images/bts.png",
     ],
     "VHS TV Show": [
       "/images/Hearts2Hearts.png",
-      "/images/NewJeans.png",
-      "/images/NewJeans2.png",
-      "/images/Lucy.png",
+      "/images/newjeans.png",
+      "/images/newjeans2.png",
+      "/images/lucy.png",
     ],
   };
 

@@ -171,7 +171,11 @@ const initialState: NCTContentState = {
     image: ["/typography/nct/1.png", "/typography/nct/2.png"],
   },
   related: {
-    image: ["/images/NewJeans2.png", "/images/RIIZE.png", "/images/TWS.png"],
+    image: [
+      "/images/newjeans.png",
+      "/images/riize.png",
+      "/images/newjeans3.png",
+    ],
   },
   youtube: {
     viewUrl: "https://www.youtube.com/watch?v=IKlkZZv76Ho",

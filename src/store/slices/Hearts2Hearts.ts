@@ -164,7 +164,7 @@ const initialState: Hearts2HeartsContentState = {
     image: [
       "/images/lesserafim.png",
       "/images/lucy.png",
-      "/images/NewJeans2.png",
+      "/images/newjeans2.png",
     ],
   },
   youtube: {

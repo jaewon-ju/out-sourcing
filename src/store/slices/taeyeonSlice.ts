@@ -202,8 +202,8 @@ const initialState: TaeyeonContentState = {
   related: {
     image: [
       "/images/Hearts2Hearts.png",
-      "/images/Lesserafim.png",
-      "/images/BTS.png",
+      "/images/lesserafim.png",
+      "/images/bts.png",
     ],
   },
   youtube: {
